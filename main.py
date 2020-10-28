@@ -4,8 +4,9 @@
 from sys import argv
 
 # Importation des dépendances internes
-from core.cards import Cards
 from core.icons import Icons
+from core.cards import Cards
+from core.games import *
 
 def arg(): # Fonction d'entrée des arguments
 	args = {
@@ -54,8 +55,8 @@ def arg(): # Fonction d'entrée des arguments
 	return(True)
 
 def main(): # Fonction principale de l'execution du programme
-	packets = Cards()
-	packets.getAllCards()
+	game = ClosedBattle()
+	game.getCards()
 
 	return(True)
 
