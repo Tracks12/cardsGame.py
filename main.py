@@ -7,7 +7,7 @@ from sys import argv
 from core.cards import Cards
 from core.icons import Icons
 
-def arg():
+def arg(): # Fonction d'entrée des arguments
 	args = {
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
@@ -35,6 +35,8 @@ def arg():
 		print(" cardsGame.py 0.1 - Florian Cardinal\n")
 
 	elif(argv[1] in args["prfx"][0][0]):
+		packets = Cards()
+
 		try:
 			card = int(argv[2])
 
@@ -43,7 +45,6 @@ def arg():
 
 			return False
 
-		packets = Cards()
 		packets.getOneCard(card)
 
 	elif(argv[1] in args["prfx"][1][0]):
@@ -52,7 +53,7 @@ def arg():
 
 	return(True)
 
-def main():
+def main(): # Fonction principale de l'execution du programme
 	packets = Cards()
 	packets.getAllCards()
 
