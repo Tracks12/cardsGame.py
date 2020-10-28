@@ -20,4 +20,4 @@ class Colors:
 
 	else:
 		bold = italic = end = ""
-		red = green = blue = yellow = ""
+		red = green = blue = yellow = cyan = ""
