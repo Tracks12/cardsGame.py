@@ -1,6 +1,8 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+# Module de création de packet de carte
+
 from core.colors import Colors
 
 class Cards: # Objet de jeu de cartes

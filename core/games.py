@@ -1,6 +1,8 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+# Module des types de jeux
+
 from core.cards import Cards
 
 class ClosedBattle(Cards):
