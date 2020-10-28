@@ -3,46 +3,39 @@
 
 from sys import argv
 
-class Cards: # Objet de jeu de cartes
-	def __init__(self): # Construction du jeu de 52 cartes
-		self.packets = []
-		self.__numbers = ("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "V", "Q", "R")
-		self.__shapes  = ("♥", "♦", "♠", "♣")
-
-		for s in self.__shapes:
-			for n in self.__numbers:
-				self.packets.append([n, s])
-
-	def __dispCard(self, card): # Affichage d'une carte
-		if(len(card[0]) < 2):
-			card[0] += " "
-
-		print(",-----,")
-		print("|{}   |".format(card[0]))
-		print("|  {}  |".format(card[1]))
-		print("|   {}|".format(card[0]))
-		print("`-----`")
-
-		return card
-
-	def getAllCards(self): # Affiche toutes les cartes en ascii
-		for card in self.packets:
-			self.__dispCard(card)
-
-		return self.packets
-
-	def getOneCard(self, key):
-		card = self.packets[key]
-		self.__dispCard(card)
-
-		return card
+# Importation des dépendances internes
+from core.cards import Cards
 
 def arg():
+	args = {
+		"prfx": (
+			(("-h", "--help"), ""),
+			(("-v", "--version"), "")
+		),
+		"desc": (
+			"\tAffichage du menu d'aide",
+			"\tAffichage de la version du programme\n"
+		)
+	}
+
+	if(argv[1] in args["prfx"][-2][0]):
+		print(" Jeux de cartes")
+		print(" Lancement: python main.py <arg>\n")
+		print(" Arguments:")
+
+		for i in range(0, len(args["prfx"])):
+			print(" {}, {} {}\t{}".format(args["prfx"][i][0][0], args["prfx"][i][0][1], args["prfx"][i][1], args["desc"][i]))
+
+	elif(argv[1] in args["prfx"][-1][0]):
+		print(" cardsGame.py 0.1 - Florian Cardinal\n")
+
+
+
 	return(True)
 
 def main():
 	packets = Cards()
-	packets.getOneCard(0)
+	packets.getAllCards()
 
 	return(True)
 
