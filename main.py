@@ -5,16 +5,21 @@ from sys import argv
 
 # Importation des dépendances internes
 from core.cards import Cards
+from core.icons import Icons
 
 def arg():
 	args = {
 		"prfx": (
+			(("-s", "--show-card"), "<x>"),
+			(("-S", "--show-all"), ""),
 			(("-h", "--help"), ""),
 			(("-v", "--version"), "")
 		),
 		"desc": (
-			"\tAffichage du menu d'aide",
-			"\tAffichage de la version du programme\n"
+			"\tAffiche une carte",
+			"\tAffiche toutes les cartes\n",
+			"\tAffiche le menu d'aide",
+			"\tAffiche la version du programme\n"
 		)
 	}
 
@@ -29,7 +34,21 @@ def arg():
 	elif(argv[1] in args["prfx"][-1][0]):
 		print(" cardsGame.py 0.1 - Florian Cardinal\n")
 
+	elif(argv[1] in args["prfx"][0][0]):
+		try:
+			card = int(argv[2])
 
+		except Exception:
+			print("{}Spécifier un numéro de carte".format(Icons.warn))
+
+			return False
+
+		packets = Cards()
+		packets.getOneCard(card)
+
+	elif(argv[1] in args["prfx"][1][0]):
+		packets = Cards()
+		packets.getAllCards()
 
 	return(True)
 
