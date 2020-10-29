@@ -20,7 +20,8 @@ def arg(): # Fonction d'entrée des arguments
 		),
 		"desc": (
 			"\tAffiche une carte",
-			"\tAffiche toutes les cartes\n",
+			"\tAffiche toutes les cartes",
+			"\tAffiche toutes les cartes mélanger\n",
 			"\tAffiche le menu d'aide",
 			"\tAffiche la version du programme\n"
 		)
