@@ -8,10 +8,11 @@ from time import sleep
 
 # Importation des dépendances internes
 from core.icons import Icons
+from core.region import Region
 from core.cards import Cards
 from core.games import *
 
-def arg(): # Fonction d'entrée des arguments
+def arg(reg): # Fonction d'entrée des arguments
 	args = {
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
@@ -20,25 +21,18 @@ def arg(): # Fonction d'entrée des arguments
 			(("-h", "--help"), ""),
 			(("-v", "--version"), "")
 		),
-		"desc": (
-			"\tAffiche une carte",
-			"\tAffiche toutes les cartes",
-			"\tAffiche toutes les cartes mélanger\n",
-			"\tAffiche le menu d'aide",
-			"\tAffiche la version du programme\n"
-		)
+		"desc": reg.content["args"]["desc"]
 	}
 
 	if(argv[1] in args["prfx"][-2][0]):
-		print(" Jeux de cartes")
-		print(" Lancement: python main.py <arg>\n")
-		print(" Arguments:")
+		for line in reg.content["args"]["intro"]:
+			print(" {}".format(line))
 
 		for i in range(0, len(args["prfx"])):
 			print(" {}, {} {}\t{}".format(args["prfx"][i][0][0], args["prfx"][i][0][1], args["prfx"][i][1], args["desc"][i]))
 
 	elif(argv[1] in args["prfx"][-1][0]):
-		print(" cardsGame.py 0.1 - Florian Cardinal\n")
+		print(" cardsGame.py 0.1 {} Florian Cardinal\n".format(reg.content["vers"]))
 
 	elif(argv[1] in args["prfx"][0][0]):
 		packets = Cards()
@@ -64,19 +58,17 @@ def arg(): # Fonction d'entrée des arguments
 
 	return(True)
 
-def main(): # Fonction principale de l'execution du programme
+def main(reg): # Fonction principale de l'execution du programme
 	game = PeckerLady(["admin", "root", "user"])
-
-	while(True):
-		game.start()
-		sleep(.5)
-		shell('clear' if(system() == "Linux") else 'cls')
+	game.start()
 
 	return(True)
 
 if __name__ == "__main__":
+	reg = Region("fr")
+
 	if(len(argv) > 1):
-		arg()
+		arg(reg)
 
 	else:
-		main()
+		main(reg)
