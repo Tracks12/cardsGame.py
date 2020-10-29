@@ -27,11 +27,16 @@ class Cards: # Objet de jeu de cartes
 
 		color = Colors.red if(card[1] in ("♥", "♦")) else Colors.cyan
 
-		print(",-----,")
-		print("|{}{}{}   |".format(color, card[0], Colors.end))
-		print("|  {}{}{}  |".format(color, card[1], Colors.end))
-		print("|   {}{}{}|".format(color, card[0], Colors.end))
-		print("`-----`")
+		displayer = [
+			",-----,",
+			"|{}{}{}   |".format(color, card[0], Colors.end),
+			"|  {}{}{}  |".format(color, card[1], Colors.end),
+			"|   {}{}{}|".format(color, card[0], Colors.end),
+			"`-----`"
+		]
+
+		for line in displayer:
+			print(line)
 
 		return card
 
