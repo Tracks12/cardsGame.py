@@ -6,7 +6,7 @@
         "\tDisplays a card",
         "\tDisplays all cards",
         "\tDisplays a random card",
-        "\tDebug mod\n",
+        "\t\tDebug mod\n",
         "\t\tDisplays the help menu",
         "\t\tDisplays the version of the program\n"
       ]
@@ -24,7 +24,7 @@
         "\tAffiche une carte",
         "\tAffiche toutes les cartes",
         "\tAffiche toutes les cartes mélanger",
-        "\tMode debugger\n",
+        "\t\tMode debugger\n",
         "\t\tAffiche le menu d'aide",
         "\t\tAffiche la version du programme\n"
       ]
