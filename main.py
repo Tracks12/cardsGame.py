@@ -56,12 +56,10 @@ def arg(): # Fonction d'entrée des arguments
 	return(True)
 
 def main(): # Fonction principale de l'execution du programme
-	game = ClosedBattle()
+	game = Solitary()
 
-	while(True):
-		game.mixCards()
-		game.getCards()
-		sleep(.5)
+	game.mixCards()
+	game.getCards()
 
 	return(True)
 

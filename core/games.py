@@ -5,20 +5,20 @@
 
 from core.cards import Cards
 
-class ClosedBattle(Cards):
+class ClosedBattle(Cards): # La bataille fermée
 	game = "la bataille fermée"
+
+class Solitary(Cards): # Le solitaire
+	game = "le solitaire"
 
 	def getCards(self):
 		self.getAllCards()
 
-class Solitary(Cards):
-	game = "le solitaire"
-
-class PeckerLady(Cards):
+class PeckerLady(Cards): # La dame de pic
 	game = "la dame de pic"
 
-class Chickenshit(Cards):
+class Chickenshit(Cards): # Le pouilleux ou mistigri
 	game = "le pouilleux"
 
-class Liar(Cards):
+class Liar(Cards): # Le menteur
 	game = "le menteur"
