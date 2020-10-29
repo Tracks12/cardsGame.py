@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from sys import argv
+from time import sleep
 
 # Importation des dépendances internes
 from core.icons import Icons
@@ -56,7 +57,11 @@ def arg(): # Fonction d'entrée des arguments
 
 def main(): # Fonction principale de l'execution du programme
 	game = ClosedBattle()
-	game.getCards()
+
+	while(True):
+		game.mixCards()
+		game.getCards()
+		sleep(.5)
 
 	return(True)
 

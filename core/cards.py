@@ -3,6 +3,7 @@
 
 # Module de création de packet de carte
 
+from random import shuffle
 from core.colors import Colors
 
 class Cards: # Objet de jeu de cartes
@@ -28,6 +29,11 @@ class Cards: # Objet de jeu de cartes
 		print("`-----`")
 
 		return card
+
+	def mixCards(self):
+		shuffle(self.packets)
+
+		return True
 
 	def getAllCards(self): # Affiche toutes les cartes en ascii
 		for card in self.packets:
