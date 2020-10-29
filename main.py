@@ -18,6 +18,7 @@ def arg(reg): # Fonction d'entrée des arguments
 			(("-s", "--show-card"), "<x>"),
 			(("-S", "--show-all"), ""),
 			(("-r", "--show-rand"), ""),
+			(("-d", "--debug"), ""),
 			(("-h", "--help"), ""),
 			(("-v", "--version"), "")
 		),
@@ -55,6 +56,12 @@ def arg(reg): # Fonction d'entrée des arguments
 		packets = Cards()
 		packets.mixCards()
 		packets.getAllCards()
+
+	elif(argv[1] in args["prfx"][3][0]): # Mode Debugger
+		while(True):
+			shell("clear" if(system() == "Linux") else "cls")
+			shell("python3 main.py")
+			sleep(.5)
 
 	return(True)
 
