@@ -4,21 +4,62 @@
 # Module des types de jeux
 
 from core.cards import Cards
+from core.players import Players
 
-class ClosedBattle(Cards): # La bataille fermée
-	game = "la bataille fermée"
+class ClosedBattle(Cards, Players): # La bataille fermée
+	gameName = "la bataille fermée"
 
-class Solitary(Cards): # Le solitaire
-	game = "le solitaire"
+	def __init__(self, player):
+		Cards.__init__(self)
+		Players.__init__(self)
 
-	def getCards(self):
-		self.getAllCards()
+		self.addPlayer(player)
 
-class PeckerLady(Cards): # La dame de pic
-	game = "la dame de pic"
+class Solitary(Cards, Players): # Le solitaire
+	gameName = "le solitaire"
 
-class Chickenshit(Cards): # Le pouilleux ou mistigri
-	game = "le pouilleux"
+	def __init__(self):
+		Cards.__init__(self)
+		Players.__init__(self)
 
-class Liar(Cards): # Le menteur
-	game = "le menteur"
+		self.addPlayer(1)
+
+class PeckerLady(Cards, Players): # La dame de pic
+	gameName = "la dame de pic"
+
+	def __init__(self, player):
+		Cards.__init__(self)
+		Players.__init__(self)
+
+		self.addPlayer(player)
+
+	def __rules(self):
+		for player in self.players:
+			if(player["score"] >= 100):
+				self.end = True
+
+		return True
+
+	def start(self):
+		print(self.players)
+		#self.getAllCards()
+
+		return True
+
+class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
+	gameName = "le pouilleux"
+
+	def __init__(self, player):
+		Cards.__init__(self)
+		Players.__init__(self)
+
+		self.addPlayer(player)
+
+class Liar(Cards, Players): # Le menteur
+	gameName = "le menteur"
+
+	def __init__(self, player):
+		Cards.__init__(self)
+		Players.__init__(self)
+
+		self.addPlayer(player)

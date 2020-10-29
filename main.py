@@ -62,10 +62,9 @@ def arg(): # Fonction d'entrée des arguments
 	return(True)
 
 def main(): # Fonction principale de l'execution du programme
-	game = Solitary()
+	game = PeckerLady(2)
 
-	game.mixCards()
-	game.getCards()
+	game.start()
 
 	return(True)
 
