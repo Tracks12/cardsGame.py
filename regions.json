@@ -64,5 +64,36 @@
       }
     },
     "vers": "par"
+  },
+  "de": {
+    "args": {
+      "intro": ["Kartenspiele", "Starten: python main.py <arg>\n", "Einwände:"],
+      "desc": [
+        "\tEine Karte anzeigen",
+        "\tZeigt alle Karten an",
+        "\tZeigt alle gemischten Karten an",
+        "\t\tDebugging-Modus\n",
+        "\t\tZeigt das Hilfemenü an",
+        "\t\tZeigt die Programmversion an\n"
+      ]
+    },
+    "game": {
+      "closedBattle": {
+        "name": "Die geschlossene Schlacht"
+      },
+      "solitary": {
+        "name": "Der Solitär"
+      },
+      "peckerLady": {
+        "name": "Die Frau des Spechtes"
+      },
+      "chickenshit": {
+        "name": "Der Schlappschwanz"
+      },
+      "liar": {
+        "name": "Der Lügner"
+      }
+    },
+    "vers": "par"
   }
 }
