@@ -14,6 +14,7 @@ def arg(): # Fonction d'entrée des arguments
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
 			(("-S", "--show-all"), ""),
+			(("-r", "--show-rand"), ""),
 			(("-h", "--help"), ""),
 			(("-v", "--version"), "")
 		),
@@ -51,6 +52,11 @@ def arg(): # Fonction d'entrée des arguments
 
 	elif(argv[1] in args["prfx"][1][0]):
 		packets = Cards()
+		packets.getAllCards()
+
+	elif(argv[1] in args["prfx"][2][0]):
+		packets = Cards()
+		packets.mixCards()
 		packets.getAllCards()
 
 	return(True)
