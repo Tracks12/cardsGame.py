@@ -27,11 +27,11 @@ class Solitary(Cards, Players): # Le solitaire
 class PeckerLady(Cards, Players): # La dame de pic
 	gameName = "la dame de pic"
 
-	def __init__(self, player, playersName):
+	def __init__(self, player):
 		Cards.__init__(self)
 		Players.__init__(self)
 
-		self.addPlayer(player, playersName)
+		self.addPlayer(player)
 
 	def __rules(self):
 		for player in self.players:
@@ -42,9 +42,9 @@ class PeckerLady(Cards, Players): # La dame de pic
 
 	def start(self):
 		self.mixCards()
-		self.getPlayers()
 
-		print(self.dispAllCards())
+		print(self.getPlayers())
+		print(self.getAllCards())
 
 		return True
 

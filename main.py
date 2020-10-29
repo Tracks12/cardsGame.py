@@ -63,7 +63,7 @@ def arg(): # Fonction d'entrée des arguments
 	return(True)
 
 def main(): # Fonction principale de l'execution du programme
-	game = PeckerLady(2, ["admin", "root"])
+	game = PeckerLady(["admin", "root", "user"])
 
 	game.start()
 

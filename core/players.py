@@ -20,8 +20,8 @@ class Players:
 			if(player["name"] == plyrName):
 				return self._players[key]
 
-	def addPlayer(self, number, name): # Ajout d'un joueur
-		for i in range(0, number):
+	def addPlayer(self, name): # Ajout d'un joueur
+		for i in range(0, len(name)):
 			self._players.append({
 				"id":		len(self._players)+1,
 				"name":		name[i],
