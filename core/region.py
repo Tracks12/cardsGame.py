@@ -6,7 +6,7 @@
 import json
 
 class Region:
-	def __init__(self, lang):
+	def __init__(self, lang): # Selection de la langue dans le constructeur
 		self.content	= {}
 		self.__path		= "region.json"
 
@@ -14,7 +14,7 @@ class Region:
 
 		self.content = self.content[lang]
 
-	def __loadJSON(self): # Chargement depuis un fichier
+	def __loadJSON(self): # Chargement des langues depuis un fichier
 		try:
 			with open(self.__path) as outFile:
 				self.content = json.load(outFile)
