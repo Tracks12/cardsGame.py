@@ -11,6 +11,23 @@
         "\t\tDisplays the version of the program\n"
       ]
     },
+    "game": {
+      "closedBattle": {
+        "name": "The Closed Battle"
+      },
+      "solitary": {
+        "name": "The Solitary"
+      },
+      "peckerLady": {
+        "name": "The Pecker Lady"
+      },
+      "chickenshit": {
+        "name": "The Chickenshit"
+      },
+      "liar": {
+        "name": "The Liar"
+      }
+    },
     "vers": "by"
   },
   "fr": {
@@ -28,6 +45,23 @@
         "\t\tAffiche le menu d'aide",
         "\t\tAffiche la version du programme\n"
       ]
+    },
+    "game": {
+      "closedBattle": {
+        "name": "La Bataille Fermée"
+      },
+      "solitary": {
+        "name": "Le Solitaire"
+      },
+      "peckerLady": {
+        "name": "La Dame de Pic"
+      },
+      "chickenshit": {
+        "name": "Le Pouilleux"
+      },
+      "liar": {
+        "name": "Le Menteur"
+      }
     },
     "vers": "par"
   }

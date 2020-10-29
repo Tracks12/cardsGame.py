@@ -5,7 +5,7 @@
 
 import json
 
-class Region:
+class Regions:
 	def __init__(self, lang): # Selection de la langue dans le constructeur
 		self.content	= {}
 		self.__path		= "region.json"

@@ -8,7 +8,7 @@ from time import sleep
 
 # Importation des dépendances internes
 from core.icons import Icons
-from core.region import Region
+from core.regions import Regions
 from core.cards import Cards
 from core.games import *
 
@@ -66,13 +66,13 @@ def arg(reg): # Fonction d'entrée des arguments
 	return(True)
 
 def main(reg): # Fonction principale de l'execution du programme
-	game = PeckerLady(["admin", "root", "user"])
+	game = PeckerLady(["admin", "root", "user"], reg)
 	game.start()
 
 	return(True)
 
 if __name__ == "__main__":
-	reg = Region("fr")
+	reg = Regions("fr")
 
 	if(len(argv) > 1):
 		arg(reg)
