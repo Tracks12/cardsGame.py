@@ -7,31 +7,25 @@ from core.cards import Cards
 from core.players import Players
 
 class ClosedBattle(Cards, Players): # La bataille fermée
-	gameName = "la bataille fermée"
-
 	def __init__(self, player, playersName):
 		Cards.__init__(self)
-		Players.__init__(self)
+		Players.__init__(self, players)
 
-		self.addPlayer(player, playersName)
+		self.gameName = "la bataille fermée"
 
 class Solitary(Cards, Players): # Le solitaire
-	gameName = "le solitaire"
-
 	def __init__(self, playersName):
 		Cards.__init__(self)
-		Players.__init__(self)
+		Players.__init__(self, players)
 
-		self.addPlayer(1, playersName)
+		self.gameName = "le solitaire"
 
 class PeckerLady(Cards, Players): # La dame de pic
-	gameName = "la dame de pic"
-
-	def __init__(self, player):
+	def __init__(self, players):
 		Cards.__init__(self)
-		Players.__init__(self)
+		Players.__init__(self, players)
 
-		self.addPlayer(player)
+		self.self.gameName = "la dame de pic"
 
 	def __rules(self):
 		for player in self.players:
@@ -49,19 +43,15 @@ class PeckerLady(Cards, Players): # La dame de pic
 		return True
 
 class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
-	gameName = "le pouilleux"
-
 	def __init__(self, player, playersName):
 		Cards.__init__(self)
-		Players.__init__(self)
+		Players.__init__(self, players)
 
-		self.addPlayer(player, playersName)
+		self.gameName = "le pouilleux"
 
 class Liar(Cards, Players): # Le menteur
-	gameName = "le menteur"
-
 	def __init__(self, player, playersName):
 		Cards.__init__(self)
-		Players.__init__(self)
+		Players.__init__(self, players)
 
-		self.addPlayer(player, playersName)
+		self.gameName = "le menteur"

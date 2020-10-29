@@ -4,8 +4,21 @@
 # Module de création d'objets joueurs
 
 class Players:
-	def __init__(self):
+	def __init__(self, players):
 		self._players = []
+
+		self.__addPlayer(players)
+
+	def __addPlayer(self, name): # Ajout d'un joueur
+		for i in range(0, len(name)):
+			self._players.append({
+				"id":		len(self._players)+1,
+				"name":		name[i],
+				"score":	0,
+				"deck":		[]
+			})
+
+		return self._players
 
 	def getPlayers(self): # Affichage de la liste des joueurs
 		return self._players
@@ -19,17 +32,6 @@ class Players:
 		for key, player in enumerate(self._players):
 			if(player["name"] == plyrName):
 				return self._players[key]
-
-	def addPlayer(self, name): # Ajout d'un joueur
-		for i in range(0, len(name)):
-			self._players.append({
-				"id":		len(self._players)+1,
-				"name":		name[i],
-				"score":	0,
-				"deck":		[]
-			})
-
-		return self._players
 
 	def delPlayerById(self, plyrId): # Suppression d'un joueur par son id
 		for key, player in enumerate(self._players):
