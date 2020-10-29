@@ -5,33 +5,36 @@
 
 class Players:
 	def __init__(self):
-		self.players = []
+		self._players = []
+
+	def getPlayers(self):
+		return self._players
 
 	def addPlayer(self, number, name): # Ajout d'un joueur
 		for i in range(0, number):
-			self.players.append({
-				"id":		len(self.players)+1,
+			self._players.append({
+				"id":		len(self._players)+1,
 				"name":		name[i],
 				"score":	0,
 				"deck":		[]
 			})
 
-		return self.players
+		return self._players
 
 	def delPlayerByName(self, plyrName): # Suppression d'un joueur par son id
-		for key, player in enumerate(self.players):
+		for key, player in enumerate(self._players):
 			if(player["name"] == plyrName):
-				self.players.remove(player)
+				self._players.remove(player)
 
-				return self.players
+				return self._players
 
 		return False
 
 	def delPlayerById(self, idPlyr): # Suppression d'un joueur par son id
-		for key, player in enumerate(self.players):
+		for key, player in enumerate(self._players):
 			if(player["id"] == idPlyr):
-				self.players.remove(player)
+				self._players.remove(player)
 
-				return self.players
+				return self._players
 
 		return False

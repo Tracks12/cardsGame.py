@@ -41,7 +41,7 @@ class PeckerLady(Cards, Players): # La dame de pic
 		return True
 
 	def start(self):
-		print(self.players)
+		print(self.getPlayers())
 
 		return True
 
