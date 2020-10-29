@@ -1,6 +1,8 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+from os import system as shell
+from platform import system
 from sys import argv
 from time import sleep
 
@@ -65,7 +67,10 @@ def arg(): # Fonction d'entrée des arguments
 def main(): # Fonction principale de l'execution du programme
 	game = PeckerLady(["admin", "root", "user"])
 
-	game.start()
+	while(True):
+		game.start()
+		sleep(.5)
+		shell('clear' if(system() == "Linux") else 'cls')
 
 	return(True)
 
