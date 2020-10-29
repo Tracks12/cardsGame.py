@@ -26,7 +26,7 @@ L’évaluation est individuelle et le rendu sera à déposer le 29/10/2020 avan
 
 Exemple de jeux de cartes plutôt faciles à implémenter :
 
-- La bataille fermée
+- la bataille fermée
 - le solitaire
 - la dame de pic
 - le pouilleux ou mistigri
