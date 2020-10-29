@@ -25,7 +25,7 @@ class PeckerLady(Cards, Players): # La dame de pic
 		Cards.__init__(self)
 		Players.__init__(self, players)
 
-		self.self.gameName = "la dame de pic"
+		self.gameName = "la dame de pic"
 
 	def __rules(self):
 		for player in self.players:
