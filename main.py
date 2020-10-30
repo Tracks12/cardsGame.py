@@ -1,6 +1,7 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+import json
 from os import system as shell
 from platform import system
 from sys import argv
@@ -17,7 +18,8 @@ def arg(reg): # Fonction d'entrée des arguments
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
 			(("-S", "--show-all"), ""),
-			(("-r", "--show-rand"), ""),
+			(("-r", "--show-rand-card"), "<x>"),
+			(("-R", "--show-rand-all"), ""),
 			(("-d", "--debug"), ""),
 			(("-h", "--help"), ""),
 			(("-v", "--version"), "")
@@ -26,8 +28,9 @@ def arg(reg): # Fonction d'entrée des arguments
 	}
 
 	if(argv[1] in args["prfx"][-2][0]):
-		for line in reg.content["args"]["intro"]:
-			print(" {}".format(line))
+		print(" {}".format(reg.content["args"]["intro"][0]))
+		print(" {}: python main.py <arg>\n".format(reg.content["args"]["intro"][1]))
+		print(" {}:".format(reg.content["args"]["intro"][2]))
 
 		for i in range(0, len(args["prfx"])):
 			print(" {}, {} {}\t{}".format(args["prfx"][i][0][0], args["prfx"][i][0][1], args["prfx"][i][1], args["desc"][i]))
@@ -39,25 +42,39 @@ def arg(reg): # Fonction d'entrée des arguments
 		packets = Cards()
 
 		try:
-			card = int(argv[2])
+			card = int(argv[2])-1
 
 		except Exception:
-			print("{}Spécifier un numéro de carte".format(Icons.warn))
+			print("{}{}".format(Icons.warn, reg.content["args"]["err"]["cardNum"]))
 
 			return False
 
-		packets.getOneCard(card)
+		packets.dispOneCard(card)
 
 	elif(argv[1] in args["prfx"][1][0]):
 		packets = Cards()
-		packets.getAllCards()
+		packets.dispAllCards()
 
 	elif(argv[1] in args["prfx"][2][0]):
 		packets = Cards()
-		packets.mixCards()
-		packets.getAllCards()
 
-	elif(argv[1] in args["prfx"][3][0]): # Mode Debugger
+		try:
+			card = int(argv[2])-1
+
+		except Exception:
+			print("{}{}".format(Icons.warn, reg.content["args"]["err"]["cardNum"]))
+
+			return False
+
+		packets.mixCards()
+		packets.dispOneCard(card)
+
+	elif(argv[1] in args["prfx"][3][0]):
+		packets = Cards()
+		packets.mixCards()
+		packets.dispAllCards()
+
+	elif(argv[1] in args["prfx"][4][0]): # Mode Debugger
 		isLinux = True if(system() == "Linux") else False
 
 		while(True):
@@ -74,7 +91,13 @@ def main(reg): # Fonction principale de l'execution du programme
 	return(True)
 
 if __name__ == "__main__":
-	reg = Regions("fr")
+	try:
+		with open("config.json") as outFile: # Importation du fichier de configuration
+			config = json.load(outFile)
+			reg = Regions(config["lang"])
+
+	except Exception: # Paramétrage de la langue en anglais par défaut
+		reg = Regions("us")
 
 	if(len(argv) > 1):
 		arg(reg)

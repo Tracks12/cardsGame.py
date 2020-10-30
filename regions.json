@@ -1,15 +1,19 @@
 {
   "us": {
     "args": {
-      "intro": ["Card games", "Launch: python main.py <arg>\n", "Arguments:"],
+      "intro": ["Card games", "Launch", "Arguments"],
       "desc": [
-        "\tDisplays a card",
-        "\tDisplays all cards",
-        "\tDisplays a random card",
+        "\tDisplays a packet card",
+        "\tDisplays the entire packet of cards",
+        "Displays a mixed packet card",
+        "\tDisplays all cards of the shuffled packet",
         "\t\tDebug mod\n",
         "\t\tDisplays the help menu",
         "\t\tDisplays the version of the program\n"
-      ]
+      ],
+      "err": {
+        "cardNum": "Specify a card number"
+      }
     },
     "game": {
       "closedBattle": {
@@ -32,19 +36,19 @@
   },
   "fr": {
     "args": {
-      "intro": [
-        "Jeux de cartes",
-        "Lancement: python main.py <arg>\n",
-        "Arguments:"
-      ],
+      "intro": ["Jeux de cartes", "Lancement", "Arguments"],
       "desc": [
-        "\tAffiche une carte",
-        "\tAffiche toutes les cartes",
-        "\tAffiche toutes les cartes mélanger",
+        "\tAffiche une carte du packet",
+        "\tAffiche tout le packet de cartes",
+        "Affiche une carte du packet mélangé",
+        "\tAffiche toutes les cartes du packet mélangé",
         "\t\tMode debugger\n",
         "\t\tAffiche le menu d'aide",
         "\t\tAffiche la version du programme\n"
-      ]
+      ],
+      "err": {
+        "cardNum": "Spécifier un numéro de carte"
+      }
     },
     "game": {
       "closedBattle": {
@@ -64,36 +68,5 @@
       }
     },
     "vers": "par"
-  },
-  "de": {
-    "args": {
-      "intro": ["Kartenspiele", "Starten: python main.py <arg>\n", "Einwände:"],
-      "desc": [
-        "\tEine Karte anzeigen",
-        "\tZeigt alle Karten an",
-        "\tZeigt alle gemischten Karten an",
-        "\t\tDebugging-Modus\n",
-        "\t\tZeigt das Hilfemenü an",
-        "\t\tZeigt die Programmversion an\n"
-      ]
-    },
-    "game": {
-      "closedBattle": {
-        "name": "Die geschlossene Schlacht"
-      },
-      "solitary": {
-        "name": "Der Solitär"
-      },
-      "peckerLady": {
-        "name": "Die Frau des Spechtes"
-      },
-      "chickenshit": {
-        "name": "Der Schlappschwanz"
-      },
-      "liar": {
-        "name": "Der Lügner"
-      }
-    },
-    "vers": "von"
   }
 }
