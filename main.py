@@ -27,7 +27,7 @@ def arg(reg): # Fonction d'entrée des arguments
 		"desc": reg.content["args"]["desc"]
 	}
 
-	if(argv[1] in args["prfx"][-2][0]):
+	if(argv[1] in args["prfx"][-2][0]): # Affiche le helper args
 		print(" {}".format(reg.content["args"]["intro"][0]))
 		print(" {}: python main.py <arg>\n".format(reg.content["args"]["intro"][1]))
 		print(" {}:".format(reg.content["args"]["intro"][2]))
@@ -35,10 +35,10 @@ def arg(reg): # Fonction d'entrée des arguments
 		for i in range(0, len(args["prfx"])):
 			print(" {}, {} {}\t{}".format(args["prfx"][i][0][0], args["prfx"][i][0][1], args["prfx"][i][1], args["desc"][i]))
 
-	elif(argv[1] in args["prfx"][-1][0]):
+	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
 		print(" cardsGame.py 0.1 {} Florian Cardinal\n".format(reg.content["vers"]))
 
-	elif(argv[1] in args["prfx"][0][0]):
+	elif(argv[1] in args["prfx"][0][0]): # Affiche une carte du paquet
 		packets = Cards()
 
 		try:
@@ -51,11 +51,11 @@ def arg(reg): # Fonction d'entrée des arguments
 
 		packets.dispOneCard(card)
 
-	elif(argv[1] in args["prfx"][1][0]):
+	elif(argv[1] in args["prfx"][1][0]): # Affiche tout le paquet
 		packets = Cards()
 		packets.dispAllCards()
 
-	elif(argv[1] in args["prfx"][2][0]):
+	elif(argv[1] in args["prfx"][2][0]): # Affiche une carte du paquet mélangé
 		packets = Cards()
 
 		try:
@@ -69,7 +69,7 @@ def arg(reg): # Fonction d'entrée des arguments
 		packets.mixCards()
 		packets.dispOneCard(card)
 
-	elif(argv[1] in args["prfx"][3][0]):
+	elif(argv[1] in args["prfx"][3][0]): # Affiche tout le paquet mélangé
 		packets = Cards()
 		packets.mixCards()
 		packets.dispAllCards()

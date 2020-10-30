@@ -38,10 +38,10 @@
     "args": {
       "intro": ["Jeux de cartes", "Lancement", "Arguments"],
       "desc": [
-        "\tAffiche une carte du packet",
-        "\tAffiche tout le packet de cartes",
-        "Affiche une carte du packet mélangé",
-        "\tAffiche toutes les cartes du packet mélangé",
+        "\tAffiche une carte du paquet",
+        "\tAffiche tout le paquet de cartes",
+        "Affiche une carte du paquet mélangé",
+        "\tAffiche toutes les cartes du paquet mélangé",
         "\t\tMode debugger\n",
         "\t\tAffiche le menu d'aide",
         "\t\tAffiche la version du programme\n"
