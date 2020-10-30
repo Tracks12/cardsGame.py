@@ -13,6 +13,9 @@ from core.regions import Regions
 from core.cards import Cards
 from core.games import *
 
+def splash():
+	return True
+
 def arg(reg): # Fonction d'entrée des arguments
 	args = {
 		"prfx": (
@@ -20,8 +23,8 @@ def arg(reg): # Fonction d'entrée des arguments
 			(("-S", "--show-all"), ""),
 			(("-r", "--show-rand-card"), "<x>"),
 			(("-R", "--show-rand-all"), ""),
-			(("-d", "--debug"), ""),
 			(("-h", "--help"), ""),
+			(("-d", "--debug"), ""),
 			(("-v", "--version"), "")
 		),
 		"desc": reg.content["args"]["desc"]
@@ -34,6 +37,14 @@ def arg(reg): # Fonction d'entrée des arguments
 
 		for i in range(0, len(args["prfx"])):
 			print(" {}, {} {}\t{}".format(args["prfx"][i][0][0], args["prfx"][i][0][1], args["prfx"][i][1], args["desc"][i]))
+
+	elif(argv[1] in args["prfx"][-2][0]): # Mode Debugger
+		isLinux = True if(system() == "Linux") else False
+
+		while(True):
+			shell("clear" if(isLinux) else "cls")
+			shell("python{} main.py --help".format("3" if(isLinux) else ""))
+			sleep(1)
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
 		print(" cardsGame.py 0.1 {} Florian Cardinal\n".format(reg.content["vers"]))
@@ -73,14 +84,6 @@ def arg(reg): # Fonction d'entrée des arguments
 		packets = Cards()
 		packets.mixCards()
 		packets.dispAllCards()
-
-	elif(argv[1] in args["prfx"][4][0]): # Mode Debugger
-		isLinux = True if(system() == "Linux") else False
-
-		while(True):
-			shell("clear" if(isLinux) else "cls")
-			shell("python{} main.py --help".format("3" if(isLinux) else ""))
-			sleep(1)
 
 	return(True)
 

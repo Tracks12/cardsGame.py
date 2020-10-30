@@ -7,8 +7,8 @@
         "\tDisplays the entire packet of cards",
         "Displays a mixed packet card",
         "\tDisplays all cards of the shuffled packet",
-        "\t\tDebug mod\n",
         "\t\tDisplays the help menu",
+        "\t\tDebug mod\n",
         "\t\tDisplays the version of the program\n"
       ],
       "err": {
@@ -42,8 +42,8 @@
         "\tAffiche tout le paquet de cartes",
         "Affiche une carte du paquet mélangé",
         "\tAffiche toutes les cartes du paquet mélangé",
-        "\t\tMode debugger\n",
         "\t\tAffiche le menu d'aide",
+        "\t\tMode debugger\n",
         "\t\tAffiche la version du programme\n"
       ],
       "err": {
