@@ -58,9 +58,11 @@ def arg(reg): # Fonction d'entrée des arguments
 		packets.getAllCards()
 
 	elif(argv[1] in args["prfx"][3][0]): # Mode Debugger
+		isLinux = True if(system() == "Linux") else False
+
 		while(True):
-			shell("clear" if(system() == "Linux") else "cls")
-			shell("python{} main.py --help".format("3" if(system() == "Linux") else ""))
+			shell("clear" if(isLinux) else "cls")
+			shell("python{} main.py --help".format("3" if(isLinux) else ""))
 			sleep(1)
 
 	return(True)
