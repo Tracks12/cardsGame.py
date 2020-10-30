@@ -30,7 +30,7 @@ def arg(reg): # Fonction d'entrée des arguments
 		"desc": reg.content["args"]["desc"]
 	}
 
-	if(argv[1] in args["prfx"][-2][0]): # Affiche le helper args
+	if(argv[1] in args["prfx"][-3][0]): # Affiche le helper args
 		print(" {}".format(reg.content["args"]["intro"][0]))
 		print(" {}: python main.py <arg>\n".format(reg.content["args"]["intro"][1]))
 		print(" {}:".format(reg.content["args"]["intro"][2]))
