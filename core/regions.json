@@ -8,16 +8,22 @@
         "Displays a mixed packet card",
         "\tDisplays all cards of the shuffled packet\n",
         "\t\tDisplays the help menu",
-        "\t\tDebug mod",
+        "\t\tDebug mode",
         "\t\tDisplays the version of the program\n"
       ]
     },
     "err": {
       "regLoad": "The loading of the language module failed",
+      "menuCho": "This choice does not exist",
       "cardNum": "Specify a card number"
     },
     "tip": {
       "regLoad": "Check the 'regions.json' file is complete"
+    },
+    "menu": {
+      "txt": "Choose a game mode",
+      "quit": "Quit",
+      "set": "Settings"
     },
     "game": {
       "closedBattle": {
@@ -53,10 +59,16 @@
     },
     "err": {
       "regLoad": "Le chargement du module de langue a échoué",
+      "menuCho": "Ce choix n'existe pas",
       "cardNum": "Spécifier un numéro de carte"
     },
     "tip": {
       "regLoad": "Vérifiez que le fichier 'regions.json' soit bien complet"
+    },
+    "menu": {
+      "txt": "Choisissez un mode de jeu",
+      "quit": "Quitter",
+      "set": "Paramètres"
     },
     "game": {
       "closedBattle": {

@@ -15,6 +15,13 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		self.gameName	= self.content["name"]
 		self.end		= False
 
+	def start(self):
+		self.mixCards()
+
+		print(self.gameName)
+
+		return True
+
 class Solitary(Cards, Players): # Le solitaire
 	def __init__(self, players, lang):
 		Cards.__init__(self)
@@ -23,6 +30,13 @@ class Solitary(Cards, Players): # Le solitaire
 		self.content	= lang.content["game"]["solitary"]
 		self.gameName	= self.content["name"]
 		self.end		= False
+
+	def start(self):
+		self.mixCards()
+
+		print(self.gameName)
+
+		return True
 
 class PeckerLady(Cards, Players): # La dame de pic
 	def __init__(self, players, lang):
@@ -56,6 +70,13 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 		self.gameName	= self.content["name"]
 		self.end		= False
 
+	def start(self):
+		self.mixCards()
+
+		print(self.gameName)
+
+		return True
+
 class Liar(Cards, Players): # Le menteur
 	def __init__(self, players, lang):
 		Cards.__init__(self)
@@ -64,3 +85,10 @@ class Liar(Cards, Players): # Le menteur
 		self.content	= lang.content["game"]["liar"]
 		self.gameName	= self.content["name"]
 		self.end		= False
+
+	def start(self):
+		self.mixCards()
+
+		print(self.gameName)
+
+		return True
