@@ -58,8 +58,8 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 
 		while(True):
 			shell("clear" if(isLinux) else "cls")
-			shell("python{} main.py --help".format("3" if(isLinux) else ""))
-			sleep(1)
+			shell("python{} main.py".format("3" if(isLinux) else ""))
+			input("{}{}".format(Icons.info, reg.content["debug"]["continue"]))
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
 		print(" {} {} {} {}\n".format(info["name"], info["vers"], reg.content["vers"], info["author"]))
@@ -131,8 +131,13 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
-				mode = games[i](["admin", "root"], reg)
-				mode.start()
+				game = games[i](["admin", "root"], reg)
+				print("{}{}".format(Icons.play, game.gameName))
+
+				if(not game.finished):
+					print("{}{}".format(Icons.warn, reg.content["game"]["notFinished"]))
+
+				game.start()
 
 		if(choice == 0):
 			return(True)

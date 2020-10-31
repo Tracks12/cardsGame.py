@@ -12,6 +12,9 @@
         "\t\tDisplays the version of the program\n"
       ]
     },
+    "debug": {
+      "continue": "Press key to continue ..."
+    },
     "err": {
       "regLoad": "The loading of the language module failed",
       "menuCho": "This choice does not exist",
@@ -27,7 +30,8 @@
     },
     "game": {
       "closedBattle": {
-        "name": "The Closed Battle"
+        "name": "The Closed Battle",
+        "round": "Round"
       },
       "solitary": {
         "name": "The Solitary"
@@ -40,7 +44,8 @@
       },
       "liar": {
         "name": "The Liar"
-      }
+      },
+      "notFinished": "This game wasn't finished"
     },
     "vers": "by"
   },
@@ -57,6 +62,9 @@
         "\t\tAffiche la version du programme\n"
       ]
     },
+    "debug": {
+      "continue": "Appuyez sur une touche pour continuer ..."
+    },
     "err": {
       "regLoad": "Le chargement du module de langue a échoué",
       "menuCho": "Ce choix n'existe pas",
@@ -72,7 +80,8 @@
     },
     "game": {
       "closedBattle": {
-        "name": "La Bataille Fermée"
+        "name": "La Bataille Fermée",
+        "round": "Tour"
       },
       "solitary": {
         "name": "Le Solitaire"
@@ -85,7 +94,8 @@
       },
       "liar": {
         "name": "Le Menteur"
-      }
+      },
+      "notFinished": "Ce jeu n'est pas fini"
     },
     "vers": "par"
   }
