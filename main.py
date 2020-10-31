@@ -8,15 +8,28 @@ from sys import argv
 from time import sleep
 
 # Importation des dépendances internes
+from core.colors import Colors
 from core.icons import Icons
 from core.regions import Regions
 from core.cards import Cards
 from core.games import *
 
-def splash():
+def splash(reg, info): # Splash Screen
+	for l in [
+		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
+		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),
+		"  {}____ ___ _ _ __ ___| |  ___/ /   ___ ___ _ _ _ _ __   ___   ___{}".format(Colors.yellow, Colors.end),
+		" {}/ __// _ ` | `_// _ ` | / _/ |   |_  / _ ` | `_` `_ \ / _ \ | _ \_ __{}".format(Colors.yellow, Colors.end),
+		"{}| (__| (_)  | | | (_)  |_\ \ \ \___/ | (_)  | | | | | |  __/ |  _/\` /\t{}{}{}".format(Colors.yellow, Colors.red, info["version"], Colors.end),
+		" {}\__/ \___,_|_|  \___,_|___/  \_____/ \___,_|_| |_| |_|\___|.|_|  / /\t{}{} {}{}".format(Colors.yellow, Colors.purple, reg.content["vers"], info["author"], Colors.end),
+		"                                                                 {}/_/{}\n".format(Colors.yellow, Colors.end)
+	]:
+		print(l)
+		sleep(.1)
+
 	return True
 
-def arg(reg): # Fonction d'entrée des arguments
+def arg(reg, info): # Fonction d'entrée des arguments
 	args = {
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
@@ -56,7 +69,7 @@ def arg(reg): # Fonction d'entrée des arguments
 			card = int(argv[2])-1
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg.content["args"]["err"]["cardNum"]))
+			print("{}{}".format(Icons.warn, reg.content["err"]["cardNum"]))
 
 			return False
 
@@ -73,7 +86,7 @@ def arg(reg): # Fonction d'entrée des arguments
 			card = int(argv[2])-1
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg.content["args"]["err"]["cardNum"]))
+			print("{}{}".format(Icons.warn, reg.content["err"]["cardNum"]))
 
 			return False
 
@@ -87,13 +100,20 @@ def arg(reg): # Fonction d'entrée des arguments
 
 	return(True)
 
-def main(reg): # Fonction principale de l'execution du programme
+def main(reg, info): # Fonction principale de l'execution du programme
+	splash(reg, info)
+
 	game = PeckerLady(["admin", "root", "user"], reg)
 	game.start()
 
 	return(True)
 
 if __name__ == "__main__":
+	info = {
+		"version": "0.1",
+		"author": "Florian Cardinal"
+	}
+
 	try:
 		with open("config.json") as outFile: # Importation du fichier de configuration
 			config = json.load(outFile)
@@ -101,9 +121,11 @@ if __name__ == "__main__":
 
 	except Exception: # Paramétrage de la langue en anglais par défaut
 		reg = Regions("us")
+		print("{}{}".format(Icons.warn, reg.content["err"]["regLoad"]))
+		print("{}{}".format(Icons.info, reg.content["tip"]["regLoad"]))
 
 	if(len(argv) > 1):
-		arg(reg)
+		arg(reg, info)
 
 	else:
-		main(reg)
+		main(reg, info)

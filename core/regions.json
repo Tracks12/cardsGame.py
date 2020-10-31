@@ -10,10 +10,14 @@
         "\t\tDisplays the help menu",
         "\t\tDebug mod",
         "\t\tDisplays the version of the program\n"
-      ],
-      "err": {
-        "cardNum": "Specify a card number"
-      }
+      ]
+    },
+    "err": {
+      "regLoad": "The loading of the language module failed",
+      "cardNum": "Specify a card number"
+    },
+    "tip": {
+      "regLoad": "Check the 'regions.json' file is complete"
     },
     "game": {
       "closedBattle": {
@@ -45,10 +49,14 @@
         "\t\tAffiche le menu d'aide",
         "\t\tMode debugger",
         "\t\tAffiche la version du programme\n"
-      ],
-      "err": {
-        "cardNum": "Spécifier un numéro de carte"
-      }
+      ]
+    },
+    "err": {
+      "regLoad": "Le chargement du module de langue a échoué",
+      "cardNum": "Spécifier un numéro de carte"
+    },
+    "tip": {
+      "regLoad": "Vérifiez que le fichier 'regions.json' soit bien complet"
     },
     "game": {
       "closedBattle": {
