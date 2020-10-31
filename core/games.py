@@ -14,6 +14,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 		self.content	= lang.content["game"]["closedBattle"]
 		self.gameName	= self.content["name"]
+		self.finished	= False
 		self.end		= False
 
 	def __distrib(self):
@@ -25,6 +26,8 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 				self._packet.pop(0)
 
 	def __update(self):
+
+
 		return(True)
 
 	def __rules(self):
@@ -54,6 +57,7 @@ class Solitary(Cards, Players): # Le solitaire
 
 		self.content	= lang.content["game"]["solitary"]
 		self.gameName	= self.content["name"]
+		self.finished	= False
 		self.end		= False
 
 	def start(self):
@@ -68,6 +72,7 @@ class PeckerLady(Cards, Players): # La dame de pic
 
 		self.content	= lang.content["game"]["peckerLady"]
 		self.gameName	= self.content["name"]
+		self.finished	= False
 		self.end		= False
 
 	def __rules(self):
@@ -87,6 +92,7 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 
 		self.content	= lang.content["game"]["chickenshit"]
 		self.gameName	= self.content["name"]
+		self.finished	= False
 		self.end		= False
 
 	def start(self):
@@ -101,6 +107,7 @@ class Liar(Cards, Players): # Le menteur
 
 		self.content	= lang.content["game"]["liar"]
 		self.gameName	= self.content["name"]
+		self.finished	= False
 		self.end		= False
 
 	def start(self):

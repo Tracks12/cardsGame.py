@@ -43,7 +43,8 @@
       },
       "liar": {
         "name": "The Liar"
-      }
+      },
+      "notFinished": "This game wasn't finished"
     },
     "vers": "by"
   },
@@ -91,7 +92,8 @@
       },
       "liar": {
         "name": "Le Menteur"
-      }
+      },
+      "notFinished": "Ce jeu n'est pas fini"
     },
     "vers": "par"
   }
