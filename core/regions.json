@@ -21,7 +21,9 @@
       "regLoad": "Check the 'regions.json' file is complete"
     },
     "menu": {
-      "txt": "Choose a game mode"
+      "txt": "Choose a game mode",
+      "quit": "Quit",
+      "set": "Settings"
     },
     "game": {
       "closedBattle": {
@@ -64,7 +66,9 @@
       "regLoad": "Vérifiez que le fichier 'regions.json' soit bien complet"
     },
     "menu": {
-      "txt": "Choisissez un mode de jeu"
+      "txt": "Choisissez un mode de jeu",
+      "quit": "Quitter",
+      "set": "Paramètres"
     },
     "game": {
       "closedBattle": {

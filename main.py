@@ -115,7 +115,9 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 	for key, row in enumerate(menu):
 		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
 
-	print( "\n {}0.{} Quit\n".format(Colors.red, Colors.end))
+	print("")
+	#print( " {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg.content["menu"]["set"]))
+	print( " {}0.{} {}\n".format(Colors.red, Colors.end, reg.content["menu"]["quit"]))
 
 	while(True):
 		while(True):
@@ -129,11 +131,14 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
-				mode = games[i](["admin", "root", "user"], reg)
+				mode = games[i](["admin", "root"], reg)
 				mode.start()
 
 		if(choice == 0):
 			return(True)
+
+		#elif(choice == len(menu)):
+		#	print(" OPTION")
 
 	return(True)
 
