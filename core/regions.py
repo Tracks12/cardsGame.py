@@ -8,7 +8,7 @@ import json
 class Regions:
 	def __init__(self, lang): # Selection de la langue dans le constructeur
 		self.content	= {}
-		self.__path		= "regions.json"
+		self.__path		= "core/regions.json"
 
 		self.__loadJSON()
 
