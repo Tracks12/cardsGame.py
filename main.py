@@ -131,7 +131,7 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
-				game = games[i](["admin", "user"], reg)
+				game = games[i](["admin", "root"], reg)
 				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):

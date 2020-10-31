@@ -14,7 +14,8 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 		self.content	= lang.content["game"]["closedBattle"] # Traductions du jeu
 		self.gameName	= self.content["name"]
-		self.finished	= False # Jeu fini
+		self.finished	= True # Jeu fini
+		self.round		= 0 # Nombre de tour
 		self.end		= False # État du jeu
 		self.__table	= [] # Plateau
 		self.__values	= [ # Valeurs des cartes du jeu
@@ -32,13 +33,21 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 	def __draw(self):
 		for card in self.__table:
-			self.getPlayerById(card[0])["hand"].append(card[1])
+			self.getPlayerById(card[0])["deck"].append(card[1])
 
 		self.__table = []
 
 	def __update(self):
 		max	= 0
 		id	= 0
+
+		for player in self._players:
+			if(len(player["hand"]) == 0):
+				for card in player["deck"]:
+					player["hand"].append(card)
+					player["hand"].reverse()
+
+				player["deck"] = []
 
 		for player in self._players:
 			self.__table.append([player["id"], player["hand"][0]])
@@ -55,13 +64,13 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 					id	= card[0]
 
 		for card in self.__table:
-			self.getPlayerById(id)["hand"].append(card[1])
+			self.getPlayerById(id)["deck"].append(card[1])
 
 		self.__table = []
 
 	def __rules(self): # Application des règles du jeu
 		for player in self._players:
-			if((len(player["hand"])) == 52):
+			if((len(player["hand"]) + len(player["deck"])) == 52):
 				self.end = True
 
 	def start(self): # Lancement de la partie
@@ -71,9 +80,11 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		while(not self.end):
 			self.__update()
 			self.__rules()
+			self.round += 1
 
+			print(" ----- {}: {} -----".format(self.content["round"], self.round))
 			for player in self._players:
-				print("{}: {}".format(player["name"], len(player["hand"])))
+				print("{}: {}".format(player["name"], (len(player["hand"]) + len(player["deck"]))))
 
 		return(True)
 

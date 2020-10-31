@@ -30,7 +30,8 @@
     },
     "game": {
       "closedBattle": {
-        "name": "The Closed Battle"
+        "name": "The Closed Battle",
+        "round": "Round"
       },
       "solitary": {
         "name": "The Solitary"
@@ -79,7 +80,8 @@
     },
     "game": {
       "closedBattle": {
-        "name": "La Bataille Fermée"
+        "name": "La Bataille Fermée",
+        "round": "Tour"
       },
       "solitary": {
         "name": "Le Solitaire"
