@@ -123,6 +123,7 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 		while(True):
 			try:
 				choice = int(input("({}{}{})> {}".format(Colors.green, info["name"], Colors.end, Colors.cyan)))
+				print(Colors.end)
 				break
 
 			except Exception:
@@ -130,7 +131,8 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
-				game = games[i](["admin", "root"], reg)
+				game = games[i](["admin", "user"], reg)
+				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):
 					print("{}{}".format(Icons.warn, reg.content["game"]["notFinished"]))

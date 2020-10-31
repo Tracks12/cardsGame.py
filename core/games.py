@@ -12,12 +12,17 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		Cards.__init__(self)
 		Players.__init__(self, players)
 
-		self.content	= lang.content["game"]["closedBattle"]
+		self.content	= lang.content["game"]["closedBattle"] # Traductions du jeu
 		self.gameName	= self.content["name"]
-		self.finished	= False
-		self.end		= False
+		self.finished	= False # Jeu fini
+		self.end		= False # État du jeu
+		self.__table	= [] # Plateau
+		self.__values	= [ # Valeurs des cartes du jeu
+			("A", 14), ("K", 13), ("Q", 12), ("V", 11), ("10", 10), ("9", 9),
+			("8", 8), ("7", 7), ("6", 6), ("5", 5), ("4", 4), ("3", 3), ("2", 2)
+		]
 
-	def __distrib(self):
+	def __distrib(self): # Distribution des cartes
 		spliting = int(len(self._packet)/len(self._players))
 
 		for player in self._players:
@@ -25,19 +30,41 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 				player["hand"].append(self._packet[0])
 				self._packet.pop(0)
 
+	def __draw(self):
+		for card in self.__table:
+			self.getPlayerById(card[0])["hand"].append(card[1])
+
+		self.__table = []
+
 	def __update(self):
+		max	= 0
+		id	= 0
 
-
-		return(True)
-
-	def __rules(self):
 		for player in self._players:
-			if(len(player["hand"]) == 52):
+			self.__table.append([player["id"], player["hand"][0]])
+			player["hand"].pop(0)
+
+		for card in self.__table:
+			for value in self.__values:
+				if((card[1][0] == value[0]) and (value[1] > max)):
+					if(value[1] == max):
+						self.__draw()
+						return(True)
+
+					max	= value[1]
+					id	= card[0]
+
+		for card in self.__table:
+			self.getPlayerById(id)["hand"].append(card[1])
+
+		self.__table = []
+
+	def __rules(self): # Application des règles du jeu
+		for player in self._players:
+			if((len(player["hand"])) == 52):
 				self.end = True
 
-	def start(self):
-		print(self.gameName)
-
+	def start(self): # Lancement de la partie
 		self.mixCards()
 		self.__distrib()
 
@@ -45,8 +72,8 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 			self.__update()
 			self.__rules()
 
-			print(self.getPlayers())
-			sleep(.25)
+			for player in self._players:
+				print("{}: {}".format(player["name"], len(player["hand"])))
 
 		return(True)
 
@@ -61,8 +88,6 @@ class Solitary(Cards, Players): # Le solitaire
 		self.end		= False
 
 	def start(self):
-		print(self.gameName)
-
 		return(True)
 
 class PeckerLady(Cards, Players): # La dame de pic
@@ -81,8 +106,6 @@ class PeckerLady(Cards, Players): # La dame de pic
 				self.end = True
 
 	def start(self):
-		print(self.gameName)
-
 		return(True)
 
 class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
@@ -96,8 +119,6 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 		self.end		= False
 
 	def start(self):
-		print(self.gameName)
-
 		return(True)
 
 class Liar(Cards, Players): # Le menteur
@@ -111,6 +132,4 @@ class Liar(Cards, Players): # Le menteur
 		self.end		= False
 
 	def start(self):
-		print(self.gameName)
-
 		return(True)

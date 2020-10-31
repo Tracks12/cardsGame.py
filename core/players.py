@@ -24,12 +24,12 @@ class Players:
 	def getPlayers(self): # Affichage de la liste des joueurs
 		return self._players
 
-	def getPlayersById(self, plyrId): # Affichage d'un joueur par son id
+	def getPlayerById(self, plyrId): # Affichage d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["id"] == plyrId):
 				return self._players[key]
 
-	def getPlayersByName(self, plyrName): # Affichage d'un joueur par son nom
+	def getPlayerByName(self, plyrName): # Affichage d'un joueur par son nom
 		for key, player in enumerate(self._players):
 			if(player["name"] == plyrName):
 				return self._players[key]
