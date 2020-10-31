@@ -15,7 +15,7 @@ class Players:
 				"id":		len(self._players)+1,
 				"name":		name[i],
 				"score":	0,
-				"hands":	[]
+				"hand":	[]
 			})
 
 		return self._players
