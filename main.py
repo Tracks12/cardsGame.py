@@ -15,19 +15,21 @@ from core.cards import Cards
 from core.games import *
 
 def splash(reg, info): # Splash Screen
+	shell("clear" if(system() == "Linux") else "cls")
+
 	for row in [
 		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
 		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),
 		"  {}____ ___ _ _ __ ___| |  ___/ /   ___ ___ _ _ _ _ __   ___   ___{}".format(Colors.yellow, Colors.end),
 		" {}/ __// _ ` | `_// _ ` | / _/ |   |_  / _ ` | `_` `_ \ / _ \ | _ \_ __{}".format(Colors.yellow, Colors.end),
-		"{}| (__| (_)  | | | (_)  |_\ \ \ \___/ | (_)  | | | | | |  __/ |  _/\` /\t{}{}{}".format(Colors.yellow, Colors.red, info["version"], Colors.end),
+		"{}| (__| (_)  | | | (_)  |_\ \ \ \___/ | (_)  | | | | | |  __/ |  _/\` /\t{}{}{}".format(Colors.yellow, Colors.red, info["vers"], Colors.end),
 		" {}\__/ \___,_|_|  \___,_|___/  \_____/ \___,_|_| |_| |_|\___|.|_|  / /\t{}{} {}{}".format(Colors.yellow, Colors.purple, reg.content["vers"], info["author"], Colors.end),
 		"                                                                 {}/_/{}\n".format(Colors.yellow, Colors.end)
 	]:
 		print(row)
 		sleep(.1)
 
-	return True
+	return(True)
 
 def arg(cfg, reg, info): # Fonction d'entrée des arguments
 	args = {
@@ -60,7 +62,7 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 			sleep(1)
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
-		print(" cardsGame.py 0.1 {} Florian Cardinal\n".format(reg.content["vers"]))
+		print(" {} {} {} {}\n".format(info["name"], info["vers"], reg.content["vers"], info["author"]))
 
 	elif(argv[1] in args["prfx"][0][0]): # Affiche une carte du paquet
 		packets = Cards()
@@ -71,7 +73,7 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 		except Exception:
 			print("{}{}".format(Icons.warn, reg.content["err"]["cardNum"]))
 
-			return False
+			return(False)
 
 		packets.dispOneCard(card)
 
@@ -88,7 +90,7 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 		except Exception:
 			print("{}{}".format(Icons.warn, reg.content["err"]["cardNum"]))
 
-			return False
+			return(False)
 
 		packets.mixCards()
 		packets.dispOneCard(card)
@@ -104,14 +106,41 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 	if(cfg["splash"]):
 		splash(reg, info)
 
-	game = PeckerLady(["admin", "root", "user"], reg)
-	game.start()
+	games	= [ ClosedBattle, Solitary, PeckerLady, Chickenshit, Liar ]
+	menu	= [ "{}:\n".format(reg.content["menu"]["txt"]) ]
+
+	for game in games:
+		menu.append(game([], reg).gameName)
+
+	for key, row in enumerate(menu):
+		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
+
+	print( "\n {}0.{} Quit\n".format(Colors.red, Colors.end))
+
+	while(True):
+		while(True):
+			try:
+				choice = int(input("({}{}{})> {}".format(Colors.green, info["name"], Colors.end, Colors.cyan)))
+				print(Colors.end)
+				break
+
+			except Exception:
+				print("{}{}".format(Icons.warn, reg.content["err"]["menuCho"]))
+
+		for i in range(0, len(games)):
+			if(choice == i+1):
+				mode = games[i](["admin", "root", "user"], reg)
+				mode.start()
+
+		if(choice == 0):
+			return(True)
 
 	return(True)
 
 if __name__ == "__main__":
 	info = {
-		"version": "0.1",
+		"name": "cardsGame.py",
+		"vers": "0.1",
 		"author": "Florian Cardinal"
 	}
 
