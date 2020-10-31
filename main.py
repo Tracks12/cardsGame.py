@@ -15,7 +15,7 @@ from core.cards import Cards
 from core.games import *
 
 def splash(reg, info): # Splash Screen
-	for l in [
+	for row in [
 		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
 		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),
 		"  {}____ ___ _ _ __ ___| |  ___/ /   ___ ___ _ _ _ _ __   ___   ___{}".format(Colors.yellow, Colors.end),
@@ -24,12 +24,12 @@ def splash(reg, info): # Splash Screen
 		" {}\__/ \___,_|_|  \___,_|___/  \_____/ \___,_|_| |_| |_|\___|.|_|  / /\t{}{} {}{}".format(Colors.yellow, Colors.purple, reg.content["vers"], info["author"], Colors.end),
 		"                                                                 {}/_/{}\n".format(Colors.yellow, Colors.end)
 	]:
-		print(l)
+		print(row)
 		sleep(.1)
 
 	return True
 
-def arg(reg, info): # Fonction d'entrée des arguments
+def arg(cfg, reg, info): # Fonction d'entrée des arguments
 	args = {
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
@@ -100,8 +100,9 @@ def arg(reg, info): # Fonction d'entrée des arguments
 
 	return(True)
 
-def main(reg, info): # Fonction principale de l'execution du programme
-	splash(reg, info)
+def main(cfg, reg, info): # Fonction principale de l'execution du programme
+	if(cfg["splash"]):
+		splash(reg, info)
 
 	game = PeckerLady(["admin", "root", "user"], reg)
 	game.start()
@@ -116,8 +117,8 @@ if __name__ == "__main__":
 
 	try:
 		with open("config.json") as outFile: # Importation du fichier de configuration
-			config = json.load(outFile)
-			reg = Regions(config["lang"])
+			cfg = json.load(outFile)
+			reg = Regions(cfg["lang"])
 
 	except Exception: # Paramétrage de la langue en anglais par défaut
 		reg = Regions("us")
@@ -125,7 +126,7 @@ if __name__ == "__main__":
 		print("{}{}".format(Icons.info, reg.content["tip"]["regLoad"]))
 
 	if(len(argv) > 1):
-		arg(reg, info)
+		arg(cfg, reg, info)
 
 	else:
-		main(reg, info)
+		main(cfg, reg, info)
