@@ -101,7 +101,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		packets.mixCards()
 		packets.dispAllCards()
 
-	elif(argv[1] in args["prfx"][4][0]): # Affiche tout le paquet mélangé
+	elif(argv[1] in args["prfx"][4][0]): # Lance un mode de jeu choisis en arguments
 		try:
 			gameName = str(argv[2])
 
