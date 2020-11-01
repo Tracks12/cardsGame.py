@@ -2,6 +2,10 @@
 
 Un jeu de carte classique sur terminal
 
+## Aperçu
+
+![preview](preview.gif)
+
 ## Pré-requis
 
 L'installation de [**Python 3**](https://www.python.org/downloads/) est recommandé pour l'éxécution du script
