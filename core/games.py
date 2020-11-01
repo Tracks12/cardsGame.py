@@ -165,7 +165,7 @@ class PeckerLady(Cards, Players): # La dame de pic
 
 class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 	def __init__(self, players, lang):
-		Cards.__init__(self)
+		Cards.__init__(self, 1)
 		Players.__init__(self, players)
 
 		self.content	= lang.content["game"]["chickenshit"]
