@@ -22,16 +22,13 @@ class Cards: # Objet de jeu de cartes
 		return self._packet
 
 	def __dispCard(self, card): # Affichage d'une carte
-		if(len(card[0]) < 2):
-			card[0] += " "
-
 		color = Colors.red if(card[1] in ("♥", "♦")) else Colors.cyan
 
 		displayer = [
 			",-----,",
-			"|{}{}{}   |".format(color, card[0], Colors.end),
+			"|{}{}{}   |".format(color, card[0]+" " if(len(card[0]) < 2) else card[0], Colors.end),
 			"|  {}{}{}  |".format(color, card[1], Colors.end),
-			"|   {}{}{}|".format(color, card[0], Colors.end),
+			"|   {}{}{}|".format(color, " "+card[0] if(len(card[0]) < 2) else card[0], Colors.end),
 			"`-----`"
 		]
 

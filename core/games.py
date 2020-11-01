@@ -15,32 +15,31 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		self.content	= lang.content["game"]["closedBattle"] # Traductions du jeu
 		self.gameName	= self.content["name"]
 		self.finished	= True # Jeu fini
-		self.round		= 0 # Nombre de tour
-		self.end		= False # État du jeu
-		self.winner		= None # Vainqueur
+		self.__end		= False # État du jeu
+		self.__round	= 0 # Nombre de tour
 		self.__table	= [] # Plateau
+		self.__winner	= None # Vainqueur
 		self.__values	= [ # Valeurs des cartes du jeu
 			("A", 14), ("K", 13), ("Q", 12), ("V", 11), ("10", 10), ("9", 9),
 			("8", 8), ("7", 7), ("6", 6), ("5", 5), ("4", 4), ("3", 3), ("2", 2)
 		]
 
-	def __clearTable(self):
+	def __clearTable(self): # Vide le plateau
 		self.__table = []
 
-	def __dispCardOnTable(self):
+	def __dispCardOnTable(self): # Affichage des cartes joueurs
 		screen = []
 		for i in range(0, 6):
-			screen.append(" ")
+			screen.append("")
 
 		for card in self.__table:
-			value = str(card[1][0]+" " if(len(card[1][0]) < 2) else card[1][0])
 			color = Colors.red if(card[1][1] in ("♥", "♦")) else Colors.cyan
 
-			screen[0] += ",-----,\t"
-			screen[1] += "|{}{}{}   |\t".format(color, value, Colors.end)
-			screen[2] += "|  {}{}{}  |\t".format(color, card[1][1], Colors.end)
-			screen[3] += "|   {}{}{}|\t".format(color, value, Colors.end)
-			screen[4] += "`-----`\t"
+			screen[0] += ",-----,\t\t"
+			screen[1] += "|{}{}{}   |\t\t".format(color, card[1][0]+" " if(len(card[1][0]) < 2) else card[1][0], Colors.end)
+			screen[2] += "|  {}{}{}  |\t\t".format(color, card[1][1], Colors.end)
+			screen[3] += "|   {}{}{}|\t\t".format(color, " "+card[1][0] if(len(card[1][0]) < 2) else card[1][0], Colors.end)
+			screen[4] += "`-----`\t\t"
 			screen[5] += " {}\t\t".format(self.getPlayerById(card[0])["name"])
 
 		for line in screen:
@@ -60,7 +59,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 		self.__clearTable()
 
-	def __update(self):
+	def __update(self): # Mise à jour du jeu
 		max	= 0
 		id	= 0
 
@@ -92,20 +91,20 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 	def __rules(self): # Application des règles du jeu
 		for player in self._players:
 			if((len(player["hand"]) + len(player["deck"])) == 52):
-				self.end	= True
-				self.winner	= player
+				self.__end	= True
+				self.__winner	= player
 
 	def start(self): # Lancement de la partie
 		self.mixCards()
 		self.__distrib()
 
-		while(not self.end):
-			print(" ----- {}: {} -----".format(self.content["round"], self.round))
+		while(not self.__end):
+			print(" ----- {}: {} -----".format(self.content["round"], self.__round))
 			self.__update()
 			self.__dispCardOnTable()
 			self.__clearTable()
 			self.__rules()
-			self.round += 1
+			self.__round += 1
 
 			print("")
 			for player in self._players:
@@ -113,7 +112,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 			print("")
 
-		print(" {} {}".format(self.winner["name"], self.content["winner"]))
+		print(" {} {}".format(self.__winner["name"], self.content["winner"]))
 
 		return(True)
 
@@ -125,9 +124,16 @@ class Solitary(Cards, Players): # Le solitaire
 		self.content	= lang.content["game"]["solitary"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
-		self.end		= False
+		self.__end		= False
+		self.__table	= []
+
+	def __update(self):
+		self.__end = True
 
 	def start(self):
+		while(not self.__end):
+			self.__update()
+
 		return(True)
 
 class PeckerLady(Cards, Players): # La dame de pic
@@ -138,7 +144,13 @@ class PeckerLady(Cards, Players): # La dame de pic
 		self.content	= lang.content["game"]["peckerLady"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
-		self.end		= False
+		self.__end		= False
+		self.__round	= 0
+		self.__table	= []
+		self.__winner	= None
+
+	def __update(self):
+		self.__end = True
 
 	def __rules(self):
 		for player in self.players:
@@ -146,6 +158,9 @@ class PeckerLady(Cards, Players): # La dame de pic
 				self.end = True
 
 	def start(self):
+		while(not self.__end):
+			self.__update()
+
 		return(True)
 
 class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
@@ -156,9 +171,18 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 		self.content	= lang.content["game"]["chickenshit"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
-		self.end		= False
+		self.__end		= False
+		self.__round	= 0
+		self.__table	= []
+		self.__winner	= None
+
+	def __update(self):
+		self.__end = True
 
 	def start(self):
+		while(not self.__end):
+			self.__update()
+
 		return(True)
 
 class Liar(Cards, Players): # Le menteur
@@ -169,7 +193,16 @@ class Liar(Cards, Players): # Le menteur
 		self.content	= lang.content["game"]["liar"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
-		self.end		= False
+		self.__end		= False
+		self.__round	= 0
+		self.__table	= []
+		self.__winner	= None
+
+	def __update(self):
+		self.__end = True
 
 	def start(self):
+		while(not self.__end):
+			self.__update()
+
 		return(True)
