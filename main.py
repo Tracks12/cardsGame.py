@@ -31,13 +31,14 @@ def splash(reg, info): # Splash Screen
 
 	return(True)
 
-def arg(cfg, reg, info): # Fonction d'entrée des arguments
+def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 	args = {
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
 			(("-S", "--show-all"), ""),
 			(("-r", "--show-rand-card"), "<x>"),
 			(("-R", "--show-rand-all"), ""),
+			(("-g", "--game"), "<gameName>"),
 			(("-h", "--help"), ""),
 			(("-d", "--debug"), ""),
 			(("-v", "--version"), "")
@@ -100,14 +101,36 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 		packets.mixCards()
 		packets.dispAllCards()
 
+	elif(argv[1] in args["prfx"][4][0]): # Affiche tout le paquet mélangé
+		try:
+			gameName = str(argv[2])
+
+		except Exception:
+			print("{}{}".format(Icons.warn, reg.content["err"]["gameName"]))
+
+			return(False)
+
+		gameList = []
+		for game in games:
+			gameList.append(game([], reg).gameName)
+
+		for id, name in enumerate(gameList):
+			if(gameName == name):
+				game = games[id](["admin", "root"], reg)
+				print("{}{}".format(Icons.play, game.gameName))
+
+				if(not game.finished):
+					print("{}{}".format(Icons.warn, reg.content["game"]["notFinished"]))
+
+				game.start()
+
 	return(True)
 
-def main(cfg, reg, info): # Fonction principale de l'execution du programme
+def main(cfg, reg, info, games): # Fonction principale de l'execution du programme
+	menu = [ "{}:\n".format(reg.content["menu"]["txt"]) ]
+
 	if(cfg["splash"]):
 		splash(reg, info)
-
-	games	= [ ClosedBattle, Solitary, PeckerLady, Chickenshit, Liar ]
-	menu	= [ "{}:\n".format(reg.content["menu"]["txt"]) ]
 
 	for game in games:
 		menu.append(game([], reg).gameName)
@@ -148,6 +171,7 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 	return(True)
 
 if __name__ == "__main__":
+	games = [ ClosedBattle, Solitary, PeckerLady, Chickenshit, Liar ]
 	info = {
 		"name": "cardsGame.py",
 		"vers": "0.1",
@@ -165,7 +189,7 @@ if __name__ == "__main__":
 		print("{}{}".format(Icons.info, reg.content["tip"]["regLoad"]))
 
 	if(len(argv) > 1):
-		arg(cfg, reg, info)
+		arg(cfg, reg, info, games)
 
 	else:
-		main(cfg, reg, info)
+		main(cfg, reg, info, games)

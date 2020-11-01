@@ -17,6 +17,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		self.finished	= True # Jeu fini
 		self.round		= 0 # Nombre de tour
 		self.end		= False # État du jeu
+		self.winner		= None # Vainqueur
 		self.__table	= [] # Plateau
 		self.__values	= [ # Valeurs des cartes du jeu
 			("A", 14), ("K", 13), ("Q", 12), ("V", 11), ("10", 10), ("9", 9),
@@ -71,7 +72,8 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 	def __rules(self): # Application des règles du jeu
 		for player in self._players:
 			if((len(player["hand"]) + len(player["deck"])) == 52):
-				self.end = True
+				self.end	= True
+				self.winner	= player
 
 	def start(self): # Lancement de la partie
 		self.mixCards()
@@ -84,7 +86,9 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 			print(" ----- {}: {} -----".format(self.content["round"], self.round))
 			for player in self._players:
-				print("{}: {}".format(player["name"], (len(player["hand"]) + len(player["deck"]))))
+				print(" {}: {}".format(player["name"], (len(player["hand"]) + len(player["deck"]))))
+
+		print("\n {} {}".format(self.winner["name"], self.content["winner"]))
 
 		return(True)
 
