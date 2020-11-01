@@ -66,7 +66,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		print(" {} {} {} {}\n".format(info["name"], info["vers"], reg.content["vers"], info["author"]))
 
 	elif(argv[1] in args["prfx"][0][0]): # Affiche une carte du paquet
-		packets = Cards()
+		packets = Cards(2)
 
 		try:
 			card = int(argv[2])-1
@@ -79,11 +79,11 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		packets.dispOneCard(card)
 
 	elif(argv[1] in args["prfx"][1][0]): # Affiche tout le paquet
-		packets = Cards()
+		packets = Cards(2)
 		packets.dispAllCards()
 
 	elif(argv[1] in args["prfx"][2][0]): # Affiche une carte du paquet mélangé
-		packets = Cards()
+		packets = Cards(2)
 
 		try:
 			card = int(argv[2])-1
@@ -97,7 +97,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		packets.dispOneCard(card)
 
 	elif(argv[1] in args["prfx"][3][0]): # Affiche tout le paquet mélangé
-		packets = Cards()
+		packets = Cards(2)
 		packets.mixCards()
 		packets.dispAllCards()
 
