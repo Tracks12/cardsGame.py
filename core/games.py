@@ -3,7 +3,7 @@
 
 # Module des types de jeux
 
-from time import sleep
+from core.colors import Colors
 from core.cards import Cards
 from core.players import Players
 
@@ -24,6 +24,28 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 			("8", 8), ("7", 7), ("6", 6), ("5", 5), ("4", 4), ("3", 3), ("2", 2)
 		]
 
+	def __clearTable(self):
+		self.__table = []
+
+	def __dispCardOnTable(self):
+		screen = []
+		for i in range(0, 6):
+			screen.append(" ")
+
+		for card in self.__table:
+			value = str(card[1][0]+" " if(len(card[1][0]) < 2) else card[1][0])
+			color = Colors.red if(card[1][1] in ("♥", "♦")) else Colors.cyan
+
+			screen[0] += ",-----,\t"
+			screen[1] += "|{}{}{}   |\t".format(color, value, Colors.end)
+			screen[2] += "|  {}{}{}  |\t".format(color, card[1][1], Colors.end)
+			screen[3] += "|   {}{}{}|\t".format(color, value, Colors.end)
+			screen[4] += "`-----`\t"
+			screen[5] += " {}\t\t".format(self.getPlayerById(card[0])["name"])
+
+		for line in screen:
+			print(line)
+
 	def __distrib(self): # Distribution des cartes
 		spliting = int(len(self._packet)/len(self._players))
 
@@ -36,7 +58,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		for card in self.__table:
 			self.getPlayerById(card[0])["deck"].append(card[1])
 
-		self.__table = []
+		self.__clearTable()
 
 	def __update(self):
 		max	= 0
@@ -67,8 +89,6 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		for card in self.__table:
 			self.getPlayerById(id)["deck"].append(card[1])
 
-		self.__table = []
-
 	def __rules(self): # Application des règles du jeu
 		for player in self._players:
 			if((len(player["hand"]) + len(player["deck"])) == 52):
@@ -80,15 +100,20 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		self.__distrib()
 
 		while(not self.end):
+			print(" ----- {}: {} -----".format(self.content["round"], self.round))
 			self.__update()
+			self.__dispCardOnTable()
+			self.__clearTable()
 			self.__rules()
 			self.round += 1
 
-			print(" ----- {}: {} -----".format(self.content["round"], self.round))
+			print("")
 			for player in self._players:
 				print(" {}: {}".format(player["name"], (len(player["hand"]) + len(player["deck"]))))
 
-		print("\n {} {}".format(self.winner["name"], self.content["winner"]))
+			print("")
+
+		print(" {} {}".format(self.winner["name"], self.content["winner"]))
 
 		return(True)
 
