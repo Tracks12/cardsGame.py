@@ -6,7 +6,8 @@
         "\tDisplays a packet card",
         "\tDisplays the entire packet of cards",
         "Displays a mixed packet card",
-        "\tDisplays all cards of the shuffled packet\n",
+        "\tDisplays all cards of the shuffled packet",
+        "\tLaunch a card game\n",
         "\t\tDisplays the help menu",
         "\t\tDebug mode",
         "\t\tDisplays the version of the program\n"
@@ -18,7 +19,8 @@
     "err": {
       "regLoad": "The loading of the language module failed",
       "menuCho": "This choice does not exist",
-      "cardNum": "Specify a card number"
+      "cardNum": "Specify a card number",
+      "gameName": "Enter a game name"
     },
     "tip": {
       "regLoad": "Check the 'regions.json' file is complete"
@@ -31,7 +33,8 @@
     "game": {
       "closedBattle": {
         "name": "The Closed Battle",
-        "round": "Round"
+        "round": "Round",
+        "winner": "is the winner !"
       },
       "solitary": {
         "name": "The Solitary"
@@ -56,7 +59,8 @@
         "\tAffiche une carte du paquet",
         "\tAffiche tout le paquet de cartes",
         "Affiche une carte du paquet mélangé",
-        "\tAffiche toutes les cartes du paquet mélangé\n",
+        "\tAffiche toutes les cartes du paquet mélangé",
+        "\tLance un jeu de carte\n",
         "\t\tAffiche le menu d'aide",
         "\t\tMode debugger",
         "\t\tAffiche la version du programme\n"
@@ -68,7 +72,8 @@
     "err": {
       "regLoad": "Le chargement du module de langue a échoué",
       "menuCho": "Ce choix n'existe pas",
-      "cardNum": "Spécifier un numéro de carte"
+      "cardNum": "Spécifier un numéro de carte",
+      "gameName": "Entrer un nom de jeu"
     },
     "tip": {
       "regLoad": "Vérifiez que le fichier 'regions.json' soit bien complet"
@@ -81,7 +86,8 @@
     "game": {
       "closedBattle": {
         "name": "La Bataille Fermée",
-        "round": "Tour"
+        "round": "Tour",
+        "winner": "est le vainqueur !"
       },
       "solitary": {
         "name": "Le Solitaire"
