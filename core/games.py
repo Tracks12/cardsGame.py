@@ -112,7 +112,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 			print("")
 
-		print(" {} {}".format(self.__winner["name"], self.content["winner"]))
+		print(" {} {} !".format(self.__winner["name"], self.content["winner"]))
 
 		return(True)
 
