@@ -15,8 +15,6 @@ from core.cards import Cards
 from core.games import *
 
 def splash(reg, info): # Splash Screen
-	shell("clear" if(system() == "Linux") else "cls")
-
 	for row in [
 		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
 		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),
@@ -181,12 +179,14 @@ if __name__ == "__main__":
 	try:
 		with open("config.json") as outFile: # Importation du fichier de configuration
 			cfg = json.load(outFile)
-			reg = Regions(cfg["lang"])
 
-	except Exception: # Paramétrage de la langue en anglais par défaut
-		reg = Regions("us")
-		print("{}{}".format(Icons.warn, reg.content["err"]["regLoad"]))
-		print("{}{}".format(Icons.info, reg.content["tip"]["regLoad"]))
+	except Exception: # Création d'une configuration si le fichier n'existe pas
+		cfg = {
+			"lang": "us",
+			"splash": True
+		}
+
+	reg = Regions(cfg["lang"])
 
 	if(len(argv) > 1):
 		arg(cfg, reg, info, games)

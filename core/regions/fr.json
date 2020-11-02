@@ -1,0 +1,53 @@
+{
+  "args": {
+    "intro": ["Jeux de cartes", "Lancement", "Arguments"],
+    "desc": [
+      "\tAffiche une carte du paquet",
+      "\tAffiche tout le paquet de cartes",
+      "Affiche une carte du paquet mélangé",
+      "\tAffiche toutes les cartes du paquet mélangé",
+      "\tLance un jeu de carte\n",
+      "\t\tAffiche le menu d'aide",
+      "\t\tMode debugger",
+      "\t\tAffiche la version du programme\n"
+    ]
+  },
+  "debug": {
+    "continue": "Appuyez sur une touche pour continuer ..."
+  },
+  "err": {
+    "regLoad": "Le chargement du module de langue a échoué",
+    "menuCho": "Ce choix n'existe pas",
+    "cardNum": "Spécifier un numéro de carte",
+    "gameName": "Entrer un nom de jeu"
+  },
+  "tip": {
+    "regLoad": "Vérifiez que le fichier 'regions.json' soit bien complet"
+  },
+  "menu": {
+    "txt": "Choisissez un mode de jeu",
+    "quit": "Quitter",
+    "set": "Paramètres"
+  },
+  "game": {
+    "closedBattle": {
+      "name": "La Bataille Fermée",
+      "round": "Tour",
+      "winner": "est le Vainqueur"
+    },
+    "solitary": {
+      "name": "Le Solitaire"
+    },
+    "peckerLady": {
+      "name": "La Dame de Pic"
+    },
+    "chickenshit": {
+      "name": "Le Pouilleux"
+    },
+    "liar": {
+      "name": "Le Menteur"
+    },
+    "notFinished": "Ce jeu n'est pas fini"
+  },
+  "vers": "par"
+}
