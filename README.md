@@ -6,6 +6,10 @@ Un jeu de carte classique sur terminal
 
 ![preview](preview.gif)
 
+### Consignes
+
+La liste des consignes du sujet est disponible dans le [`todo.md`](todo.md)
+
 ## Pré-requis
 
 L'installation de [**Python 3**](https://www.python.org/downloads/) est recommandé pour l'éxécution du script
