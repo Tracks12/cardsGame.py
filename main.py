@@ -15,8 +15,6 @@ from core.cards import Cards
 from core.games import *
 
 def splash(reg, info): # Splash Screen
-	shell("clear" if(system() == "Linux") else "cls")
-
 	for row in [
 		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
 		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),
