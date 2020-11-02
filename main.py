@@ -180,7 +180,7 @@ if __name__ == "__main__":
 		with open("config.json") as outFile: # Importation du fichier de configuration
 			cfg = json.load(outFile)
 
-	except Exception: # Paramétrage de la langue en anglais par défaut
+	except Exception: # Création d'une configuration si le fichier n'existe pas
 		cfg = {
 			"lang": "us",
 			"splash": True
