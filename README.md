@@ -8,7 +8,7 @@ Un jeu de carte classique sur terminal
 
 ### Consignes
 
-La liste des consignes du sujet est disponible dans le [todo.md](todo.md)
+La liste des consignes du sujet est disponible dans le [TODO.md](TODO.md)
 
 ## Pré-requis
 
