@@ -9,4 +9,4 @@ class Icons:
 	warn = " {}{}[!]{} - ".format(Colors.bold, Colors.red, Colors.end)
 	info = " {}{}(i){} - ".format(Colors.bold, Colors.blue, Colors.end)
 	tips = " {}{}(?){} - ".format(Colors.bold, Colors.green, Colors.end)
-	play = " {}{}(►){} - ".format(Colors.bold, Colors.green, Colors.end)
+	play = " {}{}(>){} - ".format(Colors.bold, Colors.green, Colors.end)
