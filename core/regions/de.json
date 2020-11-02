@@ -1,0 +1,53 @@
+{
+  "args": {
+    "intro": ["Die Kartenspiele", "Starten Sie", "Einwände"],
+    "desc": [
+      "\tZeigt eine Paketkarte an",
+      "\tZeigt das gesamte Kartenpaket an",
+      "Zeigt eine gemischte Paketkarte an",
+      "\tZeigt alle Karten des gemischten Pakets an",
+      "\tStarten Sie ein Kartenspiel\n",
+      "\t\tZeigt das Hilfemenü an",
+      "\t\tDebug-Modus",
+      "\t\tZeigt die Version des Programms an\n"
+    ]
+  },
+  "debug": {
+    "continue": "Taste drücken, um fortzufahren ..."
+  },
+  "err": {
+    "regLoad": "Das Laden des Sprachmoduls schlug fehl",
+    "menuCho": "Diese Wahl gibt es nicht",
+    "cardNum": "Geben Sie eine Kartennummer an",
+    "gameName": "Geben Sie einen Spielnamen ein"
+  },
+  "tip": {
+    "regLoad": "Überprüfen Sie, ob die Datei 'regions.json' vollständig ist"
+  },
+  "menu": {
+    "txt": "Wählen Sie einen Spielmodus",
+    "quit": "Beenden Sie",
+    "set": "Einstellungen"
+  },
+  "game": {
+    "closedBattle": {
+      "name": "Die geschlossene Schlacht",
+      "round": "Runde",
+      "winner": "ist der Gewinner"
+    },
+    "solitary": {
+      "name": "Der Einzelgänger"
+    },
+    "peckerLady": {
+      "name": "Die Pecker-Dame"
+    },
+    "chickenshit": {
+      "name": "Die Angstscheiße"
+    },
+    "liar": {
+      "name": "Der Lügner"
+    },
+    "notFinished": "Diese Partie wurde nicht beendet"
+  },
+  "vers": "von"
+}
