@@ -182,11 +182,12 @@ if __name__ == "__main__":
 
 	except Exception: # Création d'une configuration si le fichier n'existe pas
 		cfg = {
-			"lang": "us",
+			"encoding": "utf-8",
+			"language": "us",
 			"splash": True
 		}
 
-	reg = Regions(cfg["lang"])
+	reg = Regions(cfg["language"], cfg["encoding"])
 
 	if(len(argv) > 1):
 		arg(cfg, reg, info, games)

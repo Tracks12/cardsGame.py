@@ -7,15 +7,15 @@ import json
 from core.icons import Icons
 
 class Regions:
-	def __init__(self, lang): # Selection de la langue dans le constructeur
+	def __init__(self, lang, encode): # Selection de la langue dans le constructeur
 		self.content	= {}
 		self.__path		= "core/regions/"
 
-		self.__loadJSON(lang)
+		self.__loadJSON(lang, encode)
 
-	def __loadJSON(self, lang): # Chargement des langues depuis un fichier
+	def __loadJSON(self, lang, encode): # Chargement des langues depuis un fichier
 		try:
-			with open("{}{}.json".format(self.__path, lang), encoding="utf-8") as outFile:
+			with open("{}{}.json".format(self.__path, lang), encoding=encode) as outFile:
 				self.content = json.load(outFile)
 
 		except Exception: # Chargement du contenu de langue anglais par défaut
