@@ -8,19 +8,20 @@ from core.icons import Icons
 
 class Config:
 	def __init__(self):
-		self.config	= {}
-		self.__path	= "config.json"
+		self.config		= {}
+		self.__encode	= "utf-8"
+		self.__path		= "config.json"
 
 		self.__loadJSON()
 
 	def __loadJSON(self): # Importation du fichier de configuration
 		try:
-			with open(self.__path, encoding="utf-8") as outFile:
+			with open(self.__path, encoding=self.__encode) as outFile:
 				self.config = json.load(outFile)
 
 		except Exception: # Création d'une configuration par défaut
 			self.config = {
-				"encoding": "utf-8",
+				"encoding": self.__encode,
 				"language": "us",
 				"splash": True
 			}
