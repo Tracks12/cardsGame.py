@@ -91,7 +91,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 	def __rules(self): # Application des règles du jeu
 		for player in self._players:
 			if((len(player["hand"]) + len(player["deck"])) == 52):
-				self.__end	= True
+				self.__end		= True
 				self.__winner	= player
 
 	def start(self): # Lancement de la partie

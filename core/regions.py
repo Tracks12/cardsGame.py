@@ -15,7 +15,7 @@ class Regions:
 
 	def __loadJSON(self, lang): # Chargement des langues depuis un fichier
 		try:
-			with open("{}{}.json".format(self.__path, lang)) as outFile:
+			with open("{}{}.json".format(self.__path, lang), encoding="utf-8") as outFile:
 				self.content = json.load(outFile)
 
 		except Exception: # Chargement du contenu de langue anglais par défaut
