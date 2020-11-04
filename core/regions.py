@@ -18,7 +18,7 @@ class Regions:
 			with open("{}{}.json".format(self.__path, lang), encoding=encode) as outFile:
 				self.content = json.load(outFile)
 
-		except Exception: # Chargement du contenu de langue anglais par défaut
+		except Exception: # Création du contenu de langue anglais par défaut
 			self.content = {
 				"args": {
 					"intro": ["Card games", "Launch", "Arguments"],

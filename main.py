@@ -10,6 +10,7 @@ from time import sleep
 # Importation des dépendances internes
 from core.colors import Colors
 from core.icons import Icons
+from core.config import Config
 from core.regions import Regions
 from core.cards import Cards
 from core.games import *
@@ -176,18 +177,8 @@ if __name__ == "__main__":
 		"author": "Florian Cardinal"
 	}
 
-	try:
-		with open("config.json") as outFile: # Importation du fichier de configuration
-			cfg = json.load(outFile)
-
-	except Exception: # Création d'une configuration si le fichier n'existe pas
-		cfg = {
-			"encoding": "utf-8",
-			"language": "us",
-			"splash": True
-		}
-
-	reg = Regions(cfg["language"], cfg["encoding"])
+	cfg = Config().config # Chargement du fichier de configuration
+	reg = Regions(cfg["language"], cfg["encoding"]) # Chargement de la langue
 
 	if(len(argv) > 1):
 		arg(cfg, reg, info, games)
