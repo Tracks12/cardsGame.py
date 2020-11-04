@@ -12,7 +12,7 @@ La liste des consignes du sujet est disponible dans le [TODO.md](TODO.md)
 
 ## Pré-requis
 
-L'installation de [**Python 3**](https://www.python.org/downloads/) est recommandé pour l'éxécution du script
+L'installation de **[Python 3](https://www.python.org/downloads/)** est recommandé pour l'éxécution du script
 
 ## Dépendances
 
@@ -40,13 +40,13 @@ Exécution du script: `$ python main.py <arg>`
 
 ## Options & Configurations
 
-La configuration du programme se fait depuis le fichier [`config.json`](config.json) au format **JSON**, dans ce fichier vous pouvez **configurer la langue**.
-
-La langue par défaut du programme est **l'anglais**.
+La configuration du programme se fait depuis le fichier **[config.json](config.json)** au format **json**, dans ce fichier vous pouvez **configurer la langue**, l'**encodage des caractères** ainsi que l'affichage du splash screen.
 
 ```json
 {
-  "lang": "fr"
+  "encoding": "utf-8",
+  "language": "fr",
+  "splash": true
 }
 ```
 
@@ -54,9 +54,19 @@ La langue par défaut du programme est **l'anglais**.
 
 ### Langues & Régions
 
-Les langues disponibles sont contenus dans le fichier [`regions.json`](core/regions.json) disponible dans le dossier [`core/`](core/). Il contient les traductions **françaises** et **anglaises** du programme, vous pouvez en ajouter d'autre si vous le souhaitez, vous n'aurez alors qu'à spécifier son label (`"fr"`) avec tous son contenus.
+Les langues disponibles sont contenus dans le répertoire **[core/regions/](core/regions/)**. Il contient les traductions du programme, vous pouvez en ajouter d'autre si vous le souhaitez, vous n'aurez alors qu'à spécifier son label (_exemple:_ `fr.json` _pour le français_) en nom de fichier sous format **json** avec tous son contenus.
 
-### Jeux implémenter
+Si le fichier de configuration contient un label de langue non-reconnu, alors **le programme adoptera la langue par défaut qui est l'anglais** avec **un encodage UTF-8**.
+
+### Jeux implémentés
+
+Les jeux implémentés sont contenus dans le module **[games.py](core/games.py)** sous la forme d'objet et sont déclarés à la fin du **[main.py](main.py)** sous la forme d'un **array**
+
+```python
+if __name__ == "__main__":
+	games = [ ClosedBattle, Solitary, PeckerLady, Chickenshit, Liar ]
+	# {...}
+```
 
 | Nom du jeu                                                                          | Jouable |
 | ----------------------------------------------------------------------------------- | ------- |
