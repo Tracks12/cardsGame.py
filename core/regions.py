@@ -37,14 +37,11 @@ class Regions:
 					"continue": "Press key to continue ..."
 				},
 				"err": {
-					"regLoad": "The loading of the language module failed",
 					"menuCho": "This choice does not exist",
 					"cardNum": "Specify a card number",
 					"gameName": "Enter a game name"
 				},
-				"tip": {
-					"regLoad": "Check the 'regions.json' file is complete"
-				},
+				"tip": {},
 				"menu": {
 					"txt": "Choose a game mode",
 					"quit": "Quit",
@@ -73,5 +70,5 @@ class Regions:
 				"vers": "by"
 			}
 
-			print("{}{}".format(Icons.warn, self.content["err"]["regLoad"]))
-			print("{}{}".format(Icons.info, self.content["tip"]["regLoad"]))
+			print("{}The loading of the language module failed".format(Icons.warn))
+			print("{}Check the language file is complete in \"core/regions/\"".format(Icons.info))

@@ -16,14 +16,11 @@
     "continue": "Appuyez sur une touche pour continuer ..."
   },
   "err": {
-    "regLoad": "Le chargement du module de langue a échoué",
     "menuCho": "Ce choix n'existe pas",
     "cardNum": "Spécifier un numéro de carte",
     "gameName": "Entrer un nom de jeu"
   },
-  "tip": {
-    "regLoad": "Vérifiez que le fichier 'regions.json' soit bien complet"
-  },
+  "tip": {},
   "menu": {
     "txt": "Choisissez un mode de jeu",
     "quit": "Quitter",

@@ -16,14 +16,11 @@
     "continue": "Taste drücken, um fortzufahren ..."
   },
   "err": {
-    "regLoad": "Das Laden des Sprachmoduls schlug fehl",
     "menuCho": "Diese Wahl gibt es nicht",
     "cardNum": "Geben Sie eine Kartennummer an",
     "gameName": "Geben Sie einen Spielnamen ein"
   },
-  "tip": {
-    "regLoad": "Überprüfen Sie, ob die Datei 'regions.json' vollständig ist"
-  },
+  "tip": {},
   "menu": {
     "txt": "Wählen Sie einen Spielmodus",
     "quit": "Beenden Sie",
