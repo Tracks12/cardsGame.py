@@ -40,6 +40,14 @@ Exécution du script: `$ python main.py <arg>`
 | `-d`, `--debug`                  | -                                    | Exécution en mode debuger                   |
 | `-v`, `--version`                | -                                    | Affiche la version du programme             |
 
+### Gestion des joeurs
+
+Le système de joueurs se fait directement en ligne de commande avec en arguments une liste de nom de joueur, de la manière suivante: `$ python main.py -p "['nomJoueur', ...]"`, vous pouvez en ajouter tant que vous voulez, la limitte du nombre de joueurs dépendra du mode de jeu choisit.
+
+Si vous entrer une liste contenant 4 joueurs alors que vous avez sélectionner un mode de jeu nécessitant seulement 2 joueurs, alors le jeu ne prendra que les 2 premiers de la liste. Et si il manque un ou plusieurs joueurs requis, alors le mode de jeu ne se lancera pas tout simplement.
+
+Les noms des joueurs sont sauvegarder directement dans le fichier **[players.json](core/players.json)** qui est dans le répertoire **[core/](core/)**.
+
 ## Options & Configurations
 
 La configuration du programme se fait depuis le fichier **[config.json](config.json)** au format **json**, dans ce fichier vous pouvez **configurer la langue**, l'**encodage des caractères** ainsi que l'affichage du splash screen.
@@ -77,14 +85,6 @@ if __name__ == "__main__":
 | [La Dame de Pique](<https://fr.wikipedia.org/wiki/Dame_de_pique_(jeu)>)             | Non     |
 | [Le Pouilleux (Mistigri)](https://fr.wikipedia.org/wiki/Pouilleux)                  | Non     |
 | [Le Menteur](https://ludos.brussels/ludo-walalou/opac_css/doc_num.php?explnum_id=5) | Non     |
-
-### Gestion des joeurs
-
-Le système de joueurs se fait directement en ligne de commande avec en arguments une liste de nom de joueur, de la manière suivante: `$ python main.py -p "['nomJoueur', ...]"`, vous pouvez en ajouter tant que vous voulez, la limitte du nombre de joueurs dépendra du mode de jeu choisit.
-
-Si vous entrer une liste contenant 4 joueurs alors que vous avez sélectionner un mode de jeu nécessitant seulement 2 joueurs, alors le jeu ne prendra que les 2 premiers de la liste. Et si il manque un ou plusieurs joueurs requis, alors le mode de jeu ne se lancera pas tout simplement.
-
-Les noms des joueurs sont sauvegarder directement dans le fichier **[players.json](core/players.json)** qui est dans le répertoire **[core/](core/)**.
 
 ## Licence
 
