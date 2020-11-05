@@ -12,7 +12,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		Cards.__init__(self)
 		Players.__init__(self, encode)
 
-		self.content	= lang.content["game"]["closedBattle"] # Traductions du jeu
+		self.content	= lang["game"]["closedBattle"] # Traductions du jeu
 		self.gameName	= self.content["name"] # Nom du jeu
 		self.finished	= True # Jeu fini
 		self.__end		= False # État du jeu
@@ -121,7 +121,7 @@ class Solitary(Cards, Players): # Le solitaire
 		Cards.__init__(self)
 		Players.__init__(self, encode)
 
-		self.content	= lang.content["game"]["solitary"]
+		self.content	= lang["game"]["solitary"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
 		self.__end		= False
@@ -141,7 +141,7 @@ class PeckerLady(Cards, Players): # La dame de pic
 		Cards.__init__(self)
 		Players.__init__(self, encode)
 
-		self.content	= lang.content["game"]["peckerLady"]
+		self.content	= lang["game"]["peckerLady"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
 		self.__end		= False
@@ -168,7 +168,7 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 		Cards.__init__(self, 1)
 		Players.__init__(self, encode)
 
-		self.content	= lang.content["game"]["chickenshit"]
+		self.content	= lang["game"]["chickenshit"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
 		self.__end		= False
@@ -190,7 +190,7 @@ class Liar(Cards, Players): # Le menteur
 		Cards.__init__(self)
 		Players.__init__(self, encode)
 
-		self.content	= lang.content["game"]["liar"]
+		self.content	= lang["game"]["liar"]
 		self.gameName	= self.content["name"]
 		self.finished	= False
 		self.__end		= False

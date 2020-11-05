@@ -22,7 +22,7 @@ def splash(reg, info): # Splash Screen
 		"  {}____ ___ _ _ __ ___| |  ___/ /   ___ ___ _ _ _ _ __   ___   ___{}".format(Colors.yellow, Colors.end),
 		" {}/ __// _ ` | `_// _ ` | / _/ |   |_  / _ ` | `_` `_ \ / _ \ | _ \_ __{}".format(Colors.yellow, Colors.end),
 		"{}| (__| (_)  | | | (_)  |_\ \ \ \___/ | (_)  | | | | | |  __/ |  _/\` /\t{}{}{}".format(Colors.yellow, Colors.red, info["vers"], Colors.end),
-		" {}\__/ \___,_|_|  \___,_|___/  \_____/ \___,_|_| |_| |_|\___|.|_|  / /\t{}{} {}{}".format(Colors.yellow, Colors.purple, reg.content["vers"], info["author"], Colors.end),
+		" {}\__/ \___,_|_|  \___,_|___/  \_____/ \___,_|_| |_| |_|\___|.|_|  / /\t{}{} {}{}".format(Colors.yellow, Colors.purple, reg["vers"], info["author"], Colors.end),
 		"                                                                 {}/_/{}\n".format(Colors.yellow, Colors.end)
 	]:
 		print(row)
@@ -43,13 +43,13 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			(("-d", "--debug"), ""),
 			(("-v", "--version"), "")
 		),
-		"desc": reg.content["args"]["desc"]
+		"desc": reg["args"]["desc"]
 	}
 
 	if(argv[1] in args["prfx"][-3][0]): # Affiche le helper args
-		print(" {}".format(reg.content["args"]["intro"][0]))
-		print(" {}: python main.py <arg>\n".format(reg.content["args"]["intro"][1]))
-		print(" {}:".format(reg.content["args"]["intro"][2]))
+		print(" {}".format(reg["args"]["intro"][0]))
+		print(" {}: python main.py <arg>\n".format(reg["args"]["intro"][1]))
+		print(" {}:".format(reg["args"]["intro"][2]))
 
 		for i in range(0, len(args["prfx"])):
 			print(" {}, {} {}\t{}".format(args["prfx"][i][0][0], args["prfx"][i][0][1], args["prfx"][i][1], args["desc"][i]))
@@ -60,10 +60,10 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		while(True):
 			shell("clear" if(isLinux) else "cls")
 			shell("python{} main.py".format("3" if(isLinux) else ""))
-			input("{}{}".format(Icons.info, reg.content["debug"]["continue"]))
+			input("{}{}".format(Icons.info, reg["debug"]["continue"]))
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
-		print(" {} {} {} {}\n".format(info["name"], info["vers"], reg.content["vers"], info["author"]))
+		print(" {} {} {} {}\n".format(info["name"], info["vers"], reg["vers"], info["author"]))
 
 	elif(argv[1] in args["prfx"][0][0]): # Affiche une carte du paquet
 		packets = Cards(2)
@@ -72,7 +72,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			card = int(argv[2])-1
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg.content["err"]["cardNum"]))
+			print("{}{}".format(Icons.warn, reg["err"]["cardNum"]))
 
 			return(False)
 
@@ -89,7 +89,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			card = int(argv[2])-1
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg.content["err"]["cardNum"]))
+			print("{}{}".format(Icons.warn, reg["err"]["cardNum"]))
 
 			return(False)
 
@@ -106,7 +106,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			gameName = str(argv[2])
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg.content["err"]["gameName"]))
+			print("{}{}".format(Icons.warn, reg["err"]["gameName"]))
 
 			return(False)
 
@@ -120,7 +120,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):
-					print("{}{}".format(Icons.warn, reg.content["game"]["notFinished"]))
+					print("{}{}".format(Icons.warn, reg["game"]["notFinished"]))
 
 				game.start()
 
@@ -129,7 +129,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			playersList = list(eval(argv[2]))
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg.content["err"]["player"]))
+			print("{}{}".format(Icons.warn, reg["err"]["player"]))
 
 			return(False)
 
@@ -142,7 +142,7 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 	if(cfg["splash"]):
 		splash(reg, info)
 
-	menu = [ "{}:\n".format(reg.content["menu"]["txt"]) ]
+	menu = [ "{}:\n".format(reg["menu"]["txt"]) ]
 	for game in games:
 		menu.append(game(reg, cfg["encoding"]).gameName)
 
@@ -150,8 +150,8 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
 
 	print("")
-	#print( " {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg.content["menu"]["set"]))
-	print( " {}0.{} {}\n".format(Colors.red, Colors.end, reg.content["menu"]["quit"]))
+	#print( " {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
+	print( " {}0.{} {}\n".format(Colors.red, Colors.end, reg["menu"]["quit"]))
 
 	while(True):
 		while(True):
@@ -161,7 +161,7 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 				break
 
 			except Exception:
-				print("{}{}".format(Icons.warn, reg.content["err"]["menuCho"]))
+				print("{}{}".format(Icons.warn, reg["err"]["menuCho"]))
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
@@ -169,7 +169,7 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):
-					print("{}{}".format(Icons.warn, reg.content["game"]["notFinished"]))
+					print("{}{}".format(Icons.warn, reg["game"]["notFinished"]))
 
 				game.start()
 
@@ -190,7 +190,7 @@ if __name__ == "__main__":
 	}
 
 	cfg = Config().config # Chargement du fichier de configuration
-	reg = Regions(cfg["language"], cfg["encoding"]) # Chargement de la langue
+	reg = Regions(cfg["language"], cfg["encoding"]).content # Chargement de la langue
 
 	if(len(argv) > 1):
 		arg(cfg, reg, info, games)
