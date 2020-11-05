@@ -3,7 +3,7 @@
 
 # Module d'affichage des textes par langue
 
-import json
+from json import load
 from core.icons import Icons
 
 class Regions:
@@ -18,7 +18,7 @@ class Regions:
 	def __loadJSON(self): # Chargement des langues depuis un fichier
 		try:
 			with open("{}{}.json".format(self.__path, self.__lang), encoding=self.__encode) as outFile:
-				self.content = json.load(outFile)
+				self.content = load(outFile)
 
 		except Exception: # Création du contenu de langue anglais par défaut
 			self.content = {

@@ -3,7 +3,7 @@
 
 # Module d'affichage des textes par langue
 
-import json
+from json import load
 from core.icons import Icons
 
 class Config:
@@ -17,7 +17,7 @@ class Config:
 	def __loadJSON(self): # Importation du fichier de configuration
 		try:
 			with open(self.__path, encoding=self.__encode) as outFile:
-				self.config = json.load(outFile)
+				self.config = load(outFile)
 
 		except Exception: # Création d'une configuration par défaut
 			self.config = {

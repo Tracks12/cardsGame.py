@@ -1,7 +1,6 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-import json
 from os import system as shell
 from platform import system
 from sys import argv
