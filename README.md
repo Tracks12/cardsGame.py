@@ -27,16 +27,17 @@ L'installation de **[Python 3](https://www.python.org/downloads/)** est recomman
 
 Exécution du script: `$ python main.py <arg>`
 
-| Arguments                        | Valeur                  | Descriptions                                |
-| -------------------------------- | ----------------------- | ------------------------------------------- |
-| `-s <x>`, `--show-card <x>`      | `<x>` n° de carte       | Affiche une carte du paquet                 |
-| `-S`, `--show-all`               | -                       | Affiche tout le paquet de cartes            |
-| `-r <x>`, `--show-rand-card <x>` | `<x>` n° de carte       | Affiche une carte du paquet mélangé         |
-| `-R`, `--show-rand-all`          | -                       | Affiche toutes les cartes du paquet mélangé |
-| `-g`, `--game`                   | `<gameName>` nom du jeu | Lance un jeu de carte                       |
-| `-h`, `--help`                   | -                       | Affiche le menu d'aide                      |
-| `-d`, `--debug`                  | -                       | Exécution en mode debuger                   |
-| `-v`, `--version`                | -                       | Affiche la version du programme             |
+| Arguments                        | Valeur                               | Descriptions                                |
+| -------------------------------- | ------------------------------------ | ------------------------------------------- |
+| `-s <x>`, `--show-card <x>`      | `<x>` n° de carte                    | Affiche une carte du paquet                 |
+| `-S`, `--show-all`               | -                                    | Affiche tout le paquet de cartes            |
+| `-r <x>`, `--show-rand-card <x>` | `<x>` n° de carte                    | Affiche une carte du paquet mélangé         |
+| `-R`, `--show-rand-all`          | -                                    | Affiche toutes les cartes du paquet mélangé |
+| `-g`, `--game`                   | `<gameName>` nom du jeu              | Lance un jeu de carte                       |
+| `-p`, `--players`                | `"['name', ...]"` liste de joueur(s) | Insérer un ou plusieurs joueur(s)           |
+| `-h`, `--help`                   | -                                    | Affiche le menu d'aide                      |
+| `-d`, `--debug`                  | -                                    | Exécution en mode debuger                   |
+| `-v`, `--version`                | -                                    | Affiche la version du programme             |
 
 ## Options & Configurations
 

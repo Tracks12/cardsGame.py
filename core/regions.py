@@ -28,8 +28,9 @@ class Regions:
 						"\tDisplays a packet card",
 						"\tDisplays the entire packet of cards",
 						"Displays a mixed packet card",
-						"\tDisplays all cards of the shuffled packet",
-						"\tLaunch a card game\n",
+						"\tDisplays all cards of the shuffled packet\n",
+						"\tLaunch a card game",
+						"Insert one or more player(s)\n",
 						"\t\tDisplays the help menu",
 						"\t\tDebug mode",
 						"\t\tDisplays the version of the program\n"
@@ -41,7 +42,8 @@ class Regions:
 				"err": {
 					"menuCho": "This choice does not exist",
 					"cardNum": "Specify a card number",
-					"gameName": "Enter a game name"
+					"gameName": "Enter a game name",
+					"player": "Player list is incorrect"
 				},
 				"tip": {},
 				"menu": {
