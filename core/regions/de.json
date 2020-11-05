@@ -5,8 +5,9 @@
       "\tZeigt eine Paketkarte an",
       "\tZeigt das gesamte Kartenpaket an",
       "Zeigt eine gemischte Paketkarte an",
-      "\tZeigt alle Karten des gemischten Pakets an",
-      "\tStarten Sie ein Kartenspiel\n",
+      "\tZeigt alle Karten des gemischten Pakets an\n",
+      "\tStarten Sie ein Kartenspiel",
+      "Einen oder mehrere Spieler einfügen\n",
       "\t\tZeigt das Hilfemenü an",
       "\t\tDebug-Modus",
       "\t\tZeigt die Version des Programms an\n"
@@ -16,14 +17,12 @@
     "continue": "Taste drücken, um fortzufahren ..."
   },
   "err": {
-    "regLoad": "Das Laden des Sprachmoduls schlug fehl",
     "menuCho": "Diese Wahl gibt es nicht",
     "cardNum": "Geben Sie eine Kartennummer an",
-    "gameName": "Geben Sie einen Spielnamen ein"
+    "gameName": "Geben Sie einen Spielnamen ein",
+    "player": "Die Spielerliste ist falsch"
   },
-  "tip": {
-    "regLoad": "Überprüfen Sie, ob die Datei 'regions.json' vollständig ist"
-  },
+  "tip": {},
   "menu": {
     "txt": "Wählen Sie einen Spielmodus",
     "quit": "Beenden Sie",

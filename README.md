@@ -16,7 +16,8 @@ L'installation de **[Python 3](https://www.python.org/downloads/)** est recomman
 
 ## Dépendances
 
-- [json](https://docs.python.org/3/library/json.html)
+- [json.load](https://docs.python.org/3/library/json.html#json.load)
+- [json.dump](https://docs.python.org/3/library/json.html#json.dump)
 - [os.system](https://docs.python.org/3/library/os.html#os.system)
 - [platform.system](https://docs.python.org/3/library/platform.html#platform.system)
 - [random.shuffle](https://docs.python.org/3/library/random.html#random.shuffle)
@@ -27,24 +28,34 @@ L'installation de **[Python 3](https://www.python.org/downloads/)** est recomman
 
 Exécution du script: `$ python main.py <arg>`
 
-| Arguments                        | Valeur                  | Descriptions                                |
-| -------------------------------- | ----------------------- | ------------------------------------------- |
-| `-s <x>`, `--show-card <x>`      | `<x>` n° de carte       | Affiche une carte du paquet                 |
-| `-S`, `--show-all`               | -                       | Affiche tout le paquet de cartes            |
-| `-r <x>`, `--show-rand-card <x>` | `<x>` n° de carte       | Affiche une carte du paquet mélangé         |
-| `-R`, `--show-rand-all`          | -                       | Affiche toutes les cartes du paquet mélangé |
-| `-g`, `--game`                   | `<gameName>` nom du jeu | Lance un jeu de carte                       |
-| `-h`, `--help`                   | -                       | Affiche le menu d'aide                      |
-| `-d`, `--debug`                  | -                       | Exécution en mode debuger                   |
-| `-v`, `--version`                | -                       | Affiche la version du programme             |
+| Arguments                        | Valeur                               | Descriptions                                |
+| -------------------------------- | ------------------------------------ | ------------------------------------------- |
+| `-s <x>`, `--show-card <x>`      | `<x>` n° de carte                    | Affiche une carte du paquet                 |
+| `-S`, `--show-all`               | -                                    | Affiche tout le paquet de cartes            |
+| `-r <x>`, `--show-rand-card <x>` | `<x>` n° de carte                    | Affiche une carte du paquet mélangé         |
+| `-R`, `--show-rand-all`          | -                                    | Affiche toutes les cartes du paquet mélangé |
+| `-g`, `--game`                   | `<gameName>` nom du jeu              | Lance un jeu de carte                       |
+| `-p`, `--players`                | `"['name', ...]"` liste de joueur(s) | Insérer un ou plusieurs joueur(s)           |
+| `-h`, `--help`                   | -                                    | Affiche le menu d'aide                      |
+| `-d`, `--debug`                  | -                                    | Exécution en mode debuger                   |
+| `-v`, `--version`                | -                                    | Affiche la version du programme             |
+
+### Gestion des joeurs
+
+Le système de joueurs se fait directement en ligne de commande avec en arguments une liste de nom de joueur, de la manière suivante: `$ python main.py -p "['nomJoueur', ...]"`, vous pouvez en ajouter tant que vous voulez, la limitte du nombre de joueurs dépendra du mode de jeu choisit.
+
+Si vous entrer une liste contenant 4 joueurs alors que vous avez sélectionner un mode de jeu nécessitant seulement 2 joueurs, alors le jeu ne prendra que les 2 premiers de la liste. Et si il manque un ou plusieurs joueurs requis, alors le mode de jeu ne se lancera pas tout simplement.
+
+Les noms des joueurs sont sauvegarder directement dans le fichier **[players.json](core/players.json)** qui est dans le répertoire **[core/](core/)**.
 
 ## Options & Configurations
 
-La configuration du programme se fait depuis le fichier **[config.json](config.json)** au format **json**, dans ce fichier vous pouvez **configurer la langue**.
+La configuration du programme se fait depuis le fichier **[config.json](config.json)** au format **json**, dans ce fichier vous pouvez **configurer la langue**, l'**encodage des caractères** ainsi que l'affichage du splash screen.
 
 ```json
 {
-  "lang": "fr",
+  "encoding": "utf-8",
+  "language": "fr",
   "splash": true
 }
 ```
@@ -55,7 +66,7 @@ La configuration du programme se fait depuis le fichier **[config.json](config.j
 
 Les langues disponibles sont contenus dans le répertoire **[core/regions/](core/regions/)**. Il contient les traductions du programme, vous pouvez en ajouter d'autre si vous le souhaitez, vous n'aurez alors qu'à spécifier son label (_exemple:_ `fr.json` _pour le français_) en nom de fichier sous format **json** avec tous son contenus.
 
-Si le fichier de configuration contient un label de langue non-reconnu, alors **le programme adoptera la langue par défaut qui est l'anglais**.
+Si le fichier de configuration contient un label de langue non-reconnu, alors **le programme adoptera la langue par défaut qui est l'anglais** avec **un encodage UTF-8**.
 
 ### Jeux implémentés
 

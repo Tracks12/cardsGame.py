@@ -8,12 +8,12 @@ from core.cards import Cards
 from core.players import Players
 
 class ClosedBattle(Cards, Players): # La bataille fermée
-	def __init__(self, players, lang):
+	def __init__(self, lang, encode):
 		Cards.__init__(self)
-		Players.__init__(self, players)
+		Players.__init__(self, encode)
 
 		self.content	= lang.content["game"]["closedBattle"] # Traductions du jeu
-		self.gameName	= self.content["name"]
+		self.gameName	= self.content["name"] # Nom du jeu
 		self.finished	= True # Jeu fini
 		self.__end		= False # État du jeu
 		self.__round	= 0 # Nombre de tour
@@ -91,7 +91,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 	def __rules(self): # Application des règles du jeu
 		for player in self._players:
 			if((len(player["hand"]) + len(player["deck"])) == 52):
-				self.__end	= True
+				self.__end		= True
 				self.__winner	= player
 
 	def start(self): # Lancement de la partie
@@ -117,9 +117,9 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		return(True)
 
 class Solitary(Cards, Players): # Le solitaire
-	def __init__(self, players, lang):
+	def __init__(self, lang, encode):
 		Cards.__init__(self)
-		Players.__init__(self, players)
+		Players.__init__(self, encode)
 
 		self.content	= lang.content["game"]["solitary"]
 		self.gameName	= self.content["name"]
@@ -137,9 +137,9 @@ class Solitary(Cards, Players): # Le solitaire
 		return(True)
 
 class PeckerLady(Cards, Players): # La dame de pic
-	def __init__(self, players, lang):
+	def __init__(self, lang, encode):
 		Cards.__init__(self)
-		Players.__init__(self, players)
+		Players.__init__(self, encode)
 
 		self.content	= lang.content["game"]["peckerLady"]
 		self.gameName	= self.content["name"]
@@ -164,9 +164,9 @@ class PeckerLady(Cards, Players): # La dame de pic
 		return(True)
 
 class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
-	def __init__(self, players, lang):
+	def __init__(self, lang, encode):
 		Cards.__init__(self, 1)
-		Players.__init__(self, players)
+		Players.__init__(self, encode)
 
 		self.content	= lang.content["game"]["chickenshit"]
 		self.gameName	= self.content["name"]
@@ -186,9 +186,9 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 		return(True)
 
 class Liar(Cards, Players): # Le menteur
-	def __init__(self, players, lang):
+	def __init__(self, lang, encode):
 		Cards.__init__(self)
-		Players.__init__(self, players)
+		Players.__init__(self, encode)
 
 		self.content	= lang.content["game"]["liar"]
 		self.gameName	= self.content["name"]

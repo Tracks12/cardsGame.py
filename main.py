@@ -1,7 +1,6 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-import json
 from os import system as shell
 from platform import system
 from sys import argv
@@ -10,7 +9,9 @@ from time import sleep
 # Importation des dépendances internes
 from core.colors import Colors
 from core.icons import Icons
+from core.config import Config
 from core.regions import Regions
+from core.players import LoadPlayers
 from core.cards import Cards
 from core.games import *
 
@@ -37,6 +38,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			(("-r", "--show-rand-card"), "<x>"),
 			(("-R", "--show-rand-all"), ""),
 			(("-g", "--game"), "<gameName>"),
+			(("-p", "--players"), "\"['name', ...]\""),
 			(("-h", "--help"), ""),
 			(("-d", "--debug"), ""),
 			(("-v", "--version"), "")
@@ -110,11 +112,11 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 		gameList = []
 		for game in games:
-			gameList.append(game([], reg).gameName)
+			gameList.append(game(reg, cfg["encoding"]).gameName)
 
 		for id, name in enumerate(gameList):
 			if(gameName == name):
-				game = games[id](["admin", "root"], reg)
+				game = games[id](reg, cfg["encoding"])
 				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):
@@ -122,16 +124,27 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 				game.start()
 
+	elif(argv[1] in args["prfx"][5][0]): # Gestion des joueurs
+		try:
+			playersList = list(eval(argv[2]))
+
+		except Exception:
+			print("{}{}".format(Icons.warn, reg.content["err"]["player"]))
+
+			return(False)
+
+		players	= LoadPlayers(cfg["encoding"])
+		players.insert(playersList)
+
 	return(True)
 
 def main(cfg, reg, info, games): # Fonction principale de l'execution du programme
-	menu = [ "{}:\n".format(reg.content["menu"]["txt"]) ]
-
 	if(cfg["splash"]):
 		splash(reg, info)
 
+	menu = [ "{}:\n".format(reg.content["menu"]["txt"]) ]
 	for game in games:
-		menu.append(game([], reg).gameName)
+		menu.append(game(reg, cfg["encoding"]).gameName)
 
 	for key, row in enumerate(menu):
 		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
@@ -152,7 +165,7 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
-				game = games[i](["admin", "root"], reg)
+				game = games[i](reg, cfg["encoding"])
 				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):
@@ -176,17 +189,8 @@ if __name__ == "__main__":
 		"author": "Florian Cardinal"
 	}
 
-	try:
-		with open("config.json") as outFile: # Importation du fichier de configuration
-			cfg = json.load(outFile)
-
-	except Exception: # Création d'une configuration si le fichier n'existe pas
-		cfg = {
-			"lang": "us",
-			"splash": True
-		}
-
-	reg = Regions(cfg["lang"])
+	cfg = Config().config # Chargement du fichier de configuration
+	reg = Regions(cfg["language"], cfg["encoding"]) # Chargement de la langue
 
 	if(len(argv) > 1):
 		arg(cfg, reg, info, games)

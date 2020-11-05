@@ -3,22 +3,24 @@
 
 # Module d'affichage des textes par langue
 
-import json
+from json import load
 from core.icons import Icons
 
 class Regions:
-	def __init__(self, lang): # Selection de la langue dans le constructeur
+	def __init__(self, lang, encode): # Selection de la langue dans le constructeur
 		self.content	= {}
+		self.__encode	= encode
+		self.__lang		= lang
 		self.__path		= "core/regions/"
 
-		self.__loadJSON(lang)
+		self.__loadJSON()
 
-	def __loadJSON(self, lang): # Chargement des langues depuis un fichier
+	def __loadJSON(self): # Chargement des langues depuis un fichier
 		try:
-			with open("{}{}.json".format(self.__path, lang)) as outFile:
-				self.content = json.load(outFile)
+			with open("{}{}.json".format(self.__path, self.__lang), encoding=self.__encode) as outFile:
+				self.content = load(outFile)
 
-		except Exception: # Chargement du contenu de langue anglais par défaut
+		except Exception: # Création du contenu de langue anglais par défaut
 			self.content = {
 				"args": {
 					"intro": ["Card games", "Launch", "Arguments"],
@@ -26,8 +28,9 @@ class Regions:
 						"\tDisplays a packet card",
 						"\tDisplays the entire packet of cards",
 						"Displays a mixed packet card",
-						"\tDisplays all cards of the shuffled packet",
-						"\tLaunch a card game\n",
+						"\tDisplays all cards of the shuffled packet\n",
+						"\tLaunch a card game",
+						"Insert one or more player(s)\n",
 						"\t\tDisplays the help menu",
 						"\t\tDebug mode",
 						"\t\tDisplays the version of the program\n"
@@ -37,14 +40,12 @@ class Regions:
 					"continue": "Press key to continue ..."
 				},
 				"err": {
-					"regLoad": "The loading of the language module failed",
 					"menuCho": "This choice does not exist",
 					"cardNum": "Specify a card number",
-					"gameName": "Enter a game name"
+					"gameName": "Enter a game name",
+					"player": "Player list is incorrect"
 				},
-				"tip": {
-					"regLoad": "Check the 'regions.json' file is complete"
-				},
+				"tip": {},
 				"menu": {
 					"txt": "Choose a game mode",
 					"quit": "Quit",
@@ -73,5 +74,5 @@ class Regions:
 				"vers": "by"
 			}
 
-			print("{}{}".format(Icons.warn, self.content["err"]["regLoad"]))
-			print("{}{}".format(Icons.info, self.content["tip"]["regLoad"]))
+			print("{}The loading of the language module failed".format(Icons.warn))
+			print("{}Check the language file is complete in \"core/regions/\"".format(Icons.info))

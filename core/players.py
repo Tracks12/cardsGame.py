@@ -3,11 +3,46 @@
 
 # Module de création d'objets joueurs
 
-class Players:
-	def __init__(self, players):
+from json import load, dump
+
+class LoadPlayers:
+	def __init__(self, encode):
+		self.players	= []
+		self.__encode	= encode
+		self.__path		= "core/players.json"
+
+		self.__loadJSON()
+
+	def __loadJSON(self):
+		try:
+			with open(self.__path, "r", encoding=self.__encode) as outFile:
+				self.players = load(outFile)
+
+		except Exception:
+			self.players = []
+
+	def __saveJSON(self):
+		try:
+			with open(self.__path, "w", encoding=self.__encode) as inFile:
+				dump(self.players, inFile)
+
+			return(True)
+
+		except Exception:
+			return(False)
+
+	def insert(self, players):
+		self.players = players
+
+		return(self.__saveJSON())
+
+class Players(LoadPlayers):
+	def __init__(self, encode):
+		LoadPlayers.__init__(self, encode)
+
 		self._players = []
 
-		self.__addPlayer(players)
+		self.__addPlayer(self.players)
 
 	def __addPlayer(self, name): # Ajout d'un joueur
 		for i in range(0, len(name)):
@@ -15,11 +50,9 @@ class Players:
 				"id":		len(self._players)+1,
 				"name":		name[i],
 				"score":	0,
-				"deck": [],
-				"hand":	[]
+				"deck":		[],
+				"hand":		[]
 			})
-
-		return self._players
 
 	def getPlayers(self): # Affichage de la liste des joueurs
 		return self._players
@@ -39,15 +72,15 @@ class Players:
 			if(player["id"] == plyrId):
 				self._players.remove(player)
 
-				return self._players
+				return(True)
 
-		return False
+		return(False)
 
 	def delPlayerByName(self, plyrName): # Suppression d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["name"] == plyrName):
 				self._players.remove(player)
 
-				return self._players
+				return(True)
 
-		return False
+		return(False)

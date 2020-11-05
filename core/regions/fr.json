@@ -5,8 +5,9 @@
       "\tAffiche une carte du paquet",
       "\tAffiche tout le paquet de cartes",
       "Affiche une carte du paquet mélangé",
-      "\tAffiche toutes les cartes du paquet mélangé",
-      "\tLance un jeu de carte\n",
+      "\tAffiche toutes les cartes du paquet mélangé\n",
+      "\tLance un jeu de carte",
+      "Insérer un ou plusieurs joueur(s)\n",
       "\t\tAffiche le menu d'aide",
       "\t\tMode debugger",
       "\t\tAffiche la version du programme\n"
@@ -16,14 +17,12 @@
     "continue": "Appuyez sur une touche pour continuer ..."
   },
   "err": {
-    "regLoad": "Le chargement du module de langue a échoué",
     "menuCho": "Ce choix n'existe pas",
     "cardNum": "Spécifier un numéro de carte",
-    "gameName": "Entrer un nom de jeu"
+    "gameName": "Entrer un nom de jeu",
+    "player": "La liste de joueur est incorrect"
   },
-  "tip": {
-    "regLoad": "Vérifiez que le fichier 'regions.json' soit bien complet"
-  },
+  "tip": {},
   "menu": {
     "txt": "Choisissez un mode de jeu",
     "quit": "Quitter",
