@@ -3,10 +3,15 @@
 
 from os import system as shell
 from platform import system
-from sys import argv
+from sys import argv, version_info
 
 # Importation des dépendances internes
 from core import Colors, Icons, splash
+
+if(version_info.major < 3): # Vérification de l'éxecution du script avec Python3
+	print("{}Le programme doit être lancer avec Python 3".format(Icons.warn))
+	exit()
+
 from core.config import Config
 from core.regions import Regions
 from core.players import LoadPlayers

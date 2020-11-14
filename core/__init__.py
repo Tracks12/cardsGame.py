@@ -1,6 +1,7 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+from base64 import b64decode, b64encode
 from platform import system
 from time import sleep
 
@@ -28,6 +29,13 @@ class Icons: # Module d'icône ascii
 	info = " {}{}(i){} - ".format(Colors.bold, Colors.blue, Colors.end)
 	tips = " {}{}(?){} - ".format(Colors.bold, Colors.green, Colors.end)
 	play = " {}{}(>){} - ".format(Colors.bold, Colors.green, Colors.end)
+
+class B64: # Encode/Decode ascii string
+        def encode(str = ""):
+                return(b64encode(str.encode("ascii")).decode("ascii"))
+
+        def decode(str = ""):
+                return(b64decode(str).decode("ascii"))
 
 def splash(reg, info): # Splash Screen
 	for row in [
