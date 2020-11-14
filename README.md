@@ -14,7 +14,7 @@ La liste des consignes du sujet est disponible dans le [TODO.md](TODO.md)
 
 L'installation de **[Python 3](https://www.python.org/downloads/)** est recommandé pour l'éxécution du script
 
-## Dépendances
+### Dépendances
 
 - [json.load](https://docs.python.org/3/library/json.html#json.load), [json.dump](https://docs.python.org/3/library/json.html#json.dump)
 - [os.system](https://docs.python.org/3/library/os.html#os.system)
