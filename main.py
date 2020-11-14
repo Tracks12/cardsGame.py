@@ -4,31 +4,14 @@
 from os import system as shell
 from platform import system
 from sys import argv
-from time import sleep
 
 # Importation des dépendances internes
-from core.colors import Colors
-from core.icons import Icons
+from core import Colors, Icons, splash
 from core.config import Config
 from core.regions import Regions
 from core.players import LoadPlayers
 from core.cards import Cards
 from core.games import *
-
-def splash(reg, info): # Splash Screen
-	for row in [
-		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
-		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),
-		"  {}____ ___ _ _ __ ___| |  ___/ /   ___ ___ _ _ _ _ __   ___   ___{}".format(Colors.yellow, Colors.end),
-		" {}/ __// _ ` | `_// _ ` | / _/ |   |_  / _ ` | `_` `_ \ / _ \ | _ \_ __{}".format(Colors.yellow, Colors.end),
-		"{}| (__| (_)  | | | (_)  |_\ \ \ \___/ | (_)  | | | | | |  __/ |  _/\` /\t{}{}{}".format(Colors.yellow, Colors.red, info["vers"], Colors.end),
-		" {}\__/ \___,_|_|  \___,_|___/  \_____/ \___,_|_| |_| |_|\___|.|_|  / /\t{}{} {}{}".format(Colors.yellow, Colors.purple, reg["vers"], info["author"], Colors.end),
-		"                                                                 {}/_/{}\n".format(Colors.yellow, Colors.end)
-	]:
-		print(row)
-		sleep(.1)
-
-	return(True)
 
 def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 	args = {

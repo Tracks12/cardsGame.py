@@ -3,7 +3,7 @@
 
 # Module des types de jeux
 
-from core.colors import Colors
+from core import Colors
 from core.cards import Cards
 from core.players import Players
 
