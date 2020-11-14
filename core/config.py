@@ -4,7 +4,8 @@
 # Module d'affichage des textes par langue
 
 from json import load
-from core.icons import Icons
+
+from core import Icons
 
 class Config:
 	def __init__(self):

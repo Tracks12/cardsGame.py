@@ -4,7 +4,8 @@
 # Module de création de packet de carte
 
 from random import shuffle
-from core.colors import Colors
+
+from core import Colors
 
 class Cards: # Objet de jeu de cartes
 	def __init__(self, joker = 0): # Construction du jeu de 52 cartes avec/sans les jokers
