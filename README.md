@@ -14,10 +14,9 @@ La liste des consignes du sujet est disponible dans le [TODO.md](TODO.md)
 
 L'installation de **[Python 3](https://www.python.org/downloads/)** est recommandé pour l'éxécution du script
 
-## Dépendances
+### Dépendances
 
-- [json.load](https://docs.python.org/3/library/json.html#json.load)
-- [json.dump](https://docs.python.org/3/library/json.html#json.dump)
+- [json.load](https://docs.python.org/3/library/json.html#json.load), [json.dump](https://docs.python.org/3/library/json.html#json.dump)
 - [os.system](https://docs.python.org/3/library/os.html#os.system)
 - [platform.system](https://docs.python.org/3/library/platform.html#platform.system)
 - [random.shuffle](https://docs.python.org/3/library/random.html#random.shuffle)
@@ -46,7 +45,7 @@ Le système de joueurs se fait directement en ligne de commande avec en argument
 
 Si vous entrer une liste contenant 4 joueurs alors que vous avez sélectionner un mode de jeu nécessitant seulement 2 joueurs, alors le jeu ne prendra que les 2 premiers de la liste. Et si il manque un ou plusieurs joueurs requis, alors le mode de jeu ne se lancera pas tout simplement.
 
-Les noms des joueurs sont sauvegarder directement dans le fichier **[players.json](core/players.json)** qui est dans le répertoire **[core/](core/)**.
+Les noms des joueurs sont sauvegarder en **Base64** directement dans le fichier **[players](core/players)** qui est dans le répertoire **[core/](core/)**.
 
 ## Options & Configurations
 

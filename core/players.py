@@ -3,20 +3,22 @@
 
 # Module de création d'objets joueurs
 
-from json import load, dump
+from json import loads, dumps
+
+from core import B64
 
 class LoadPlayers:
 	def __init__(self, encode):
 		self.players	= []
 		self.__encode	= encode
-		self.__path		= "core/players.json"
+		self.__path		= "core/players"
 
 		self.__loadJSON()
 
 	def __loadJSON(self):
 		try:
 			with open(self.__path, "r", encoding=self.__encode) as outFile:
-				self.players = load(outFile)
+				self.players = loads(B64.decode(outFile.read()))
 
 		except Exception:
 			self.players = []
@@ -24,7 +26,7 @@ class LoadPlayers:
 	def __saveJSON(self):
 		try:
 			with open(self.__path, "w", encoding=self.__encode) as inFile:
-				dump(self.players, inFile)
+				inFile.write(B64.encode(dumps(self.players)))
 
 			return(True)
 
