@@ -31,11 +31,11 @@ class Icons: # Module d'icône ascii
 	play = " {}{}(>){} - ".format(Colors.bold, Colors.green, Colors.end)
 
 class B64: # Encode/Decode ascii string
-        def encode(str = ""):
-                return(b64encode(str.encode("ascii")).decode("ascii"))
+	def encode(str = ""):
+		return(b64encode(str.encode("ascii")).decode("ascii"))
 
-        def decode(str = ""):
-                return(b64decode(str).decode("ascii"))
+	def decode(str = ""):
+		return(b64decode(str).decode("ascii"))
 
 def splash(reg, info): # Splash Screen
 	for row in [
