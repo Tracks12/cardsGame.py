@@ -24,6 +24,10 @@
   },
   "tip": {},
   "menu": {
+		"config": {
+			"label": "Einstellungen",
+			"back": "zurück"
+		},
     "txt": "Wählen Sie einen Spielmodus",
     "quit": "Beenden Sie",
     "set": "Einstellungen"

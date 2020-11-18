@@ -24,6 +24,10 @@
   },
   "tip": {},
   "menu": {
+		"config": {
+			"label": "settings",
+			"back": "back"
+		},
     "txt": "Choose a game mode",
     "quit": "Quit",
     "set": "Settings"

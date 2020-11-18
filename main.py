@@ -126,6 +126,24 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 	return(True)
 
+def config(cfg, reg, info): # Fonction de configuration du programme
+	print(f" {Colors.red}0.{Colors.end} {reg['menu']['config']['back']}\n")
+
+	while(True):
+		while(True):
+			try:
+				choice = int(input(f"({Colors.green}{info['name']}{Colors.end})[{Colors.yellow}{reg['menu']['config']['label']}{Colors.end}]> {Colors.cyan}"))
+				print(Colors.end)
+				break
+
+			except Exception:
+				print(f"{Icons.warn}{reg['err']['menuCho']}")
+
+		if(choice == 0):
+			return(True)
+
+	return(True)
+
 def main(cfg, reg, info, games): # Fonction principale de l'execution du programme
 	if(cfg["splash"]):
 		splash(reg, info)
@@ -138,7 +156,7 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
 
 	print("")
-	#print( " {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
+	print( " {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
 	print( " {}0.{} {}\n".format(Colors.red, Colors.end, reg["menu"]["quit"]))
 
 	while(True):
@@ -164,8 +182,8 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 		if(choice == 0):
 			return(True)
 
-		#elif(choice == len(menu)):
-		#	print(" OPTION")
+		elif(choice == len(menu)):
+			config(cfg, reg, info)
 
 	return(True)
 
