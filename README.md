@@ -2,6 +2,20 @@
 
 Un jeu de carte classique sur terminal
 
+## Sommaire
+
+1. [Aperçu](#aperçu)
+   - [Consignes](#consignes)
+2. [Pré-requis](#pré-requis)
+   - [Dépendances](#dépendances)
+3. [Utilisations](#utilisations)
+   - [Gestion des joeurs](#gestion-des-joeurs)
+4. [Options & Configurations](#options-&-configurations)
+5. [Ressource disponibles](#ressource-disponibles)
+   - [Langues & Régions](#langues-&-régions)
+   - [Jeux implémentés](#jeux-implémentés)
+6. [Licence](#licence)
+
 ## Aperçu
 
 ![preview](preview.gif)
