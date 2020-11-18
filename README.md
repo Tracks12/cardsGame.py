@@ -10,9 +10,9 @@ Un jeu de carte classique sur terminal
    - [Dépendances](#dépendances)
 3. [Utilisations](#utilisations)
    - [Gestion des joeurs](#gestion-des-joeurs)
-4. [Options & Configurations](#options-&-configurations)
+4. [Options & Configurations](#options--configurations)
 5. [Ressource disponibles](#ressource-disponibles)
-   - [Langues & Régions](#langues-&-régions)
+   - [Langues & Régions](#langues--régions)
    - [Jeux implémentés](#jeux-implémentés)
 6. [Licence](#licence)
 
