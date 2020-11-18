@@ -16,6 +16,7 @@ L'installation de **[Python 3](https://www.python.org/downloads/)** est recomman
 
 ### Dépendances
 
+- [base64.b64decode](https://docs.python.org/3/library/base64.html#base64.b64decode), [base64.b64encode](https://docs.python.org/3/library/base64.html#base64.b64encode)
 - [json.load](https://docs.python.org/3/library/json.html#json.load), [json.dump](https://docs.python.org/3/library/json.html#json.dump)
 - [os.system](https://docs.python.org/3/library/os.html#os.system)
 - [platform.system](https://docs.python.org/3/library/platform.html#platform.system)
