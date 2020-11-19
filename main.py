@@ -1,7 +1,7 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-from os import system as shell
+from os import listdir, system as shell
 from platform import system
 from sys import argv, version_info
 
@@ -127,20 +127,55 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 	return(True)
 
 def config(cfg, reg, info): # Fonction de configuration du programme
-	print(f" {Colors.red}0.{Colors.end} {reg['menu']['config']['back']}\n")
+	for key, row in enumerate([
+		"",
+		f"{reg['menu']['config']['content']['encoding']}",
+		f"{reg['menu']['config']['content']['language']}",
+		f"{reg['menu']['config']['content']['splash']}",
+	]):
+		print(f" {f'{Colors.cyan}{key}.{Colors.end}' if(key > 0) else ''} {row}")
+
+	print(f"\n {Colors.red}0.{Colors.end} {reg['menu']['config']['back']}\n")
 
 	while(True):
 		while(True):
 			try:
 				choice = int(input(f"({Colors.green}{info['name']}{Colors.end})[{Colors.yellow}{reg['menu']['config']['label']}{Colors.end}]> {Colors.cyan}"))
-				print(Colors.end)
+				print(end=Colors.end)
 				break
 
 			except Exception:
 				print(f"{Icons.warn}{reg['err']['menuCho']}")
 
 		if(choice == 0):
-			return(True)
+			print("")
+			break
+
+		elif(choice == 1):
+			codings = ["ascii", "utf-8", "utf-16", "utf-32"]
+			prompt	= "["
+
+			for k, v in enumerate(codings):
+				prompt += f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(codings)-1) else ']'}"
+
+			coding = str(input(f"Encoding: {prompt}: {Colors.cyan}"))
+			print(end=Colors.end)
+
+		elif(choice == 2):
+			langs	= listdir("core/regions")
+			for k, v in enumerate(langs):
+				langs[k] = v.split(".")[0]
+
+			prompt	= "["
+			for k, v in enumerate(langs):
+				prompt += f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(langs)-1) else ']'}"
+
+			lang = str(input(f"Language: {prompt}: {Colors.cyan}"))
+			print(end=Colors.end)
+
+		elif(choice == 3):
+			splash = str(input(f"Splash screen: [{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]: {Colors.cyan}"))
+			print(end=Colors.end)
 
 	return(True)
 
@@ -155,15 +190,14 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 	for key, row in enumerate(menu):
 		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
 
-	print("")
-	print( " {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
+	print( "\n {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
 	print( " {}0.{} {}\n".format(Colors.red, Colors.end, reg["menu"]["quit"]))
 
 	while(True):
 		while(True):
 			try:
 				choice = int(input("({}{}{})> {}".format(Colors.green, info["name"], Colors.end, Colors.cyan)))
-				print(Colors.end)
+				print(end=Colors.end)
 				break
 
 			except Exception:

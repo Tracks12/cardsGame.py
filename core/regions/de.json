@@ -24,10 +24,15 @@
   },
   "tip": {},
   "menu": {
-		"config": {
-			"label": "Einstellungen",
-			"back": "zurück"
-		},
+    "config": {
+      "content": {
+        "encoding": "Kodierung",
+        "language": "Sprache",
+        "splash": "Begrüßungsbildschirm"
+      },
+      "label": "Einstellungen",
+      "back": "zurück"
+    },
     "txt": "Wählen Sie einen Spielmodus",
     "quit": "Beenden Sie",
     "set": "Einstellungen"
