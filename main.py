@@ -177,6 +177,9 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 			splash = str(input(f"Splash screen: [{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]: {Colors.cyan}"))
 			print(end=Colors.end)
 
+		else:
+			print(f"{Icons.warn}{reg['err']['menuCho']}")
+
 	return(True)
 
 def main(cfg, reg, info, games): # Fonction principale de l'execution du programme
