@@ -24,6 +24,15 @@
   },
   "tip": {},
   "menu": {
+    "config": {
+      "content": {
+        "encoding": "エンコーディング",
+        "language": "言語",
+        "splash": "スプラッシュ画面"
+      },
+      "label": "設定",
+      "back": "うしろ"
+    },
     "txt": "ゲームモードを選択する",
     "quit": "辞める",
     "set": "設定"

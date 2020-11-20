@@ -1,7 +1,7 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-from os import system as shell
+from os import listdir, system as shell
 from platform import system
 from sys import argv, version_info
 
@@ -100,11 +100,11 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 		gameList = []
 		for game in games:
-			gameList.append(game(reg, cfg["encoding"]).gameName)
+			gameList.append(game(reg, cfg.encoding).gameName)
 
 		for id, name in enumerate(gameList):
 			if(gameName == name):
-				game = games[id](reg, cfg["encoding"])
+				game = games[id](reg, cfg.encoding)
 				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):
@@ -121,31 +121,101 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 			return(False)
 
-		players	= LoadPlayers(cfg["encoding"])
+		players	= LoadPlayers(cfg.encoding)
 		players.insert(playersList)
 
 	return(True)
 
+def config(cfg, reg, info): # Fonction de configuration du programme
+	def confirm(setter):
+		if(setter):
+			print(f"{Icons.info}Config applied")
+			return(True)
+
+		print(f"{Icons.warn}Config not applied")
+		return(False)
+
+	for key, row in enumerate([
+		"",
+		f"{reg['menu']['config']['content']['encoding']}",
+		f"{reg['menu']['config']['content']['language']}",
+		f"{reg['menu']['config']['content']['splash']}",
+	]):
+		print(f" {f'{Colors.cyan}{key}.{Colors.end}' if(key > 0) else ''} {row}")
+
+	print(f"\n {Colors.red}0.{Colors.end} {reg['menu']['config']['back']}\n")
+
+	while(True):
+		while(True):
+			try:
+				choice = int(input(f"({Colors.green}{info['name']}{Colors.end})[{Colors.yellow}{reg['menu']['config']['label']}{Colors.end}]> {Colors.cyan}"))
+				print(end=Colors.end)
+				break
+
+			except Exception:
+				print(f"{Icons.warn}{reg['err']['menuCho']}")
+
+		if(choice == 0):
+			print(f"{Icons.info}Restart program to apply the new config")
+			break
+
+		elif(choice == 1):
+			codings = ("ascii", "utf-8", "utf-16", "utf-32")
+			prompt	= "["
+
+			for k, v in enumerate(codings):
+				prompt += f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(codings)-1) else ']'}"
+
+			coding = str(input(f"{reg['menu']['config']['content']['encoding']}: {prompt}: {Colors.cyan}"))
+			print(end=Colors.end)
+
+			confirm(cfg.setEncode(coding))
+
+		elif(choice == 2):
+			langs	= listdir("core/regions")
+			for k, v in enumerate(langs):
+				langs[k] = v.split(".")[0]
+
+			prompt	= "["
+			for k, v in enumerate(langs):
+				prompt += f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(langs)-1) else ']'}"
+
+			lang = str(input(f"{reg['menu']['config']['content']['language']}: {prompt}: {Colors.cyan}"))
+			print(end=Colors.end)
+
+			confirm(cfg.setLanguage(lang))
+
+		elif(choice == 3):
+			prompt = f"[{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]"
+			splash = str(input(f"{reg['menu']['config']['content']['splash']}: {prompt}: {Colors.cyan}"))
+			print(end=Colors.end)
+
+			confirm(cfg.setSplash(splash))
+
+		else:
+			print(f"{Icons.warn}{reg['err']['menuCho']}")
+
+	return(True)
+
 def main(cfg, reg, info, games): # Fonction principale de l'execution du programme
-	if(cfg["splash"]):
+	if(cfg.splash):
 		splash(reg, info)
 
 	menu = [ "{}:\n".format(reg["menu"]["txt"]) ]
 	for game in games:
-		menu.append(game(reg, cfg["encoding"]).gameName)
+		menu.append(game(reg, cfg.encoding).gameName)
 
 	for key, row in enumerate(menu):
 		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
 
-	print("")
-	#print( " {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
+	print( "\n {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
 	print( " {}0.{} {}\n".format(Colors.red, Colors.end, reg["menu"]["quit"]))
 
 	while(True):
 		while(True):
 			try:
 				choice = int(input("({}{}{})> {}".format(Colors.green, info["name"], Colors.end, Colors.cyan)))
-				print(Colors.end)
+				print(end=Colors.end)
 				break
 
 			except Exception:
@@ -153,7 +223,7 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
-				game = games[i](reg, cfg["encoding"])
+				game = games[i](reg, cfg.encoding)
 				print("{}{}".format(Icons.play, game.gameName))
 
 				if(not game.finished):
@@ -164,8 +234,8 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 		if(choice == 0):
 			return(True)
 
-		#elif(choice == len(menu)):
-		#	print(" OPTION")
+		elif(choice == len(menu)):
+			config(cfg, reg, info)
 
 	return(True)
 
@@ -177,8 +247,8 @@ if __name__ == "__main__":
 		"author": "Florian Cardinal"
 	}
 
-	cfg = Config().config # Chargement du fichier de configuration
-	reg = Regions(cfg["language"], cfg["encoding"]).content # Chargement de la langue
+	cfg = Config() # Chargement du fichier de configuration
+	reg = Regions(cfg.language, cfg.encoding).content # Chargement de la langue
 
 	if(len(argv) > 1):
 		arg(cfg, reg, info, games)

@@ -24,6 +24,15 @@
   },
   "tip": {},
   "menu": {
+    "config": {
+      "content": {
+        "encoding": "Encoding",
+        "language": "Language",
+        "splash": "Splash screen"
+      },
+      "label": "settings",
+      "back": "back"
+    },
     "txt": "Choose a game mode",
     "quit": "Quit",
     "set": "Settings"
