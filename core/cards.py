@@ -9,9 +9,9 @@ from core import Colors
 
 class Cards: # Objet de jeu de cartes
 	def __init__(self, joker = 0): # Construction du jeu de 52 cartes avec/sans les jokers
-		self._packet	= []
-		self.__numbers	= ("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "V", "Q", "K")
-		self.__shapes	= ("♥", "♦", "♠", "♣")
+		self._packet	= list([])
+		self.__numbers	= tuple(("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "V", "Q", "K"))
+		self.__shapes	= tuple(("♥", "♦", "♠", "♣"))
 
 		self.__buildPacket(joker)
 
@@ -23,45 +23,45 @@ class Cards: # Objet de jeu de cartes
 		for j in range(0, joker): # Ajout des cartes jokers
 			self._packet.append(["J", "★"])
 
-		return self._packet
+		return(self._packet)
 
 	def __dispCard(self, card): # Affichage d'une carte
-		color = Colors.red if(card[1] in ("♥", "♦")) else Colors.cyan
+		color = str(Colors.red if(card[1] in ("♥", "♦")) else Colors.cyan)
 
 		displayer = [
 			",-----,",
-			"|{}{}{}   |".format(color, card[0]+" " if(len(card[0]) < 2) else card[0], Colors.end),
-			"|  {}{}{}  |".format(color, card[1], Colors.end),
-			"|   {}{}{}|".format(color, " "+card[0] if(len(card[0]) < 2) else card[0], Colors.end),
+			f"|{color}{card[0]}{' ' if(len(card[0]) < 2) else ''}{Colors.end}   |",
+			f"|  {color}{card[1]}{Colors.end}  |",
+			f"|   {color}{' ' if(len(card[0]) < 2) else ''}{card[0]}{Colors.end}|",
 			"`-----`"
 		]
 
 		for line in displayer:
 			print(line)
 
-		return card
+		return(card)
 
 	def dispAllCards(self): # Affiche toutes les cartes en ascii
-		cards = self.getAllCards()
+		cards = list(self.getAllCards())
 
 		for card in cards:
 			self.__dispCard(card)
 
-		return cards
+		return(cards)
 
 	def dispOneCard(self, key): # Affiche une carte en ascii
-		card = self.getOneCard(key)
+		card = list(self.getOneCard(key))
 		self.__dispCard(card)
 
-		return card
+		return(card)
 
 	def mixCards(self): # mélange les cartes du packets
 		shuffle(self._packet)
 
-		return self._packet
+		return(self._packet)
 
 	def getAllCards(self): # Sort toutes les cartes
-		return self._packet
+		return(self._packet)
 
 	def getOneCard(self, key): # Sort une carte
-		return self._packet[key]
+		return(self._packet[key])

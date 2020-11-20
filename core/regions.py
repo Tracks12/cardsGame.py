@@ -9,17 +9,17 @@ from core import Icons
 
 class Regions:
 	def __init__(self, lang, encode): # Selection de la langue dans le constructeur
-		self.content	= {}
-		self.__encode	= encode
-		self.__lang		= lang
-		self.__path		= "core/regions/"
+		self.content	= dict({})
+		self.__encode	= str(encode)
+		self.__lang		= str(lang)
+		self.__path		= str("core/regions/")
 
 		self.__loadJSON()
 
 	def __loadJSON(self): # Chargement des langues depuis un fichier
 		try:
-			with open("{}{}.json".format(self.__path, self.__lang), encoding=self.__encode) as outFile:
-				self.content = load(outFile)
+			with open(f"{self.__path}{self.__lang}.json", "r", encoding=self.__encode) as outFile:
+				self.content = dict(load(outFile))
 
 		except Exception: # Création du contenu de langue anglais par défaut
 			self.content = {
@@ -87,5 +87,5 @@ class Regions:
 				"vers": "by"
 			}
 
-			print("{}The loading of the language module failed".format(Icons.warn))
-			print("{}Check the language file is complete in \"core/regions/\"".format(Icons.info))
+			print(f"{Icons.warn}The loading of the language module failed")
+			print(f'{Icons.info}Check the language file is complete in "core/regions/"')

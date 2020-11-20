@@ -10,22 +10,22 @@ from core import Icons
 
 class Config:
 	def __init__(self):
-		self.__config	= {}
-		self.__encode	= "utf-8"
-		self.__path		= "config.json"
-		self.encoding 	= self.__encode	# Encodage par défaut
-		self.language	= "us"			# Langue par défaut
-		self.splash		= True			# Screen de bienvenu par défaut
+		self.__config	= dict({})
+		self.__encode	= str("utf-8")
+		self.__path		= str("config.json")
+		self.encoding 	= str(self.__encode)	# Encodage par défaut
+		self.language	= str("us")				# Langue par défaut
+		self.splash		= bool(True)			# Screen de bienvenu par défaut
 
-		self.loaded		= self.__loadJSON()
+		self.loaded		= bool(self.__loadJSON())
 
 	def __loadJSON(self): # Importation du fichier de configuration
 		try:
 			with open(self.__path, "r", encoding=self.__encode) as outFile:
-				self.__config	= load(outFile)
-				self.encoding 	= self.__config["encoding"]
-				self.language	= self.__config["language"]
-				self.splash		= self.__config["splash"]
+				self.__config	= dict(load(outFile))
+				self.encoding 	= str(self.__config["encoding"])
+				self.language	= str(self.__config["language"])
+				self.splash		= bool(self.__config["splash"])
 
 		except Exception:
 			print("{}No config file found".format(Icons.warn))
@@ -36,13 +36,13 @@ class Config:
 	def __saveJSON(self): # Sauvearde du fichier de configuration
 		try:
 			with open(self.__path, "w", encoding=self.__encode) as inFile:
-				self.__config = {
-					"encoding": self.encoding,
-					"language": self.language,
-					"splash": self.splash
-				}
+				self.__config = dict({
+					"encoding": str(self.encoding),
+					"language": str(self.language),
+					"splash": bool(self.splash)
+				})
 
-				dump(self.__config, inFile, sort_keys=True, indent=2)
+				dump(dict(self.__config), inFile, sort_keys=True, indent=2)
 
 		except Exception:
 			print("{}No config file found".format(Icons.warn))
