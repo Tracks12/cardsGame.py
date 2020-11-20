@@ -9,7 +9,7 @@ from sys import argv, version_info
 from core import Colors, Icons, splash
 
 if(version_info.major < 3): # Vérification de l'éxecution du script avec Python3
-	print("{}Le programme doit être lancer avec Python 3".format(Icons.warn))
+	print("{}Program must be run with Python 3".format(Icons.warn))
 	exit()
 
 from core.config import Config
@@ -129,10 +129,10 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 def config(cfg, reg, info): # Fonction de configuration du programme
 	def confirm(setter):
 		if(setter):
-			print(f"{Icons.info}Config applied")
+			print(f"{Icons.info}{reg['menu']['config']['success']}")
 			return(True)
 
-		print(f"{Icons.warn}Config not applied")
+		print(f"{Icons.warn}{reg['menu']['config']['success']}")
 		return(False)
 
 	for key, row in enumerate([
@@ -156,7 +156,7 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 				print(f"{Icons.warn}{reg['err']['menuCho']}")
 
 		if(choice == 0):
-			print(f"{Icons.info}Restart program to apply the new config")
+			print(f"{Icons.info}{reg['menu']['config']['restart']}")
 			break
 
 		elif(choice == 1):

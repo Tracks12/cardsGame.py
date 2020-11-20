@@ -48,6 +48,18 @@ class Regions:
 				},
 				"tip": {},
 				"menu": {
+					"config": {
+						"content": {
+							"encoding": "Encoding",
+							"language": "Language",
+							"splash": "Splash screen"
+						},
+						"label": "settings",
+						"back": "back",
+						"success": "Config applied",
+						"failed": "Config not applied",
+						"restart": "Restart program to apply the new config"
+					},
 					"txt": "Choose a game mode",
 					"quit": "Quit",
 					"set": "Settings"

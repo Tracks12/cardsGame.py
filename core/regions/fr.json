@@ -31,7 +31,10 @@
         "splash": "Écran de démarrage"
       },
       "label": "paramètres",
-      "back": "retour"
+      "back": "retour",
+      "success": "Configuration appliquée",
+      "failed": "Configuration non appliquée",
+      "restart": "Redémarrer le programme pour appliquer la nouvelle configuration"
     },
     "txt": "Choisissez un mode de jeu",
     "quit": "Quitter",
