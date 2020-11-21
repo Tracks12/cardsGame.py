@@ -31,7 +31,10 @@
         "splash": "Splash screen"
       },
       "label": "settings",
-      "back": "back"
+      "back": "back",
+      "success": "Config applied",
+      "failed": "Config not applied",
+      "restart": "Restart program to apply the new config"
     },
     "txt": "Choose a game mode",
     "quit": "Quit",

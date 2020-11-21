@@ -7,28 +7,28 @@ from time import sleep
 
 class Colors: # Module de coloration pour les système Linux/Unix
 	if(system() == "Linux"):
-		bold	= "\033[1m"
-		italic	= "\033[3m"
+		bold	= str("\033[1m")
+		italic	= str("\033[3m")
 
-		red		= "\033[31m"
-		green	= "\033[32m"
-		yellow	= "\033[33m"
-		blue	= "\033[34m"
-		purple	= "\033[35m"
-		cyan	= "\033[36m"
-		white	= "\033[37m"
+		red		= str("\033[31m")
+		green	= str("\033[32m")
+		yellow	= str("\033[33m")
+		blue	= str("\033[34m")
+		purple	= str("\033[35m")
+		cyan	= str("\033[36m")
+		white	= str("\033[37m")
 
-		end		= "\033[0m"
+		end		= str("\033[0m")
 
 	else:
-		bold = italic = end = ""
-		red = green = yellow = blue = purple = cyan = white = ""
+		bold = italic = end = str("")
+		red = green = yellow = blue = purple = cyan = white = str("")
 
 class Icons: # Module d'icône ascii
-	warn = " {}{}[!]{} - ".format(Colors.bold, Colors.red, Colors.end)
-	info = " {}{}(i){} - ".format(Colors.bold, Colors.blue, Colors.end)
-	tips = " {}{}(?){} - ".format(Colors.bold, Colors.green, Colors.end)
-	play = " {}{}(>){} - ".format(Colors.bold, Colors.green, Colors.end)
+	warn = str(f" {Colors.bold}{Colors.red}[!]{Colors.end} - ")
+	info = str(f" {Colors.bold}{Colors.blue}(i){Colors.end} - ")
+	tips = str(f" {Colors.bold}{Colors.green}(?){Colors.end} - ")
+	play = str(f" {Colors.bold}{Colors.green}(>){Colors.end} - ")
 
 class B64: # Encode/Decode ascii string
 	def encode(str = ""):

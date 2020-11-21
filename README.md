@@ -37,11 +37,11 @@ L'installation de **[Python 3](https://www.python.org/downloads/)** est recomman
 ### Dépendances
 
 - [base64.b64decode](https://docs.python.org/3/library/base64.html#base64.b64decode), [base64.b64encode](https://docs.python.org/3/library/base64.html#base64.b64encode)
-- [json.load](https://docs.python.org/3/library/json.html#json.load), [json.dump](https://docs.python.org/3/library/json.html#json.dump)
-- [os.system](https://docs.python.org/3/library/os.html#os.system)
+- [json.loads](https://docs.python.org/3/library/json.html#json.loads), [json.dumps](https://docs.python.org/3/library/json.html#json.dumps), [json.load](https://docs.python.org/3/library/json.html#json.load), [json.dump](https://docs.python.org/3/library/json.html#json.dump)
+- [os.listdir](https://docs.python.org/3/library/os.html#os.listdir), [os.system](https://docs.python.org/3/library/os.html#os.system)
 - [platform.system](https://docs.python.org/3/library/platform.html#platform.system)
 - [random.shuffle](https://docs.python.org/3/library/random.html#random.shuffle)
-- [sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+- [sys.argv](https://docs.python.org/3/library/sys.html#sys.argv), [sys.version_info](https://docs.python.org/3/library/sys.html#sys.version_info)
 - [time.sleep](https://docs.python.org/3/library/time.html#time.sleep)
 
 [Sommaire](#sommaire)
@@ -85,6 +85,8 @@ La configuration du programme se fait depuis le fichier **[config.json](config.j
   "splash": true
 }
 ```
+
+Vous pouvez le modifier directement (ce qui est peu conseiller) ou bien passer par le programme de configuration avec **tous les choix des paramètres possible à l'option 6 du menu principal**.
 
 [Sommaire](#sommaire)
 

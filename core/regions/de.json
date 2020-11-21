@@ -31,7 +31,10 @@
         "splash": "Begrüßungsbildschirm"
       },
       "label": "Einstellungen",
-      "back": "zurück"
+      "back": "zurück",
+      "success": "Konfig angewendet",
+      "failed": "Config nicht angewendet",
+      "restart": "Programm neu starten, um die neue Konfiguration anzuwenden"
     },
     "txt": "Wählen Sie einen Spielmodus",
     "quit": "Beenden Sie",

@@ -9,7 +9,7 @@ from sys import argv, version_info
 from core import Colors, Icons, splash
 
 if(version_info.major < 3): # Vérification de l'éxecution du script avec Python3
-	print("{}Le programme doit être lancer avec Python 3".format(Icons.warn))
+	print("{}Program must be run with Python 3".format(Icons.warn))
 	exit()
 
 from core.config import Config
@@ -35,23 +35,23 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 	}
 
 	if(argv[1] in args["prfx"][-3][0]): # Affiche le helper args
-		print(" {}".format(reg["args"]["intro"][0]))
-		print(" {}: python main.py <arg>\n".format(reg["args"]["intro"][1]))
-		print(" {}:".format(reg["args"]["intro"][2]))
+		print(f" {reg['args']['intro'][0]}")
+		print(f" {reg['args']['intro'][1]}: python main.py <arg>\n")
+		print(f" {reg['args']['intro'][2]}:")
 
 		for i in range(0, len(args["prfx"])):
-			print(" {}, {} {}\t{}".format(args["prfx"][i][0][0], args["prfx"][i][0][1], args["prfx"][i][1], args["desc"][i]))
+			print(f" {args['prfx'][i][0][0]}, {args['prfx'][i][0][1]} {args['prfx'][i][1]}\t{args['desc'][i]}")
 
 	elif(argv[1] in args["prfx"][-2][0]): # Mode Debugger
 		isLinux = True if(system() == "Linux") else False
 
 		while(True):
 			shell("clear" if(isLinux) else "cls")
-			shell("python{} main.py".format("3" if(isLinux) else ""))
-			input("{}{}".format(Icons.info, reg["debug"]["continue"]))
+			shell(f"python{'3' if(isLinux) else ''} main.py")
+			input(f"{Icons.info}{reg['debug']['continue']}")
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
-		print(" {} {} {} {}\n".format(info["name"], info["vers"], reg["vers"], info["author"]))
+		print(f" {info['name']} {info['vers']} {reg['vers']} {info['author']}\n")
 
 	elif(argv[1] in args["prfx"][0][0]): # Affiche une carte du paquet
 		packets = Cards(2)
@@ -60,7 +60,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			card = int(argv[2])-1
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg["err"]["cardNum"]))
+			print(f"{Icons.warn}{reg['err']['cardNum']}")
 
 			return(False)
 
@@ -77,7 +77,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			card = int(argv[2])-1
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg["err"]["cardNum"]))
+			print(f"{Icons.warn}{reg['err']['cardNum']}")
 
 			return(False)
 
@@ -94,7 +94,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			gameName = str(argv[2])
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg["err"]["gameName"]))
+			print(f"{Icons.warn}{reg['err']['gameName']}")
 
 			return(False)
 
@@ -105,10 +105,10 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		for id, name in enumerate(gameList):
 			if(gameName == name):
 				game = games[id](reg, cfg.encoding)
-				print("{}{}".format(Icons.play, game.gameName))
+				print(f"{Icons.play}{game.gameName}")
 
 				if(not game.finished):
-					print("{}{}".format(Icons.warn, reg["game"]["notFinished"]))
+					print(f"{Icons.warn}{reg['game']['notFinished']}")
 
 				game.start()
 
@@ -117,7 +117,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 			playersList = list(eval(argv[2]))
 
 		except Exception:
-			print("{}{}".format(Icons.warn, reg["err"]["player"]))
+			print(f"{Icons.warn}{reg['err']['player']}")
 
 			return(False)
 
@@ -129,10 +129,10 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 def config(cfg, reg, info): # Fonction de configuration du programme
 	def confirm(setter):
 		if(setter):
-			print(f"{Icons.info}Config applied")
+			print(f"{Icons.info}{reg['menu']['config']['success']}")
 			return(True)
 
-		print(f"{Icons.warn}Config not applied")
+		print(f"{Icons.warn}{reg['menu']['config']['success']}")
 		return(False)
 
 	for key, row in enumerate([
@@ -156,7 +156,7 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 				print(f"{Icons.warn}{reg['err']['menuCho']}")
 
 		if(choice == 0):
-			print(f"{Icons.info}Restart program to apply the new config")
+			print(f"{Icons.info}{reg['menu']['config']['restart']}")
 			break
 
 		elif(choice == 1):
@@ -201,33 +201,33 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 	if(cfg.splash):
 		splash(reg, info)
 
-	menu = [ "{}:\n".format(reg["menu"]["txt"]) ]
+	menu = [ f"{reg['menu']['txt']}:\n" ]
 	for game in games:
 		menu.append(game(reg, cfg.encoding).gameName)
 
 	for key, row in enumerate(menu):
-		print(" {}{}".format("" if(key == 0) else "{}{}.{} ".format(Colors.cyan, key, Colors.end), row))
+		print(f" {'' if(key == 0) else f'{Colors.cyan}{key}.{Colors.end} '}{row}")
 
-	print( "\n {}{}.{} {}".format(Colors.yellow, len(menu), Colors.end, reg["menu"]["set"]))
-	print( " {}0.{} {}\n".format(Colors.red, Colors.end, reg["menu"]["quit"]))
+	print( f"\n {Colors.yellow}{len(menu)}.{Colors.end} {reg['menu']['set']}")
+	print( f" {Colors.red}0.{Colors.end} {reg['menu']['quit']}\n")
 
 	while(True):
 		while(True):
 			try:
-				choice = int(input("({}{}{})> {}".format(Colors.green, info["name"], Colors.end, Colors.cyan)))
+				choice = int(input(f"({Colors.green}{info['name']}{Colors.end})> {Colors.cyan}"))
 				print(end=Colors.end)
 				break
 
 			except Exception:
-				print("{}{}".format(Icons.warn, reg["err"]["menuCho"]))
+				print(f"{Icons.warn}{reg['err']['menuCho']}")
 
 		for i in range(0, len(games)):
 			if(choice == i+1):
 				game = games[i](reg, cfg.encoding)
-				print("{}{}".format(Icons.play, game.gameName))
+				print(f"{Icons.play}{game.gameName}")
 
 				if(not game.finished):
-					print("{}{}".format(Icons.warn, reg["game"]["notFinished"]))
+					print(f"{Icons.warn}{reg['game']['notFinished']}")
 
 				game.start()
 
@@ -243,7 +243,7 @@ if __name__ == "__main__":
 	games = [ ClosedBattle, Solitary, PeckerLady, Chickenshit, Liar ]
 	info = {
 		"name": "cardsGame.py",
-		"vers": "0.1",
+		"vers": "0.2",
 		"author": "Florian Cardinal"
 	}
 
