@@ -40,7 +40,8 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		print(f" {reg['args']['intro'][2]}:")
 
 		for i in range(0, len(args["prfx"])):
-			print(f" {args['prfx'][i][0][0]}, {args['prfx'][i][0][1]} {args['prfx'][i][1]}\t{args['desc'][i]}")
+			leftSide = f"{args['prfx'][i][0][0]}, {args['prfx'][i][0][1]}{args['prfx'][i][1]}"
+			print(f" {leftSide}{' '*(30-len(leftSide))}{args['desc'][i]}", end="\n\n" if(i in (3, 5, len(args['desc'])-1)) else "\n")
 
 	elif(argv[1] in args["prfx"][-2][0]): # Mode Debugger
 		isLinux = True if(system() == "Linux") else False
@@ -135,15 +136,17 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 		print(f"{Icons.warn}{reg['menu']['config']['success']}")
 		return(False)
 
-	for key, row in enumerate([
+	menu = [
 		"",
-		f"{reg['menu']['config']['content']['encoding']}",
-		f"{reg['menu']['config']['content']['language']}",
-		f"{reg['menu']['config']['content']['splash']}",
-	]):
-		print(f" {f'{Colors.cyan}{key}.{Colors.end}' if(key > 0) else ''} {row}")
+		reg['menu']['config']['content']['encoding'],
+		reg['menu']['config']['content']['language'],
+		reg['menu']['config']['content']['splash']
+	]
 
-	print(f"\n {Colors.red}0.{Colors.end} {reg['menu']['config']['back']}\n")
+	for key, row in enumerate(menu):
+		print(f" {f'{Colors.cyan}{key}.{Colors.end}' if(key > 0) else ''} {row}", end="\n\n" if(key == len(menu)-1) else "\n")
+
+	print(f" {Colors.red}0.{Colors.end} {reg['menu']['config']['back']}", end="\n\n")
 
 	while(True):
 		while(True):
@@ -206,10 +209,10 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 		menu.append(game(reg, cfg.encoding).gameName)
 
 	for key, row in enumerate(menu):
-		print(f" {'' if(key == 0) else f'{Colors.cyan}{key}.{Colors.end} '}{row}")
+		print(f" {'' if(key == 0) else f'{Colors.cyan}{key}.{Colors.end} '}{row}", end="\n\n" if(key == len(menu)-1) else "\n")
 
-	print( f"\n {Colors.yellow}{len(menu)}.{Colors.end} {reg['menu']['set']}")
-	print( f" {Colors.red}0.{Colors.end} {reg['menu']['quit']}\n")
+	print( f" {Colors.yellow}{len(menu)}.{Colors.end} {reg['menu']['set']}")
+	print( f" {Colors.red}0.{Colors.end} {reg['menu']['quit']}", end="\n\n")
 
 	while(True):
 		while(True):

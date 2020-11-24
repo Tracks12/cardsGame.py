@@ -2,15 +2,15 @@
   "args": {
     "intro": ["Die Kartenspiele", "Starten Sie", "Einwände"],
     "desc": [
-      "\tZeigt eine Paketkarte an",
-      "\tZeigt das gesamte Kartenpaket an",
+      "Zeigt eine Paketkarte an",
+      "Zeigt das gesamte Kartenpaket an",
       "Zeigt eine gemischte Paketkarte an",
-      "\tZeigt alle Karten des gemischten Pakets an\n",
-      "\tStarten Sie ein Kartenspiel",
-      "Einen oder mehrere Spieler einfügen\n",
-      "\t\tZeigt das Hilfemenü an",
-      "\t\tDebug-Modus",
-      "\t\tZeigt die Version des Programms an\n"
+      "Zeigt alle Karten des gemischten Pakets an",
+      "Starten Sie ein Kartenspiel",
+      "Einen oder mehrere Spieler einfügen",
+      "Zeigt das Hilfemenü an",
+      "Debug-Modus",
+      "Zeigt die Version des Programms an"
     ]
   },
   "debug": {

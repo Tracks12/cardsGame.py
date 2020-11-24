@@ -34,13 +34,15 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 		for card in self.__table:
 			color = str(Colors.red if(card[1][1] in ("♥", "♦")) else Colors.cyan)
+			plyrName = self.getPlayerById(card[0])['name']
+			spacing = 8
 
-			screen[0] += ",-----,\t\t"
-			screen[1] += f"|{color}{card[1][0]}{' ' if(len(card[1][0]) < 2) else ''}{Colors.end}   |\t\t"
-			screen[2] += f"|  {color}{card[1][1]}{Colors.end}  |\t\t"
-			screen[3] += f"|   {color}{' ' if(len(card[1][0]) < 2) else ''}{card[1][0]}{Colors.end}|\t\t"
-			screen[4] += "`-----`\t\t"
-			screen[5] += f" {self.getPlayerById(card[0])['name']}\t\t"
+			screen[0] += f",-----,{' '*spacing}"
+			screen[1] += f"|{color}{card[1][0]}{' ' if(len(card[1][0]) < 2) else ''}{Colors.end}   |{' '*spacing}"
+			screen[2] += f"|  {color}{card[1][1]}{Colors.end}  |{' '*spacing}"
+			screen[3] += f"|   {color}{' ' if(len(card[1][0]) < 2) else ''}{card[1][0]}{Colors.end}|{' '*spacing}"
+			screen[4] += f"`-----`{' '*spacing}"
+			screen[5] += f" {self.getPlayerById(card[0])['name']}{' '*(spacing-(len(self.getPlayerById(card[0])['name'])-5)+1)}"
 
 		for line in screen:
 			print(line)

@@ -26,15 +26,15 @@ class Regions:
 				"args": {
 					"intro": ["Card games", "Launch", "Arguments"],
 					"desc": [
-						"\tDisplays a packet card",
-						"\tDisplays the entire packet of cards",
+						"Displays a packet card",
+						"Displays the entire packet of cards",
 						"Displays a mixed packet card",
-						"\tDisplays all cards of the shuffled packet\n",
-						"\tLaunch a card game",
-						"Insert one or more player(s)\n",
-						"\t\tDisplays the help menu",
-						"\t\tDebug mode",
-						"\t\tDisplays the version of the program\n"
+						"Displays all cards of the shuffled packet",
+						"Launch a card game",
+						"Insert one or more player(s)",
+						"Displays the help menu",
+						"Debug mode",
+						"Displays the version of the program"
 					]
 				},
 				"debug": {

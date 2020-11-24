@@ -2,15 +2,15 @@
   "args": {
     "intro": ["Jeux de cartes", "Lancement", "Arguments"],
     "desc": [
-      "\tAffiche une carte du paquet",
-      "\tAffiche tout le paquet de cartes",
+      "Affiche une carte du paquet",
+      "Affiche tout le paquet de cartes",
       "Affiche une carte du paquet mélangé",
-      "\tAffiche toutes les cartes du paquet mélangé\n",
-      "\tLance un jeu de carte",
-      "Insérer un ou plusieurs joueur(s)\n",
-      "\t\tAffiche le menu d'aide",
-      "\t\tMode debugger",
-      "\t\tAffiche la version du programme\n"
+      "Affiche toutes les cartes du paquet mélangé",
+      "Lance un jeu de carte",
+      "Insérer un ou plusieurs joueur(s)",
+      "Affiche le menu d'aide",
+      "Mode debugger",
+      "Affiche la version du programme"
     ]
   },
   "debug": {
