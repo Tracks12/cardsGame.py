@@ -40,7 +40,7 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 		print(f" {reg['args']['intro'][2]}:")
 
 		for i in range(0, len(args["prfx"])):
-			leftSide = f"{args['prfx'][i][0][0]}, {args['prfx'][i][0][1]}{args['prfx'][i][1]}"
+			leftSide = f"{args['prfx'][i][0][0]}, {args['prfx'][i][0][1]} {args['prfx'][i][1]}"
 			print(f" {leftSide}{' '*(30-len(leftSide))}{args['desc'][i]}", end="\n\n" if(i in (3, 5, len(args['desc'])-1)) else "\n")
 
 	elif(argv[1] in args["prfx"][-2][0]): # Mode Debugger
