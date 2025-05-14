@@ -102,7 +102,7 @@ Si le fichier de configuration contient un label de langue non-reconnu, alors **
 
 ### Jeux implémentés
 
-Les jeux implémentés sont contenus dans le répertoire **[core/games](core/games/)** sous la forme d'objet et sont déclarés à la fin du **[main.py](main.py)** sous la forme d'un **array**
+Les jeux implémentés sont contenus dans le répertoire **[games](games/)** sous la forme d'objet et sont déclarés à la fin du **[main.py](main.py)** sous la forme d'un **array**
 
 ```python
 if __name__ == "__main__":
