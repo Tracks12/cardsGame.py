@@ -1,0 +1,66 @@
+{
+  "args": {
+    "intro": ["Juegos de cartas", "Iniciar", "Argumentos"],
+    "desc": [
+      "Muestra una carta de la baraja",
+      "Muestra toda la baraja",
+      "Muestra una carta de la baraja barajada",
+      "Muestra todas las cartas de la baraja barajada",
+      "Inicia un juego de cartas",
+      "Insertar uno o más jugadores",
+      "Muestra la lista de juegos y jugadores",
+      "Muestra el menú de ayuda",
+      "Modo depurador",
+      "Muestra la versión del programa"
+    ]
+  },
+  "debug": {
+    "continue": "Pulse cualquier tecla para continuar..."
+  },
+  "err": {
+    "menuCho": "Esta opción no existe",
+    "cardNum": "Especifique un número de carta",
+    "gameName": "Ingrese a una partida name",
+    "player": "La lista de jugadores es incorrecta",
+    "list": "Tipo de lista desconocido"
+  },
+  "tip": {},
+  "menu": {
+    "config": {
+      "content": {
+        "encoding": "Codificación",
+        "language": "Idioma",
+        "splash": "Pantalla de inicio"
+      },
+      "label": "settings",
+      "back": "atrás",
+      "success": "Configuración aplicada",
+      "failed": "Configuración no aplicada",
+      "restart": "Reinicie el programa para aplicar la nueva configuración"
+    },
+    "txt": "Elige un modo de juego",
+    "quit": "Salir",
+    "set": "Configuración"
+  },
+  "game": {
+    "closedBattle": {
+      "name": "Batalla cerrada",
+      "round": "Ronda",
+      "winner": "Ganador"
+    },
+    "solitary": {
+      "name": "Solitario"
+    },
+    "peckerLady": {
+      "name": "La Reina de Picas"
+    },
+    "chickenshit": {
+      "name": "El Pésimo"
+    },
+    "liar": {
+      "name": "El Mentiroso"
+    },
+    "notFinished": "Este juego no ha terminado"
+  },
+  "vers": "par"
+}

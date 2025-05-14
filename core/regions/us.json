@@ -8,6 +8,7 @@
       "Displays all cards of the shuffled packet",
       "Launch a card game",
       "Insert one or more player(s)",
+      "Show the list of games and players",
       "Displays the help menu",
       "Debug mode",
       "Displays the version of the program"
@@ -20,7 +21,8 @@
     "menuCho": "This choice does not exist",
     "cardNum": "Specify a card number",
     "gameName": "Enter a game name",
-    "player": "Player list is incorrect"
+    "player": "Player list is incorrect",
+    "list": "Unknown list type"
   },
   "tip": {},
   "menu": {

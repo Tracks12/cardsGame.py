@@ -11,7 +11,7 @@ class LoadPlayers:
 	def __init__(self, encode):
 		self.players	= list([])
 		self.__encode	= str(encode)
-		self.__path		= str("core/players")
+		self.__path	= str("core/players")
 
 		self.__loadJSON()
 

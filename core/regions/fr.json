@@ -8,6 +8,7 @@
       "Affiche toutes les cartes du paquet mélangé",
       "Lance un jeu de carte",
       "Insérer un ou plusieurs joueur(s)",
+      "Affiche la liste des jeux et des joueurs",
       "Affiche le menu d'aide",
       "Mode debugger",
       "Affiche la version du programme"
@@ -20,7 +21,8 @@
     "menuCho": "Ce choix n'existe pas",
     "cardNum": "Spécifier un numéro de carte",
     "gameName": "Entrer un nom de jeu",
-    "player": "La liste de joueur est incorrect"
+    "player": "La liste de joueur est incorrect",
+    "list": "Type de liste inconnu"
   },
   "tip": {},
   "menu": {

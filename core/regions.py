@@ -32,6 +32,7 @@ class Regions:
 						"Displays all cards of the shuffled packet",
 						"Launch a card game",
 						"Insert one or more player(s)",
+						"Affiche la liste des jeux et des joueurs",
 						"Displays the help menu",
 						"Debug mode",
 						"Displays the version of the program"
@@ -44,7 +45,8 @@ class Regions:
 					"menuCho": "This choice does not exist",
 					"cardNum": "Specify a card number",
 					"gameName": "Enter a game name",
-					"player": "Player list is incorrect"
+					"player": "Player list is incorrect",
+					"list":"Type de liste inconnu"
 				},
 				"tip": {},
 				"menu": {

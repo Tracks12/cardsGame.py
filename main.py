@@ -14,19 +14,45 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 
 from core.config import Config
 from core.regions import Regions
-from core.players import LoadPlayers
+from core.players import LoadPlayers, Players
 from core.cards import Cards
-from core.games import *
+
+from games import *
 
 def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
+	def sortGames():
+		print(f" [ Jeux ]:\n --{'-'*len('Jeux')}--")
+		print(f" *  Nom{' '*(21-len('Nom'))}Jouable{' '*(15-len('Jouable'))}Chemin")
+		for i, game in enumerate(games):
+			g = game(reg, cfg.encoding)
+			finished = f"{Colors.green}Oui{Colors.end}" if(g.finished) else f"{Colors.red}Non{Colors.end}"
+			print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{g.gameName}{Colors.end}{' '*(21-len(g.gameName))}{str(finished)}{' '*(24-len(str(finished)))}{g.__file__}")
+
+		print("")
+
+	def sortPlayers():
+		players = Players(cfg.encoding)
+
+		playerList = []
+		for player in players.getPlayers():
+			playerList.append(player["name"])
+
+		print(f" [ Joueurs ]:\n --{'-'*len('Joueurs')}--")
+		print(f" *  Nom")
+		for i, player in enumerate(playerList):
+			print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{player}{Colors.end}")
+
+		print("")
+
 	args = {
 		"prfx": (
 			(("-s", "--show-card"), "<x>"),
 			(("-S", "--show-all"), ""),
 			(("-r", "--show-rand-card"), "<x>"),
 			(("-R", "--show-rand-all"), ""),
-			(("-g", "--game"), "<gameName>"),
+			(("-g", "--game"), "<name>"),
 			(("-p", "--players"), "\"['name', ...]\""),
+			(("-l", "--list"), "players|games"),
 			(("-h", "--help"), ""),
 			(("-d", "--debug"), ""),
 			(("-v", "--version"), "")
@@ -62,7 +88,6 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 		except Exception:
 			print(f"{Icons.warn}{reg['err']['cardNum']}")
-
 			return(False)
 
 		packets.dispOneCard(card)
@@ -79,7 +104,6 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 		except Exception:
 			print(f"{Icons.warn}{reg['err']['cardNum']}")
-
 			return(False)
 
 		packets.mixCards()
@@ -96,7 +120,6 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 		except Exception:
 			print(f"{Icons.warn}{reg['err']['gameName']}")
-
 			return(False)
 
 		gameList = []
@@ -119,11 +142,26 @@ def arg(cfg, reg, info, games): # Fonction d'entrée des arguments
 
 		except Exception:
 			print(f"{Icons.warn}{reg['err']['player']}")
-
 			return(False)
 
 		players	= LoadPlayers(cfg.encoding)
 		players.insert(playersList)
+
+	elif(argv[1] in args["prfx"][6][0]): # Affiche toute la configuration
+		try:
+			if(argv[2] == "games"):
+				sortGames()
+
+			elif(argv[2] == "players"):
+				sortPlayers()
+
+			else:
+				print(f"{Icons.warn}{reg['err']['list']}")
+				return(False)
+
+		except Exception as e:
+			sortGames()
+			sortPlayers()
 
 	return(True)
 
@@ -243,7 +281,14 @@ def main(cfg, reg, info, games): # Fonction principale de l'execution du program
 	return(True)
 
 if __name__ == "__main__":
-	games = [ ClosedBattle, Solitary, PeckerLady, Chickenshit, Liar ]
+	games = [
+		ClosedBattle,
+		Solitary,
+		PeckerLady,
+		Chickenshit,
+		Liar
+	]
+
 	info = {
 		"name": "cardsGame.py",
 		"vers": "0.2",

@@ -8,6 +8,7 @@
       "Zeigt alle Karten des gemischten Pakets an",
       "Starten Sie ein Kartenspiel",
       "Einen oder mehrere Spieler einfügen",
+      "Zeigt die Liste der Spiele und Spieler an",
       "Zeigt das Hilfemenü an",
       "Debug-Modus",
       "Zeigt die Version des Programms an"
@@ -20,7 +21,8 @@
     "menuCho": "Diese Wahl gibt es nicht",
     "cardNum": "Geben Sie eine Kartennummer an",
     "gameName": "Geben Sie einen Spielnamen ein",
-    "player": "Die Spielerliste ist falsch"
+    "player": "Die Spielerliste ist falsch",
+    "list": "Unbekannter Listentyp"
   },
   "tip": {},
   "menu": {
