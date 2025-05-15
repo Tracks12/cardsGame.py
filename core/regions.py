@@ -32,7 +32,7 @@ class Regions:
 						"Displays all cards of the shuffled packet",
 						"Launch a card game",
 						"Insert one or more player(s)",
-						"Affiche la liste des jeux et des joueurs",
+						"Show the list of games and players",
 						"Displays the help menu",
 						"Debug mode",
 						"Displays the version of the program"
@@ -46,7 +46,7 @@ class Regions:
 					"cardNum": "Specify a card number",
 					"gameName": "Enter a game name",
 					"player": "Player list is incorrect",
-					"list":"Type de liste inconnu"
+					"list": "Unknown list type"
 				},
 				"tip": {},
 				"menu": {
@@ -90,4 +90,4 @@ class Regions:
 			}
 
 			print(f"{Icons.warn}The loading of the language module failed")
-			print(f'{Icons.info}Check the language file is complete in "core/regions/"')
+			print(f'{Icons.info}Check the "config.json" or if the language file is complete in "core/regions/"')
