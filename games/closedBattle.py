@@ -23,10 +23,10 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 			("8", 8), ("7", 7), ("6", 6), ("5", 5), ("4", 4), ("3", 3), ("2", 2)
 		))
 
-	def __clearTable(self): # Vide le plateau
+	def __clearTable(self) -> None: # Vide le plateau
 		self.__table = list([])
 
-	def __displayCardOnTable(self): # Affichage des cartes joueurs
+	def __displayCardOnTable(self) -> None: # Affichage des cartes joueurs
 		screen = list([])
 		for i in range(0, 6):
 			screen.append("")
@@ -45,7 +45,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		for line in screen:
 			print(line)
 
-	def __distrib(self): # Distribution des cartes
+	def __distrib(self) -> None: # Distribution des cartes
 		spliting = int(len(self._packet)/len(self.getPlayers()))
 
 		for player in self.getPlayers():
@@ -53,13 +53,13 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 				player["hand"].append(self._packet[0])
 				self._packet.pop(0)
 
-	def __draw(self):
+	def __draw(self) -> None:
 		for card in self.__table:
 			self.getPlayerById(card[0])["deck"].append(card[1])
 
 		self.__clearTable()
 
-	def __update(self): # Mise à jour du jeu
+	def __update(self) -> None: # Mise à jour du jeu
 		max	= int(0)
 		id	= int(0)
 
@@ -89,13 +89,13 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		for card in self.__table:
 			self.getPlayerById(id)["deck"].append(card[1])
 
-	def __rules(self): # Application des règles du jeu
+	def __rules(self) -> None: # Application des règles du jeu
 		for player in self.getPlayers():
 			if((len(player["hand"]) + len(player["deck"])) == 52):
 				self.__end		= bool(True)
 				self.__winner	= dict(player)
 
-	def start(self): # Lancement de la partie
+	def start(self) -> bool: # Lancement de la partie
 		self.mixCards()
 		self.__distrib()
 

@@ -19,15 +19,15 @@ class PeckerLady(Cards, Players): # La dame de pic
 		self.__table	= list([])
 		self.__winner	= None
 
-	def __update(self):
+	def __update(self) -> None:
 		self.__end = bool(True)
 
-	def __rules(self):
+	def __rules(self) -> None:
 		for player in self.players:
 			if(player["score"] >= 100):
 				self.end = bool(True)
 
-	def start(self):
+	def start(self) -> bool:
 		while(not self.__end):
 			self.__update()
 

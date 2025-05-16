@@ -11,7 +11,7 @@ from core.icons import Icons
 from core.players import LoadPlayers, Players
 from core.regions import Regions
 
-def splash(reg, info): # Splash Screen
+def splash(reg, info) -> bool: # Splash Screen
 	for row in tuple((
 		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
 		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),

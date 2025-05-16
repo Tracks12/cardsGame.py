@@ -16,7 +16,7 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 from core import Cards, Config, LoadPlayers, Players, Regions
 from games import *
 
-def sortGames():
+def sortGames() -> None:
 	print(f" [ Jeux ]:\n --{'-'*len('Jeux')}--")
 	print(f" *  {reg['COMMON_NAME']}{' '*(21-len(reg['COMMON_NAME']))}{reg['COMMON_PLAYABLE']}{' '*(12-len(reg['COMMON_PLAYABLE']))}{reg['COMMON_PATH']}")
 	for i, game in enumerate(games):
@@ -26,7 +26,7 @@ def sortGames():
 
 	print("")
 
-def sortPlayers():
+def sortPlayers() -> None:
 	players = Players(cfg.encoding)
 
 	print(f" [ Joueurs ]:\n --{'-'*len('Joueurs')}--")
@@ -36,7 +36,7 @@ def sortPlayers():
 
 	print("")
 
-def launch(cfg, reg, game): # Fonction de lancement du jeu
+def launch(cfg, reg, game) -> bool: # Fonction de lancement du jeu
 	game = game(reg, cfg.encoding)
 	print(f"{Icons.play}{game.gameName}")
 
@@ -44,12 +44,14 @@ def launch(cfg, reg, game): # Fonction de lancement du jeu
 		print(f"{Icons.warn}{reg['GAME_NOTFINISHED']}")
 
 	try:
-		game.start()
+		return(game.start())
 
 	except Exception:
 		print(f"{Icons.warn}{format_exc()}")
 
-def arg(cfg, reg, info): # Fonction d'entrée des arguments
+	return(False)
+
+def arg(cfg, reg, info) -> bool: # Fonction d'entrée des arguments
 	args = dict({
 		"prfx": tuple((
 			(("-s", "--show-card"), "<x>"),
@@ -166,7 +168,7 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 
 	return(True)
 
-def playerManager(cfg, reg, info):
+def playerManager(cfg, reg, info) -> bool:
 	menu = tuple((
 		"",
 		reg['MENU_PLAYER_CONTENT_LIST'],
@@ -232,8 +234,8 @@ def playerManager(cfg, reg, info):
 
 	return(True)
 
-def config(cfg, reg, info): # Fonction de configuration du programme
-	def confirm(setter):
+def config(cfg, reg, info) -> bool: # Fonction de configuration du programme
+	def confirm(setter) -> bool:
 		if(setter):
 			print(f"{Icons.info}{reg['MENU_CONFIG_SUCCESS']}")
 			return(True)
@@ -305,7 +307,7 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 
 	return(True)
 
-def main(cfg, reg, info): # Fonction principale de l'execution du programme
+def main(cfg, reg, info) -> bool: # Fonction principale de l'execution du programme
 	if(cfg.splash):
 		splash(reg, info)
 

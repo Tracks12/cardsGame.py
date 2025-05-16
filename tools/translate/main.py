@@ -6,10 +6,10 @@ from json import dumps
 from os import mkdir, path
 from sys import argv
 
-def arg():
+def arg() -> bool:
   return(True)
 
-def main():
+def main() -> bool:
   dir_path = str(path.dirname(path.realpath(__file__)))
   datas = list([])
   regions = dict({})

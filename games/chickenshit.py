@@ -19,10 +19,10 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 		self.__table	= list([])
 		self.__winner	= None
 
-	def __update(self):
+	def __update(self) -> None:
 		self.__end = bool(True)
 
-	def start(self):
+	def start(self) -> bool:
 		while(not self.__end):
 			self.__update()
 
