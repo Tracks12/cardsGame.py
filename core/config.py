@@ -13,17 +13,17 @@ class Config:
 		self.__config	= dict({})
 		self.__encode	= str("utf-8")
 		self.__path		= str("config.json")
-		self.encoding 	= str(self.__encode)	# Encodage par défaut
+		self.encoding	= str(self.__encode)	# Encodage par défaut
 		self.language	= str("us")				# Langue par défaut
 		self.splash		= bool(True)			# Screen de bienvenu par défaut
 
 		self.loaded		= bool(self.__loadJSON())
 
-	def __loadJSON(self): # Importation du fichier de configuration
+	def __loadJSON(self) -> bool: # Importation du fichier de configuration
 		try:
 			with open(self.__path, "r", encoding=self.__encode) as outFile:
 				self.__config	= dict(load(outFile))
-				self.encoding 	= str(self.__config["encoding"])
+				self.encoding	= str(self.__config["encoding"])
 				self.language	= str(self.__config["language"])
 				self.splash		= bool(self.__config["splash"])
 
@@ -33,7 +33,7 @@ class Config:
 
 		return(True)
 
-	def __saveJSON(self): # Sauvearde du fichier de configuration
+	def __saveJSON(self) -> bool: # Sauvearde du fichier de configuration
 		try:
 			with open(self.__path, "w", encoding=self.__encode) as inFile:
 				self.__config = dict({
@@ -50,7 +50,7 @@ class Config:
 
 		return(True)
 
-	def setEncode(self, coding = "utf-8"): # Encodage setter
+	def setEncode(self, coding = str("utf-8")) -> bool: # Encodage setter
 		if(coding.lower() in ("ascii", "utf-8", "utf-16", "utf-32")):
 			self.encoding = str(coding.lower())
 			self.__saveJSON()
@@ -59,7 +59,7 @@ class Config:
 
 		return(False)
 
-	def setLanguage(self, lang = "us"): # Langage setter
+	def setLanguage(self, lang = str("us")) -> bool: # Langage setter
 		langs	= listdir("core/regions")
 		for k, v in enumerate(langs):
 			langs[k] = v.split(".")[0]
@@ -72,7 +72,7 @@ class Config:
 
 		return(False)
 
-	def setSplash(self, splash = True): # Splash setter
+	def setSplash(self, splash = bool(True)) -> bool: # Splash setter
 		self.splash = bool(splash in ("True", "true"))
 		self.__saveJSON()
 

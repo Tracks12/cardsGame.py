@@ -15,7 +15,7 @@ class LoadPlayers:
 
 		self.__loadJSON()
 
-	def __loadJSON(self):
+	def __loadJSON(self) -> None:
 		try:
 			with open(self.__path, "r", encoding=self.__encode) as outFile:
 				self.players = list(loads(B64.decode(outFile.read())))
@@ -23,7 +23,7 @@ class LoadPlayers:
 		except Exception:
 			self.players = list([])
 
-	def __saveJSON(self):
+	def __saveJSON(self) -> bool:
 		try:
 			with open(self.__path, "w", encoding=self.__encode) as inFile:
 				inFile.write(B64.encode(dumps(self.players)))
@@ -33,7 +33,7 @@ class LoadPlayers:
 		except Exception:
 			return(False)
 
-	def insert(self, players):
+	def insert(self, players) -> bool:
 		self.players = list(players)
 
 		return(self.__saveJSON())
@@ -46,37 +46,37 @@ class Players(LoadPlayers):
 
 		self.__addPlayer(self.players)
 
-	def __addPlayer(self, name): # Ajout d'un joueur
+	def __addPlayer(self, name) -> None: # Ajout d'un joueur
 		for i in range(0, len(name)):
-			self._players.append({
-				"id":		len(self._players)+1,
+			self._players.append(dict({
+				"id":			int(len(self._players)+1),
 				"name":		str(name[i]),
 				"score":	int(0),
 				"deck":		list([]),
 				"hand":		list([])
-			})
+			}))
 
-	def getPlayers(self): # Affichage de la liste des joueurs
+	def getPlayers(self) -> list: # Affichage de la liste des joueurs
 		return(self._players)
 
-	def getPlayerNames(self): # Affichage de la liste des joueurs
-		playerList = []
+	def getPlayerNames(self) -> list: # Affichage de la liste des joueurs
+		playerList = list([])
 		for player in self._players:
 			playerList.append(player["name"])
 
 		return(playerList)
 
-	def getPlayerById(self, plyrId): # Affichage d'un joueur par son id
+	def getPlayerById(self, plyrId) -> dict: # Affichage d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["id"] == int(plyrId)):
 				return(self._players[key])
 
-	def getPlayerByName(self, plyrName): # Affichage d'un joueur par son nom
+	def getPlayerByName(self, plyrName) -> dict: # Affichage d'un joueur par son nom
 		for key, player in enumerate(self._players):
 			if(player["name"] == str(plyrName)):
 				return(self._players[key])
 
-	def delPlayerById(self, plyrId): # Suppression d'un joueur par son id
+	def delPlayerById(self, plyrId) -> bool: # Suppression d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["id"] == int(plyrId)):
 				self._players.remove(player)
@@ -85,7 +85,7 @@ class Players(LoadPlayers):
 
 		return(False)
 
-	def delPlayerByName(self, plyrName): # Suppression d'un joueur par son id
+	def delPlayerByName(self, plyrName) -> bool: # Suppression d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["name"] == str(plyrName)):
 				self._players.remove(player)

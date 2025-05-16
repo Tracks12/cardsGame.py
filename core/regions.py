@@ -16,14 +16,14 @@ class Regions:
 
 		self.__loadJSON()
 
-	def __loadJSON(self): # Chargement des langues depuis un fichier
+	def __loadJSON(self) -> None: # Chargement des langues depuis un fichier
 		try:
 			with open(f"{self.__path}{self.__lang}.json", "r", encoding=self.__encode) as outFile:
 				self.content = dict(load(outFile))
 
 		except Exception: # Création du contenu de langue anglais par défaut
-			self.content = {
-				"ARGS_DESC": [
+			self.content = dict({
+				"ARGS_DESC": tuple((
 					"Displays a card from the deck",
 					"Displays the entire deck",
 					"Displays a card from the shuffled deck",
@@ -34,12 +34,12 @@ class Regions:
 					"Displays the help menu",
 					"Debugger mode",
 					"Displays the program version"
-				],
-				"ARGS_INTRO": [
+				)),
+				"ARGS_INTRO": tuple((
 					"Cards game",
 					"Launch",
 					"Arguments"
-				],
+				)),
 				"COMMON_BACK": "return",
 				"COMMON_BY": "by",
 				"COMMON_NAME": "Name",
@@ -57,24 +57,24 @@ class Regions:
 				"ERR_MENU_CHOICE": "This choice does not exist",
 				"ERR_PLAYER_EXIST": "Player does not exist",
 				"ERR_PLAYER_LIST": "The player list is incorrect",
-				"GAME_CHICKENSHIT": {
+				"GAME_CHICKENSHIT": dict({
 					"_NAME": "The Lousy One"
-				},
-				"GAME_CLOSEDBATTLE": {
+				}),
+				"GAME_CLOSEDBATTLE": dict({
 					"_NAME": "Closed Battle",
 					"_ROUND": "Round",
 					"_WINNER": "is winner"
-				},
-				"GAME_LIAR": {
+				}),
+				"GAME_LIAR": dict({
 					"_NAME": "The Liar"
-				},
+				}),
 				"GAME_NOTFINISHED": "This game is not finished",
-				"GAME_PECKERLADY": {
+				"GAME_PECKERLADY": dict({
 					"_NAME": "The Queen of Spades"
-				},
-				"GAME_SOLITARY": {
+				}),
+				"GAME_SOLITARY": dict({
 					"_NAME": "Solitaire"
-				},
+				}),
 				"MENU_CHOICE_PLAYER": "Players",
 				"MENU_CHOICE_QUIT": "Quit",
 				"MENU_CHOICE_SETTINGS": "Settings",
@@ -94,7 +94,7 @@ class Regions:
 				"MENU_PLAYER_RESULT_ADDED": "has been added",
 				"MENU_PLAYER_RESULT_DELETED": "has been deleted",
 				"MENU_TEXT": "Choose a game mode"
-			}
+			})
 
 			print(f"{Icons.warn}The loading of the language module failed")
 			print(f'{Icons.info}Check the "config.json" or if the language file is complete in "core/regions/"')

@@ -10,7 +10,7 @@ def arg():
   return(True)
 
 def main():
-  dir_path = path.dirname(path.realpath(__file__))
+  dir_path = str(path.dirname(path.realpath(__file__)))
   datas = list([])
   regions = dict({})
 
@@ -28,21 +28,21 @@ def main():
 
       for data in datas:
         if(("_GAME" in data["label"]) and (data["label"].split('_')[0] == "")):
-          labelSplitted = data["label"].split("_")
-          newGameLabel = f"{labelSplitted[1]}_{labelSplitted[2]}"
-          newLabel = data["label"].split(f"_{newGameLabel}")[1]
+          labelSplitted = list(data["label"].split("_"))
+          newGameLabel = str(f"{labelSplitted[1]}_{labelSplitted[2]}")
+          newLabel = str(data["label"].split(f"_{newGameLabel}")[1])
 
           if(not newGameLabel in regions[field]):
-            regions[field].update({ newGameLabel: {} })
+            regions[field].update({ newGameLabel: dict({}) })
 
           regions[field][newGameLabel].update({ newLabel: data[field] })
 
         elif(("ARGS_DESC" in data["label"]) or ("ARGS_INTRO" in data["label"])):
-          labelSplitted = data["label"].split("_")
-          newArgsLabel = f"{labelSplitted[0]}_{labelSplitted[1]}"
+          labelSplitted = list(data["label"].split("_"))
+          newArgsLabel = str(f"{labelSplitted[0]}_{labelSplitted[1]}")
 
           if(not newArgsLabel in regions[field]):
-            regions[field].update({ newArgsLabel: [] })
+            regions[field].update({ newArgsLabel: list([]) })
 
           regions[field][newArgsLabel].append(data[field])
 
@@ -61,11 +61,11 @@ def main():
   return(True)
 
 if(__name__ == "__main__"):
-	info = {
+	info = dict({
 		"name": "translate.py",
 		"vers": "0.1",
 		"author": "Florian Cardinal"
-	}
+	})
 
 	if(len(argv) > 1):
 		arg()

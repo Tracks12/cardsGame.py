@@ -18,11 +18,11 @@ from games import *
 
 def sortGames():
 	print(f" [ Jeux ]:\n --{'-'*len('Jeux')}--")
-	print(f" *  {reg['COMMON_NAME']}{' '*(21-len(reg['COMMON_NAME']))}{reg['COMMON_PLAYABLE']}{' '*(15-len(reg['COMMON_PLAYABLE']))}{reg['COMMON_PATH']}")
+	print(f" *  {reg['COMMON_NAME']}{' '*(21-len(reg['COMMON_NAME']))}{reg['COMMON_PLAYABLE']}{' '*(12-len(reg['COMMON_PLAYABLE']))}{reg['COMMON_PATH']}")
 	for i, game in enumerate(games):
 		g = game(reg, cfg.encoding)
-		finished = f"{Colors.green}{reg['COMMON_YES']}{Colors.end}" if(g.finished) else f"{Colors.red}{reg['COMMON_NO']}{Colors.end}"
-		print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{g.gameName}{Colors.end}{' '*(21-len(g.gameName))}{str(finished)}{' '*(24-len(str(finished)))}{g.__file__}")
+		finished = str(f"{Colors.green}{reg['COMMON_YES']}{Colors.end}" if(g.finished) else f"{Colors.red}{reg['COMMON_NO']}{Colors.end}")
+		print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{g.gameName}{Colors.end}{' '*(21-len(g.gameName))}{finished}{' '*(21-len(finished))}{g.__file__}")
 
 	print("")
 
@@ -50,8 +50,8 @@ def launch(cfg, reg, game): # Fonction de lancement du jeu
 		print(f"{Icons.warn}{format_exc()}")
 
 def arg(cfg, reg, info): # Fonction d'entrée des arguments
-	args = {
-		"prfx": (
+	args = dict({
+		"prfx": tuple((
 			(("-s", "--show-card"), "<x>"),
 			(("-S", "--show-all"), ""),
 			(("-r", "--show-rand-card"), "<x>"),
@@ -62,9 +62,9 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 			(("-h", "--help"), ""),
 			(("-d", "--debug"), ""),
 			(("-v", "--version"), "")
-		),
-		"desc": reg["ARGS_DESC"]
-	}
+		)),
+		"desc": tuple(reg["ARGS_DESC"])
+	})
 
 	if(argv[1] in args["prfx"][-3][0]): # Affiche le helper args
 		print(f" {reg['ARGS_INTRO'][0]}")
@@ -129,7 +129,7 @@ def arg(cfg, reg, info): # Fonction d'entrée des arguments
 			print(f"{Icons.warn}{reg['ERR_GAME_NAME']}")
 			return(False)
 
-		gameList = []
+		gameList = list([])
 		for game in games:
 			gameList.append(game(reg, cfg.encoding).gameName)
 
@@ -200,7 +200,7 @@ def playerManager(cfg, reg, info):
 			newPlayer = str(input(f"{reg['MENU_PLAYER_INPUT_NAME']}: {Colors.cyan}"))
 
 			players = Players(cfg.encoding)
-			newPlayerList = players.getPlayerNames()
+			newPlayerList = list(players.getPlayerNames())
 			newPlayerList.append(newPlayer)
 
 			loadedPlayers	= LoadPlayers(cfg.encoding)
@@ -216,8 +216,8 @@ def playerManager(cfg, reg, info):
 				playerId = int(input(f"{reg['MENU_PLAYER_INPUT_NUMBER']}: {Colors.cyan}"))
 
 				players = Players(cfg.encoding)
-				newPlayerList = players.getPlayerNames()
-				playerName = newPlayerList.pop(playerId-1)
+				newPlayerList = list(players.getPlayerNames())
+				playerName = str(newPlayerList.pop(playerId-1))
 
 				loadedPlayers	= LoadPlayers(cfg.encoding)
 				loadedPlayers.insert(newPlayerList)
@@ -268,11 +268,11 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 			break
 
 		elif(choice == 1):
-			codings = ("ascii", "utf-8", "utf-16", "utf-32")
-			prompt	= "["
+			codings = tuple(("ascii", "utf-8", "utf-16", "utf-32"))
+			prompt	= str("[")
 
 			for k, v in enumerate(codings):
-				prompt += f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(codings)-1) else ']'}"
+				prompt += str(f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(codings)-1) else ']'}")
 
 			coding = str(input(f"{reg['MENU_CONFIG_CONTENT_ENCODING']}: {prompt}: {Colors.cyan}"))
 			print(end=Colors.end)
@@ -280,13 +280,13 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 			confirm(cfg.setEncode(coding))
 
 		elif(choice == 2):
-			langs	= listdir("core/regions")
+			langs	= list(listdir("core/regions"))
 			for k, v in enumerate(langs):
-				langs[k] = v.split(".")[0]
+				langs[k] = str(v.split(".")[0])
 
-			prompt	= "["
+			prompt	= str("[")
 			for k, v in enumerate(langs):
-				prompt += f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(langs)-1) else ']'}"
+				prompt += str(f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(langs)-1) else ']'}")
 
 			lang = str(input(f"{reg['MENU_CONFIG_CONTENT_LANGUAGE']}: {prompt}: {Colors.cyan}"))
 			print(end=Colors.end)
@@ -294,7 +294,7 @@ def config(cfg, reg, info): # Fonction de configuration du programme
 			confirm(cfg.setLanguage(lang))
 
 		elif(choice == 3):
-			prompt = f"[{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]"
+			prompt = str(f"[{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]")
 			splash = str(input(f"{reg['MENU_CONFIG_CONTENT_SPLASH']}: {prompt}: {Colors.cyan}"))
 			print(end=Colors.end)
 
@@ -309,7 +309,7 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 	if(cfg.splash):
 		splash(reg, info)
 
-	menu = [ f"{reg['MENU_TEXT']}:\n" ]
+	menu = list([ f"{reg['MENU_TEXT']}:\n" ])
 	for game in games:
 		menu.append(game(reg, cfg.encoding).gameName)
 
@@ -346,11 +346,11 @@ def main(cfg, reg, info): # Fonction principale de l'execution du programme
 	return(True)
 
 if(__name__ == "__main__"):
-	info = {
+	info = dict({
 		"name": "cardsGame.py",
 		"vers": "0.3",
 		"author": "Florian Cardinal"
-	}
+	})
 
 	cfg = Config() # Chargement du fichier de configuration
 	reg = Regions(cfg.language, cfg.encoding).content # Chargement de la langue

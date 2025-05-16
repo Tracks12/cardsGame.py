@@ -7,7 +7,7 @@ from core.players import Players
 
 class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 	def __init__(self, lang, encode):
-		Cards.__init__(self, 1)
+		Cards.__init__(self, int(1))
 		Players.__init__(self, str(encode))
 
 		self.__file__ = __file__

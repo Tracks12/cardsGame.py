@@ -46,9 +46,9 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 			print(line)
 
 	def __distrib(self): # Distribution des cartes
-		spliting = int(len(self._packet)/len(self._players))
+		spliting = int(len(self._packet)/len(self.getPlayers()))
 
-		for player in self._players:
+		for player in self.getPlayers():
 			for i in range(0, spliting):
 				player["hand"].append(self._packet[0])
 				self._packet.pop(0)
@@ -63,7 +63,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		max	= int(0)
 		id	= int(0)
 
-		for player in self._players:
+		for player in self.getPlayers():
 			if(len(player["hand"]) == 0):
 				for card in player["deck"]:
 					player["hand"].append(card)
@@ -71,7 +71,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 				player["deck"] = list([])
 
-		for player in self._players:
+		for player in self.getPlayers():
 			if(len(player["hand"])):
 				self.__table.append([player["id"], player["hand"][0]])
 				player["hand"].pop(0)
@@ -90,7 +90,7 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 			self.getPlayerById(id)["deck"].append(card[1])
 
 	def __rules(self): # Application des règles du jeu
-		for player in self._players:
+		for player in self.getPlayers():
 			if((len(player["hand"]) + len(player["deck"])) == 52):
 				self.__end		= bool(True)
 				self.__winner	= dict(player)
@@ -101,14 +101,14 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 
 		while(not self.__end):
 			self.__round += 1
-			print(f"{(' ')*len(self._players)}{('-'*5)*len(self._players)} {self.content['_ROUND']}: {self.__round} {('-'*5)*len(self._players)}")
+			print(f"{(' ')*len(self.getPlayers())}{('-'*5)*len(self.getPlayers())} {self.content['_ROUND']}: {self.__round} {('-'*5)*len(self.getPlayers())}")
 			self.__update()
 			self.__displayCardOnTable()
 			self.__clearTable()
 			self.__rules()
 
 			print("")
-			for player in self._players:
+			for player in self.getPlayers():
 				print(f" {player['name']}: {len(player['hand']) + len(player['deck'])}")
 
 			print("")
