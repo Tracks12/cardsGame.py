@@ -6,7 +6,7 @@
 from json import dump, load
 from os import listdir
 
-from core import Icons
+from core.icons import Icons
 
 class Config:
 	def __init__(self):

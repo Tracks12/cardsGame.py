@@ -11,8 +11,8 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		Players.__init__(self, str(encode))
 
 		self.__file__ = __file__
-		self.content	= dict(lang["game"]["closedBattle"]) # Traductions du jeu
-		self.gameName	= str(self.content["name"]) # Nom du jeu
+		self.content	= dict(lang["GAME_CLOSEDBATTLE"]) # Traductions du jeu
+		self.gameName	= str(self.content["_NAME"]) # Nom du jeu
 		self.finished	= bool(True) # Jeu fini
 		self.__end		= bool(False) # État du jeu
 		self.__round	= int(0) # Nombre de tour
@@ -31,15 +31,16 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		for i in range(0, 6):
 			screen.append("")
 
-		for card in self.__table:
+		for i, card in enumerate(self.__table):
 			color = str(Colors.red if(card[1][1] in ("♥", "♦")) else Colors.cyan)
+			space = f"{' ' if(not i) else ' '*9}"
 
-			screen[0] += ",-----,\t\t"
-			screen[1] += f"|{color}{card[1][0]}{' ' if(len(card[1][0]) < 2) else ''}{Colors.end}   |\t\t"
-			screen[2] += f"|  {color}{card[1][1]}{Colors.end}  |\t\t"
-			screen[3] += f"|   {color}{' ' if(len(card[1][0]) < 2) else ''}{card[1][0]}{Colors.end}|\t\t"
-			screen[4] += "`-----`\t\t"
-			screen[5] += f" {self.getPlayerById(card[0])['name']}{' '*(15-len(self.getPlayerById(card[0])['name']))}"
+			screen[0] += f"{space},-----,"
+			screen[1] += f"{space}|{color}{card[1][0]}{' ' if(len(card[1][0]) < 2) else ''}{Colors.end}   |"
+			screen[2] += f"{space}|  {color}{card[1][1]}{Colors.end}  |"
+			screen[3] += f"{space}|   {color}{' ' if(len(card[1][0]) < 2) else ''}{card[1][0]}{Colors.end}|"
+			screen[4] += f"{space}`-----`"
+			screen[5] += f"{space}{self.getPlayerById(card[0])['name']}{' '*(7-len(self.getPlayerById(card[0])['name']))}"
 
 		for line in screen:
 			print(line)
@@ -99,19 +100,20 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		self.__distrib()
 
 		while(not self.__end):
-			print(f" ----- {self.content['round']}: {self.__round} -----")
+			self.__round += 1
+			print(f"{(' ')*len(self._players)}{('-'*5)*len(self._players)} {self.content['_ROUND']}: {self.__round} {('-'*5)*len(self._players)}")
 			self.__update()
 			self.__displayCardOnTable()
 			self.__clearTable()
 			self.__rules()
-			self.__round += 1
 
 			print("")
 			for player in self._players:
 				print(f" {player['name']}: {len(player['hand']) + len(player['deck'])}")
 
 			print("")
+			# input()
 
-		print(f" {self.__winner['name']} {self.content['winner']} !")
+		print(f" {self.__winner['name']} {self.content['_WINNER']} !")
 
 		return(True)

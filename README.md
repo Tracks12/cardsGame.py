@@ -58,6 +58,7 @@ Exécution du script: `$ python main.py <arg>`
 | `-R`, `--show-rand-all`          | -                                    | Affiche toutes les cartes du paquet mélangé |
 | `-g`, `--game`                   | `<gameName>` nom du jeu              | Lance un jeu de carte                       |
 | `-p`, `--players`                | `"['name', ...]"` liste de joueur(s) | Insérer un ou plusieurs joueur(s)           |
+| `-l`, `--list`                   | `games\|players`                     | Affiche la liste des jeux et des joueurs    |
 | `-h`, `--help`                   | -                                    | Affiche le menu d'aide                      |
 | `-d`, `--debug`                  | -                                    | Exécution en mode debuger                   |
 | `-v`, `--version`                | -                                    | Affiche la version du programme             |
@@ -86,7 +87,7 @@ La configuration du programme se fait depuis le fichier **[config.json](config.j
 }
 ```
 
-Vous pouvez le modifier directement (ce qui est peu conseiller) ou bien passer par le programme de configuration avec **tous les choix des paramètres possible à l'option 6 du menu principal**.
+Vous pouvez le modifier directement (ce qui est peu conseiller) ou bien passer par le programme de configuration avec **tous les choix des paramètres possible à l'option "Paramètres" du menu principal**.
 
 [Sommaire](#sommaire)
 
@@ -102,12 +103,22 @@ Si le fichier de configuration contient un label de langue non-reconnu, alors **
 
 ### Jeux implémentés
 
-Les jeux implémentés sont contenus dans le répertoire **[games](games/)** sous la forme d'objet et sont déclarés à la fin du **[main.py](main.py)** sous la forme d'un **array**
+Les jeux implémentés sont contenus dans le répertoire **[games](games/)** sous la forme d'objet et sont déclarés dans le module **[games](games/__init__.py)** sous la forme d'un **array**
 
 ```python
-if __name__ == "__main__":
-	games = [ ClosedBattle, Solitary, PeckerLady, Chickenshit, Liar ]
-	# {...}
+from games.chickenshit import Chickenshit
+from games.closedBattle import ClosedBattle
+from games.liar import Liar
+from games.peckerLady import PeckerLady
+from games.solitary import Solitary
+
+games = [ # Registre des jeux
+  ClosedBattle,
+  Solitary,
+  PeckerLady,
+  Chickenshit,
+  Liar
+]
 ```
 
 | Nom du jeu                                                                          | Jouable |

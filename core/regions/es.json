@@ -1,66 +1,73 @@
 {
-  "args": {
-    "intro": ["Juegos de cartas", "Iniciar", "Argumentos"],
-    "desc": [
-      "Muestra una carta de la baraja",
-      "Muestra toda la baraja",
-      "Muestra una carta de la baraja barajada",
-      "Muestra todas las cartas de la baraja barajada",
-      "Inicia un juego de cartas",
-      "Insertar uno o más jugadores",
-      "Muestra la lista de juegos y jugadores",
-      "Muestra el menú de ayuda",
-      "Modo depurador",
-      "Muestra la versión del programa"
-    ]
+  "ARGS_DESC": [
+    "Muestra una carta de la baraja.",
+    "Muestra la baraja completa",
+    "Muestra una carta de la baraja barajada.",
+    "Muestra todas las cartas de la baraja barajada.",
+    "Lanza un juego de cartas",
+    "Insertar uno o m\u00e1s jugadores",
+    "Muestra la lista de juegos y jugadores.",
+    "Muestra el men\u00fa de ayuda",
+    "Modo depurador",
+    "Muestra la versi\u00f3n del programa."
+  ],
+  "ARGS_INTRO": [
+    "Juego de cartas",
+    "Lanzamiento",
+    "Argumentos"
+  ],
+  "COMMON_BACK": "devolver",
+  "COMMON_BY": "por",
+  "COMMON_NAME": "Nombre",
+  "COMMON_NO": "No",
+  "COMMON_PATH": "Camino",
+  "COMMON_PLAYABLE": "Interpretable",
+  "COMMON_PLAYER": "El jugador",
+  "COMMON_UNPLAYABLE": "No jugable",
+  "COMMON_YES": "S\u00ed",
+  "DEBUG_CONTINUE": "Presione cualquier tecla para continuar...",
+  "DEBUG_STARTING": "Lanzamiento en modo depurador",
+  "ERR_CARD_NUMBER": "Especifique un n\u00famero de tarjeta",
+  "ERR_GAME_NAME": "Introduce un nombre de juego",
+  "ERR_LIST": "Tipo de lista desconocida",
+  "ERR_MENU_CHOICE": "Esta elecci\u00f3n no existe",
+  "ERR_PLAYER_EXIST": "El jugador no existe",
+  "ERR_PLAYER_LIST": "La lista de jugadores es incorrecta",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "El p\u00e9simo"
   },
-  "debug": {
-    "continue": "Pulse cualquier tecla para continuar..."
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "Batalla cerrada",
+    "_ROUND": "Redondo",
+    "_WINNER": "es ganador"
   },
-  "err": {
-    "menuCho": "Esta opción no existe",
-    "cardNum": "Especifique un número de carta",
-    "gameName": "Ingrese a una partida name",
-    "player": "La lista de jugadores es incorrecta",
-    "list": "Tipo de lista desconocido"
+  "GAME_LIAR": {
+    "_NAME": "El mentiroso"
   },
-  "tip": {},
-  "menu": {
-    "config": {
-      "content": {
-        "encoding": "Codificación",
-        "language": "Idioma",
-        "splash": "Pantalla de inicio"
-      },
-      "label": "settings",
-      "back": "atrás",
-      "success": "Configuración aplicada",
-      "failed": "Configuración no aplicada",
-      "restart": "Reinicie el programa para aplicar la nueva configuración"
-    },
-    "txt": "Elige un modo de juego",
-    "quit": "Salir",
-    "set": "Configuración"
+  "GAME_NOTFINISHED": "Este juego no est\u00e1 terminado",
+  "GAME_PECKERLADY": {
+    "_NAME": "La reina de espadas"
   },
-  "game": {
-    "closedBattle": {
-      "name": "Batalla cerrada",
-      "round": "Ronda",
-      "winner": "Ganador"
-    },
-    "solitary": {
-      "name": "Solitario"
-    },
-    "peckerLady": {
-      "name": "La Reina de Picas"
-    },
-    "chickenshit": {
-      "name": "El Pésimo"
-    },
-    "liar": {
-      "name": "El Mentiroso"
-    },
-    "notFinished": "Este juego no ha terminado"
+  "GAME_SOLITARY": {
+    "_NAME": "Solitario"
   },
-  "vers": "par"
+  "MENU_CHOICE_PLAYER": "Jugadores",
+  "MENU_CHOICE_QUIT": "Abandonar",
+  "MENU_CHOICE_SETTINGS": "Ajustes",
+  "MENU_CONFIG_CONTENT_ENCODING": "Codificaci\u00f3n",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "Idioma",
+  "MENU_CONFIG_CONTENT_SPLASH": "Pantalla de bienvenida",
+  "MENU_CONFIG_FAIL": "Configuraci\u00f3n no aplicada",
+  "MENU_CONFIG_LABEL": "ajustes",
+  "MENU_CONFIG_RESTART": "Reinicie el programa para aplicar la nueva configuraci\u00f3n",
+  "MENU_CONFIG_SUCCESS": "Configuraci\u00f3n aplicada",
+  "MENU_PLAYER_CONTENT_ADD": "Agregar un jugador",
+  "MENU_PLAYER_CONTENT_LIST": "Mostrar lista de jugadores",
+  "MENU_PLAYER_CONTENT_REMOVE": "Eliminar un jugador",
+  "MENU_PLAYER_INPUT_NAME": "Nuevo nombre de jugador",
+  "MENU_PLAYER_INPUT_NUMBER": "N\u00famero de jugador a eliminar",
+  "MENU_PLAYER_LABEL": "jugadores",
+  "MENU_PLAYER_RESULT_ADDED": "Se ha a\u00f1adido",
+  "MENU_PLAYER_RESULT_DELETED": "ha sido eliminado",
+  "MENU_TEXT": "Elige un modo de juego"
 }

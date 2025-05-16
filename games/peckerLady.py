@@ -11,8 +11,8 @@ class PeckerLady(Cards, Players): # La dame de pic
 		Players.__init__(self, str(encode))
 
 		self.__file__ = __file__
-		self.content	= dict(lang["game"]["peckerLady"])
-		self.gameName	= str(self.content["name"])
+		self.content	= dict(lang["GAME_PECKERLADY"])
+		self.gameName	= str(self.content["_NAME"])
 		self.finished	= bool(False)
 		self.__end		= bool(False)
 		self.__round	= int(0)

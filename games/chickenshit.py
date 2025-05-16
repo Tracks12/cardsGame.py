@@ -11,8 +11,8 @@ class Chickenshit(Cards, Players): # Le pouilleux ou mistigri
 		Players.__init__(self, str(encode))
 
 		self.__file__ = __file__
-		self.content	= dict(lang["game"]["chickenshit"])
-		self.gameName	= str(self.content["name"])
+		self.content	= dict(lang["GAME_CHICKENSHIT"])
+		self.gameName	= str(self.content["_NAME"])
 		self.finished	= bool(False)
 		self.__end		= bool(False)
 		self.__round	= int(0)

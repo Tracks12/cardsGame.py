@@ -5,7 +5,7 @@
 
 from random import shuffle
 
-from core import Colors
+from core.colors import Colors
 
 class Cards: # Objet de jeu de cartes
 	def __init__(self, joker = 0): # Construction du jeu de 52 cartes avec/sans les jokers

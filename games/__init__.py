@@ -6,3 +6,11 @@ from games.closedBattle import ClosedBattle
 from games.liar import Liar
 from games.peckerLady import PeckerLady
 from games.solitary import Solitary
+
+games = [ # Registre des jeux
+  ClosedBattle,
+  Solitary,
+  PeckerLady,
+  Chickenshit,
+  Liar
+]

@@ -11,8 +11,8 @@ class Solitary(Cards, Players): # Le solitaire
 		Players.__init__(self, str(encode))
 
 		self.__file__ = __file__
-		self.content	= dict(lang["game"]["solitary"])
-		self.gameName	= str(self.content["name"])
+		self.content	= dict(lang["GAME_SOLITARY"])
+		self.gameName	= str(self.content["_NAME"])
 		self.finished	= bool(False)
 		self.__end		= bool(False)
 		self.__table	= list([])

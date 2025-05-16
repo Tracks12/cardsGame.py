@@ -59,6 +59,13 @@ class Players(LoadPlayers):
 	def getPlayers(self): # Affichage de la liste des joueurs
 		return(self._players)
 
+	def getPlayerNames(self): # Affichage de la liste des joueurs
+		playerList = []
+		for player in self._players:
+			playerList.append(player["name"])
+
+		return(playerList)
+
 	def getPlayerById(self, plyrId): # Affichage d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["id"] == int(plyrId)):
