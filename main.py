@@ -62,7 +62,7 @@ def arg(cfg, reg, info) -> bool: # Fonction d'entrée des arguments
 			(("-p", "--players"), "\"['name', ...]\""),
 			(("-l", "--list"), "players|games"),
 			(("-h", "--help"), ""),
-			(("-d", "--debug"), ""),
+			(("-D", "--debug"), ""),
 			(("-v", "--version"), "")
 		)),
 		"desc": tuple(reg["ARGS_DESC"])

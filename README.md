@@ -60,7 +60,7 @@ Exécution du script: `$ python main.py <arg>`
 | `-p`, `--players`                | `"['name', ...]"` liste de joueur(s) | Insérer un ou plusieurs joueur(s)           |
 | `-l`, `--list`                   | `games\|players`                     | Affiche la liste des jeux et des joueurs    |
 | `-h`, `--help`                   | -                                    | Affiche le menu d'aide                      |
-| `-d`, `--debug`                  | -                                    | Exécution en mode debuger                   |
+| `-D`, `--debug`                  | -                                    | Exécution en mode debuger                   |
 | `-v`, `--version`                | -                                    | Affiche la version du programme             |
 
 [Sommaire](#sommaire)
