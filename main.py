@@ -245,9 +245,9 @@ def config(cfg, reg, info) -> bool: # Fonction de configuration du programme
 
 	menu = tuple((
 		"",
-		reg['MENU_CONFIG_CONTENT_ENCODING'],
-		reg['MENU_CONFIG_CONTENT_LANGUAGE'],
-		reg['MENU_CONFIG_CONTENT_SPLASH']
+		f"{reg['MENU_CONFIG_CONTENT_ENCODING']}{' '*(24-len(reg['MENU_CONFIG_CONTENT_ENCODING']))}[ {cfg.encoding} ]",
+		f"{reg['MENU_CONFIG_CONTENT_LANGUAGE']}{' '*(24-len(reg['MENU_CONFIG_CONTENT_LANGUAGE']))}[ {cfg.language} ]",
+		f"{reg['MENU_CONFIG_CONTENT_SPLASH']}{' '*(24-len(reg['MENU_CONFIG_CONTENT_SPLASH']))}[ {cfg.splash} ]"
 	))
 
 	for key, row in enumerate(menu):
@@ -276,7 +276,7 @@ def config(cfg, reg, info) -> bool: # Fonction de configuration du programme
 			for k, v in enumerate(codings):
 				prompt += str(f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(codings)-1) else ']'}")
 
-			coding = str(input(f"{reg['MENU_CONFIG_CONTENT_ENCODING']}: {prompt}: {Colors.cyan}"))
+			coding = str(input(f"{reg['MENU_CONFIG_CONTENT_ENCODING']} {prompt}: {Colors.cyan}"))
 			print(end=Colors.end)
 
 			confirm(cfg.setEncode(coding))
@@ -290,14 +290,14 @@ def config(cfg, reg, info) -> bool: # Fonction de configuration du programme
 			for k, v in enumerate(langs):
 				prompt += str(f"{Colors.cyan}{v}{Colors.end}{'|' if(k < len(langs)-1) else ']'}")
 
-			lang = str(input(f"{reg['MENU_CONFIG_CONTENT_LANGUAGE']}: {prompt}: {Colors.cyan}"))
+			lang = str(input(f"{reg['MENU_CONFIG_CONTENT_LANGUAGE']} {prompt}: {Colors.cyan}"))
 			print(end=Colors.end)
 
 			confirm(cfg.setLanguage(lang))
 
 		elif(choice == 3):
 			prompt = str(f"[{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]")
-			splash = str(input(f"{reg['MENU_CONFIG_CONTENT_SPLASH']}: {prompt}: {Colors.cyan}"))
+			splash = str(input(f"{reg['MENU_CONFIG_CONTENT_SPLASH']} {prompt}: {Colors.cyan}"))
 			print(end=Colors.end)
 
 			confirm(cfg.setSplash(splash))
