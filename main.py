@@ -12,7 +12,7 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 	print("{}Program must be run with Python 3".format(Icons.warn))
 	exit()
 
-from core import Cards, Config, LoadPlayers, Players, Regions
+from core import Cards, Config, LoadPlayers, Players, Regions, info
 from games import *
 
 def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des arguments
@@ -314,12 +314,6 @@ def main(cfg: dict, reg: dict, info: dict) -> bool: # Fonction principale de l'e
 	return(True)
 
 if(__name__ == "__main__"):
-	info = dict({
-		"name": "cardsGame.py",
-		"vers": "0.3",
-		"author": "Florian Cardinal"
-	})
-
 	cfg = Config() # Chargement du fichier de configuration
 	reg = Regions(cfg.language, cfg.encoding).content # Chargement de la langue
 

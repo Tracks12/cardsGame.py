@@ -14,6 +14,12 @@ from core.regions import Regions
 
 from games import games
 
+info = dict({
+	"name": "cardsGame.py",
+	"vers": "0.3",
+	"author": "Florian Cardinal"
+})
+
 def launch(cfg: dict, reg: dict, game) -> bool: # Fonction de lancement du jeu
 	game = game(reg, cfg.encoding)
 	print(f"{Icons.play}{game.gameName}")

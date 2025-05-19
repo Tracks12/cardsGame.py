@@ -61,12 +61,6 @@ def main() -> bool:
   return(True)
 
 if(__name__ == "__main__"):
-	info = dict({
-		"name": "translate.py",
-		"vers": "0.1",
-		"author": "Florian Cardinal"
-	})
-
 	if(len(argv) > 1):
 		arg()
 
