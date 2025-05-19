@@ -29,6 +29,7 @@
   "COMMON_YES": "\u0110\u00fang",
   "DEBUG_CONTINUE": "Nh\u1ea5n ph\u00edm b\u1ea5t k\u1ef3 \u0111\u1ec3 ti\u1ebfp t\u1ee5c...",
   "DEBUG_STARTING": "Kh\u1edfi ch\u1ea1y \u1edf ch\u1ebf \u0111\u1ed9 g\u1ee1 l\u1ed7i",
+  "ERR_ARGS": "Nh\u1eefng l\u00fd l\u1ebd ch\u01b0a bi\u1ebft",
   "ERR_CARD_NUMBER": "Ch\u1ec9 \u0111\u1ecbnh s\u1ed1 th\u1ebb",
   "ERR_GAME_NAME": "Nh\u1eadp t\u00ean tr\u00f2 ch\u01a1i",
   "ERR_LIST": "Lo\u1ea1i danh s\u00e1ch kh\u00f4ng x\u00e1c \u0111\u1ecbnh",

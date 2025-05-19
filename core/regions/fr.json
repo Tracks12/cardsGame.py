@@ -29,6 +29,7 @@
   "COMMON_YES": "Oui",
   "DEBUG_CONTINUE": "Appuyez sur n'importe quelle touche pour continuer...",
   "DEBUG_STARTING": "Lancement en mode d\u00e9bogueur",
+  "ERR_ARGS": "Arguments inconnus",
   "ERR_CARD_NUMBER": "Sp\u00e9cifiez un num\u00e9ro de carte",
   "ERR_GAME_NAME": "Entrez un nom de jeu",
   "ERR_LIST": "Type de liste inconnu",

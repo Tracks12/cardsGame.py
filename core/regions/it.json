@@ -29,6 +29,7 @@
   "COMMON_YES": "S\u00cc",
   "DEBUG_CONTINUE": "Premi un tasto qualsiasi per continuare...",
   "DEBUG_STARTING": "Avvio in modalit\u00e0 debugger",
+  "ERR_ARGS": "Argomenti sconosciuti",
   "ERR_CARD_NUMBER": "Specificare un numero di carta",
   "ERR_GAME_NAME": "Inserisci un nome di gioco",
   "ERR_LIST": "Tipo di elenco sconosciuto",

@@ -29,6 +29,7 @@
   "COMMON_YES": "Ja",
   "DEBUG_CONTINUE": "Dr\u00fccken Sie eine beliebige Taste, um fortzufahren ...",
   "DEBUG_STARTING": "Starten im Debugger-Modus",
+  "ERR_ARGS": "Unbekannte Argumente",
   "ERR_CARD_NUMBER": "Geben Sie eine Kartennummer an",
   "ERR_GAME_NAME": "Geben Sie einen Spielnamen ein",
   "ERR_LIST": "Unbekannter Listentyp",

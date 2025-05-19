@@ -131,7 +131,7 @@ def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des argu
 			sortPlayers(cfg, reg)
 	
 	else:
-		print(f'{Icons.warn}Unknown arguments "{argv[1]}"')
+		print(f'{Icons.warn}{reg["ERR_ARGS"]} "{argv[1]}"')
 
 	return(True)
 

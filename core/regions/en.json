@@ -29,6 +29,7 @@
   "COMMON_YES": "Yes",
   "DEBUG_CONTINUE": "Press any key to continue...",
   "DEBUG_STARTING": "Launching in debugger mode",
+  "ERR_ARGS": "Unknown arguments",
   "ERR_CARD_NUMBER": "Specify a card number",
   "ERR_GAME_NAME": "Enter a game name",
   "ERR_LIST": "Unknown list type",

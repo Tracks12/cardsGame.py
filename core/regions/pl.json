@@ -29,6 +29,7 @@
   "COMMON_YES": "Tak",
   "DEBUG_CONTINUE": "Naci\u015bnij dowolny klawisz, aby kontynuowa\u0107...",
   "DEBUG_STARTING": "Uruchamianie w trybie debugera",
+  "ERR_ARGS": "Nieznane argumenty",
   "ERR_CARD_NUMBER": "Podaj numer karty",
   "ERR_GAME_NAME": "Wprowad\u017a nazw\u0119 gry",
   "ERR_LIST": "Nieznany typ listy",

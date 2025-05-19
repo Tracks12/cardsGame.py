@@ -29,6 +29,7 @@
   "COMMON_YES": "S\u00ed",
   "DEBUG_CONTINUE": "Presione cualquier tecla para continuar...",
   "DEBUG_STARTING": "Lanzamiento en modo depurador",
+  "ERR_ARGS": "Argumentos desconocidos",
   "ERR_CARD_NUMBER": "Especifique un n\u00famero de tarjeta",
   "ERR_GAME_NAME": "Introduce un nombre de juego",
   "ERR_LIST": "Tipo de lista desconocida",
