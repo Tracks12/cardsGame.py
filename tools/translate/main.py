@@ -11,7 +11,7 @@ def arg() -> bool:
 
 def main() -> bool:
   dir_path = str(path.dirname(path.realpath(__file__)))
-  datas = list([])
+  datas = list[str]([])
   regions = dict({})
 
   with open(f"{dir_path}/translations.csv", 'r', newline='') as file:
@@ -28,7 +28,7 @@ def main() -> bool:
 
       for data in datas:
         if(("_GAME" in data["label"]) and (data["label"].split('_')[0] == "")):
-          labelSplitted = list(data["label"].split("_"))
+          labelSplitted = list[str](data["label"].split("_"))
           newGameLabel = str(f"{labelSplitted[1]}_{labelSplitted[2]}")
           newLabel = str(data["label"].split(f"_{newGameLabel}")[1])
 
@@ -38,7 +38,7 @@ def main() -> bool:
           regions[field][newGameLabel].update({ newLabel: data[field] })
 
         elif(("ARGS_DESC" in data["label"]) or ("ARGS_INTRO" in data["label"])):
-          labelSplitted = list(data["label"].split("_"))
+          labelSplitted = list[str](data["label"].split("_"))
           newArgsLabel = str(f"{labelSplitted[0]}_{labelSplitted[1]}")
 
           if(not newArgsLabel in regions[field]):

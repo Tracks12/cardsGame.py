@@ -1,13 +1,12 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-from traceback import format_exc
 from os import listdir, system as shell
 from platform import system
 from sys import argv, version_info
 
 # Importation des dépendances internes
-from core import Colors, Icons, splash
+from core import Colors, Icons, launch, splash, sortGames, sortPlayers
 
 if(version_info.major < 3): # Vérification de l'éxecution du script avec Python3
 	print("{}Program must be run with Python 3".format(Icons.warn))
@@ -15,41 +14,6 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 
 from core import Cards, Config, LoadPlayers, Players, Regions
 from games import *
-
-def sortGames(reg: dict) -> None:
-	print(f" [ {reg['COMMON_GAMES']} ]:\n --{'-'*len(reg['COMMON_GAMES'])}--")
-	print(f" *  {reg['COMMON_NAME']}{' '*(21-len(reg['COMMON_NAME']))}{reg['COMMON_PLAYABLE']}{' '*(12-len(reg['COMMON_PLAYABLE']))}{reg['COMMON_PATH']}")
-	for i, game in enumerate(games):
-		g = game(reg, cfg.encoding)
-		finished = str(f"{Colors.green}{reg['COMMON_YES']}{Colors.end}" if(g.finished) else f"{Colors.red}{reg['COMMON_NO']}{Colors.end}")
-		print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{g.gameName}{Colors.end}{' '*(21-len(g.gameName))}{finished}{' '*(21-len(finished))}{g.__file__}")
-
-	print("")
-
-def sortPlayers(reg: dict) -> None:
-	players = Players(cfg.encoding)
-
-	print(f" [ {reg['COMMON_PLAYERS']} ]:\n --{'-'*len(reg['COMMON_PLAYERS'])}--")
-	print(f" *  {reg['COMMON_NAME']}")
-	for i, player in enumerate(players.getPlayerNames()):
-		print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{player}{Colors.end}")
-
-	print("")
-
-def launch(cfg: dict, reg: dict, game) -> bool: # Fonction de lancement du jeu
-	game = game(reg, cfg.encoding)
-	print(f"{Icons.play}{game.gameName}")
-
-	if(not game.finished):
-		print(f"{Icons.warn}{reg['GAME_NOTFINISHED']}")
-
-	try:
-		return(game.start())
-
-	except Exception:
-		print(f"{Icons.warn}{format_exc()}")
-
-	return(False)
 
 def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des arguments
 	args = dict({
@@ -153,18 +117,18 @@ def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des argu
 	elif(argv[1] in args["prfx"][6][0]): # Affiche toute la configuration
 		try:
 			if(argv[2] == "games"):
-				sortGames(reg)
+				sortGames(cfg, reg)
 
 			elif(argv[2] == "players"):
-				sortPlayers(reg)
+				sortPlayers(cfg, reg)
 
 			else:
 				print(f"{Icons.warn}{reg['ERR_LIST']}")
 				return(False)
 
 		except Exception as e:
-			sortGames(reg)
-			sortPlayers(reg)
+			sortGames(cfg, reg)
+			sortPlayers(cfg, reg)
 
 	return(True)
 
@@ -196,7 +160,7 @@ def playerManager(cfg: dict, reg: dict, info: dict) -> bool:
 
 		elif(choice == 1):
 			print("")
-			sortPlayers(reg)
+			sortPlayers(cfg, reg)
 
 		elif(choice == 2):
 			newPlayer = str(input(f"{reg['MENU_PLAYER_INPUT_NAME']}: {Colors.cyan}"))
@@ -212,7 +176,7 @@ def playerManager(cfg: dict, reg: dict, info: dict) -> bool:
 
 		elif(choice == 3):
 			print("")
-			sortPlayers(reg)
+			sortPlayers(cfg, reg)
 
 			try:
 				playerId = int(input(f"{reg['MENU_PLAYER_INPUT_NUMBER']}: {Colors.cyan}"))
