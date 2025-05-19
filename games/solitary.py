@@ -6,7 +6,7 @@ from core.cards import Cards
 from core.players import Players
 
 class Solitary(Cards, Players): # Le solitaire
-	def __init__(self, lang, encode):
+	def __init__(self, lang: dict, encode: str):
 		Cards.__init__(self)
 		Players.__init__(self, str(encode))
 

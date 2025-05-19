@@ -8,7 +8,7 @@ from json import loads, dumps
 from core import B64
 
 class LoadPlayers:
-	def __init__(self, encode):
+	def __init__(self, encode: str):
 		self.players	= list([])
 		self.__encode	= str(encode)
 		self.__path	= str("core/players")
@@ -33,13 +33,13 @@ class LoadPlayers:
 		except Exception:
 			return(False)
 
-	def insert(self, players) -> bool:
+	def insert(self, players: list) -> bool:
 		self.players = list(players)
 
 		return(self.__saveJSON())
 
 class Players(LoadPlayers):
-	def __init__(self, encode):
+	def __init__(self, encode: str):
 		LoadPlayers.__init__(self, str(encode))
 
 		self._players = list([])
@@ -66,17 +66,17 @@ class Players(LoadPlayers):
 
 		return(playerList)
 
-	def getPlayerById(self, plyrId) -> dict: # Affichage d'un joueur par son id
+	def getPlayerById(self, plyrId: int) -> dict: # Affichage d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["id"] == int(plyrId)):
 				return(self._players[key])
 
-	def getPlayerByName(self, plyrName) -> dict: # Affichage d'un joueur par son nom
+	def getPlayerByName(self, plyrName: str) -> dict: # Affichage d'un joueur par son nom
 		for key, player in enumerate(self._players):
 			if(player["name"] == str(plyrName)):
 				return(self._players[key])
 
-	def delPlayerById(self, plyrId) -> bool: # Suppression d'un joueur par son id
+	def delPlayerById(self, plyrId: int) -> bool: # Suppression d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["id"] == int(plyrId)):
 				self._players.remove(player)
@@ -85,7 +85,7 @@ class Players(LoadPlayers):
 
 		return(False)
 
-	def delPlayerByName(self, plyrName) -> bool: # Suppression d'un joueur par son id
+	def delPlayerByName(self, plyrName: str) -> bool: # Suppression d'un joueur par son id
 		for key, player in enumerate(self._players):
 			if(player["name"] == str(plyrName)):
 				self._players.remove(player)

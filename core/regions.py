@@ -8,7 +8,7 @@ from json import load
 from core import Icons
 
 class Regions:
-	def __init__(self, lang, encode): # Selection de la langue dans le constructeur
+	def __init__(self, lang: str, encode: str): # Selection de la langue dans le constructeur
 		self.content	= dict({})
 		self.__encode	= str(encode)
 		self.__lang		= str(lang)

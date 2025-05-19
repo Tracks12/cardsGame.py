@@ -50,7 +50,7 @@ class Config:
 
 		return(True)
 
-	def setEncode(self, coding = str("utf-8")) -> bool: # Encodage setter
+	def setEncode(self, coding: str = "utf-8") -> bool: # Encodage setter
 		if(coding.lower() in ("ascii", "utf-8", "utf-16", "utf-32")):
 			self.encoding = str(coding.lower())
 			self.__saveJSON()
@@ -59,7 +59,7 @@ class Config:
 
 		return(False)
 
-	def setLanguage(self, lang = str("us")) -> bool: # Langage setter
+	def setLanguage(self, lang: str = "us") -> bool: # Langage setter
 		langs	= listdir("core/regions")
 		for k, v in enumerate(langs):
 			langs[k] = v.split(".")[0]
@@ -72,7 +72,7 @@ class Config:
 
 		return(False)
 
-	def setSplash(self, splash = bool(True)) -> bool: # Splash setter
+	def setSplash(self, splash: bool = True) -> bool: # Splash setter
 		self.splash = bool(splash in ("True", "true"))
 		self.__saveJSON()
 

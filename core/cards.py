@@ -8,14 +8,14 @@ from random import shuffle
 from core.colors import Colors
 
 class Cards: # Objet de jeu de cartes
-	def __init__(self, joker = int(0)): # Construction du jeu de 52 cartes avec/sans les jokers
+	def __init__(self, joker: int = 0): # Construction du jeu de 52 cartes avec/sans les jokers
 		self._packet	= list([])
 		self.__numbers	= tuple(("A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "V", "Q", "K"))
 		self.__shapes	= tuple(("♥", "♦", "♠", "♣"))
 
 		self.__buildPacket(joker)
 
-	def __buildPacket(self, joker) -> list: # Construction du packet de cartes
+	def __buildPacket(self, joker: int) -> list: # Construction du packet de cartes
 		for s in self.__shapes: # Ajout des 52 cartes
 			for n in self.__numbers:
 				self._packet.append(tuple((n, s)))
@@ -25,7 +25,7 @@ class Cards: # Objet de jeu de cartes
 
 		return(self._packet)
 
-	def __dispCards(self, cards) -> list: # Affichage d'une carte
+	def __dispCards(self, cards: list) -> list: # Affichage d'une carte
 		displayer = list(["", "", "", "", ""])
 
 		for card in cards:
@@ -42,7 +42,7 @@ class Cards: # Objet de jeu de cartes
 
 		return(cards)
 
-	def dispAllCards(self, div = int(6)) -> list: # Affiche toutes les cartes en ascii
+	def dispAllCards(self, div: int = 6) -> list: # Affiche toutes les cartes en ascii
 		cards = list(self.getAllCards())
 
 		for i in range(0, int(len(cards) / div)):
@@ -50,7 +50,7 @@ class Cards: # Objet de jeu de cartes
 
 		return(cards)
 
-	def dispOneCard(self, key) -> list: # Affiche une carte en ascii
+	def dispOneCard(self, key: int) -> list: # Affiche une carte en ascii
 		card = list(self.getOneCard(key))
 		self.__dispCards([ card ])
 
@@ -64,5 +64,5 @@ class Cards: # Objet de jeu de cartes
 	def getAllCards(self) -> list: # Sort toutes les cartes
 		return(self._packet)
 
-	def getOneCard(self, key) -> tuple: # Sort une carte
+	def getOneCard(self, key: int) -> tuple: # Sort une carte
 		return(self._packet[key])

@@ -16,7 +16,7 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 from core import Cards, Config, LoadPlayers, Players, Regions
 from games import *
 
-def sortGames(reg) -> None:
+def sortGames(reg: dict) -> None:
 	print(f" [ {reg['COMMON_GAMES']} ]:\n --{'-'*len(reg['COMMON_GAMES'])}--")
 	print(f" *  {reg['COMMON_NAME']}{' '*(21-len(reg['COMMON_NAME']))}{reg['COMMON_PLAYABLE']}{' '*(12-len(reg['COMMON_PLAYABLE']))}{reg['COMMON_PATH']}")
 	for i, game in enumerate(games):
@@ -26,7 +26,7 @@ def sortGames(reg) -> None:
 
 	print("")
 
-def sortPlayers(reg) -> None:
+def sortPlayers(reg: dict) -> None:
 	players = Players(cfg.encoding)
 
 	print(f" [ {reg['COMMON_PLAYERS']} ]:\n --{'-'*len(reg['COMMON_PLAYERS'])}--")
@@ -36,7 +36,7 @@ def sortPlayers(reg) -> None:
 
 	print("")
 
-def launch(cfg, reg, game) -> bool: # Fonction de lancement du jeu
+def launch(cfg: dict, reg: dict, game) -> bool: # Fonction de lancement du jeu
 	game = game(reg, cfg.encoding)
 	print(f"{Icons.play}{game.gameName}")
 
@@ -51,7 +51,7 @@ def launch(cfg, reg, game) -> bool: # Fonction de lancement du jeu
 
 	return(False)
 
-def arg(cfg, reg, info) -> bool: # Fonction d'entrée des arguments
+def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des arguments
 	args = dict({
 		"prfx": tuple((
 			(("-s", "--show-card"), "<x>"),
@@ -168,7 +168,7 @@ def arg(cfg, reg, info) -> bool: # Fonction d'entrée des arguments
 
 	return(True)
 
-def playerManager(cfg, reg, info) -> bool:
+def playerManager(cfg: dict, reg: dict, info: dict) -> bool:
 	menu = tuple((
 		"",
 		reg['MENU_PLAYER_CONTENT_LIST'],
@@ -234,8 +234,8 @@ def playerManager(cfg, reg, info) -> bool:
 
 	return(True)
 
-def config(cfg, reg, info) -> bool: # Fonction de configuration du programme
-	def confirm(setter) -> bool:
+def config(cfg: dict, reg: dict, info: dict) -> bool: # Fonction de configuration du programme
+	def confirm(setter: bool) -> bool:
 		if(setter):
 			print(f"{Icons.info}{reg['MENU_CONFIG_SUCCESS']}")
 			return(True)
@@ -307,7 +307,7 @@ def config(cfg, reg, info) -> bool: # Fonction de configuration du programme
 
 	return(True)
 
-def main(cfg, reg, info) -> bool: # Fonction principale de l'execution du programme
+def main(cfg: dict, reg: dict, info: dict) -> bool: # Fonction principale de l'execution du programme
 	if(cfg.splash):
 		splash(reg, info)
 
@@ -339,7 +339,7 @@ def main(cfg, reg, info) -> bool: # Fonction principale de l'execution du progra
 				launch(cfg, reg, game)
 
 		if(choice == 0):
-			return(True)
+			break
 
 		elif(choice == len(menu)):
 			playerManager(cfg, reg, info)

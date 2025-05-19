@@ -3,7 +3,7 @@
 
 from csv import DictReader
 from json import dumps
-from os import mkdir, path
+from os import path
 from sys import argv
 
 def arg() -> bool:
