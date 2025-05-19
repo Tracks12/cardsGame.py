@@ -12,17 +12,19 @@
     "Muestra la versi\u00f3n del programa."
   ],
   "ARGS_INTRO": [
-    "Juego de cartas",
+    "Juegos de cartas",
     "Lanzamiento",
     "Argumentos"
   ],
   "COMMON_BACK": "devolver",
   "COMMON_BY": "por",
+  "COMMON_GAMES": "Juegos",
   "COMMON_NAME": "Nombre",
   "COMMON_NO": "No",
   "COMMON_PATH": "Camino",
   "COMMON_PLAYABLE": "Interpretable",
   "COMMON_PLAYER": "El jugador",
+  "COMMON_PLAYERS": "Jugadores",
   "COMMON_UNPLAYABLE": "No jugable",
   "COMMON_YES": "S\u00ed",
   "DEBUG_CONTINUE": "Presione cualquier tecla para continuar...",

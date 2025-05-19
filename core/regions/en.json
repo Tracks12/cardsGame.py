@@ -12,17 +12,19 @@
     "Displays the program version"
   ],
   "ARGS_INTRO": [
-    "Cards game",
+    "Cards games",
     "Launch",
     "Arguments"
   ],
   "COMMON_BACK": "return",
   "COMMON_BY": "by",
+  "COMMON_GAMES": "Games",
   "COMMON_NAME": "Name",
   "COMMON_NO": "No",
   "COMMON_PATH": "Path",
   "COMMON_PLAYABLE": "Playable",
   "COMMON_PLAYER": "The player",
+  "COMMON_PLAYERS": "Players",
   "COMMON_UNPLAYABLE": "Not playable",
   "COMMON_YES": "Yes",
   "DEBUG_CONTINUE": "Press any key to continue...",

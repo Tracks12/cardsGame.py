@@ -12,17 +12,19 @@
     "Zeigt die Programmversion an"
   ],
   "ARGS_INTRO": [
-    "Kartenspiel",
+    "Kartenspiele",
     "Start",
     "Argumente"
   ],
   "COMMON_BACK": "zur\u00fcckkehren",
   "COMMON_BY": "von",
+  "COMMON_GAMES": "Spiele",
   "COMMON_NAME": "Name",
   "COMMON_NO": "NEIN",
   "COMMON_PATH": "Weg",
   "COMMON_PLAYABLE": "Spielbar",
   "COMMON_PLAYER": "Der Spieler",
+  "COMMON_PLAYERS": "Spieler",
   "COMMON_UNPLAYABLE": "Nicht spielbar",
   "COMMON_YES": "Ja",
   "DEBUG_CONTINUE": "Dr\u00fccken Sie eine beliebige Taste, um fortzufahren ...",

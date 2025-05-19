@@ -16,8 +16,8 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 from core import Cards, Config, LoadPlayers, Players, Regions
 from games import *
 
-def sortGames() -> None:
-	print(f" [ Jeux ]:\n --{'-'*len('Jeux')}--")
+def sortGames(reg) -> None:
+	print(f" [ {reg['COMMON_GAMES']} ]:\n --{'-'*len(reg['COMMON_GAMES'])}--")
 	print(f" *  {reg['COMMON_NAME']}{' '*(21-len(reg['COMMON_NAME']))}{reg['COMMON_PLAYABLE']}{' '*(12-len(reg['COMMON_PLAYABLE']))}{reg['COMMON_PATH']}")
 	for i, game in enumerate(games):
 		g = game(reg, cfg.encoding)
@@ -26,10 +26,10 @@ def sortGames() -> None:
 
 	print("")
 
-def sortPlayers() -> None:
+def sortPlayers(reg) -> None:
 	players = Players(cfg.encoding)
 
-	print(f" [ Joueurs ]:\n --{'-'*len('Joueurs')}--")
+	print(f" [ {reg['COMMON_PLAYERS']} ]:\n --{'-'*len(reg['COMMON_PLAYERS'])}--")
 	print(f" *  {reg['COMMON_NAME']}")
 	for i, player in enumerate(players.getPlayerNames()):
 		print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{player}{Colors.end}")
@@ -153,18 +153,18 @@ def arg(cfg, reg, info) -> bool: # Fonction d'entrée des arguments
 	elif(argv[1] in args["prfx"][6][0]): # Affiche toute la configuration
 		try:
 			if(argv[2] == "games"):
-				sortGames()
+				sortGames(reg)
 
 			elif(argv[2] == "players"):
-				sortPlayers()
+				sortPlayers(reg)
 
 			else:
 				print(f"{Icons.warn}{reg['ERR_LIST']}")
 				return(False)
 
 		except Exception as e:
-			sortGames()
-			sortPlayers()
+			sortGames(reg)
+			sortPlayers(reg)
 
 	return(True)
 
@@ -196,7 +196,7 @@ def playerManager(cfg, reg, info) -> bool:
 
 		elif(choice == 1):
 			print("")
-			sortPlayers()
+			sortPlayers(reg)
 
 		elif(choice == 2):
 			newPlayer = str(input(f"{reg['MENU_PLAYER_INPUT_NAME']}: {Colors.cyan}"))
@@ -212,7 +212,7 @@ def playerManager(cfg, reg, info) -> bool:
 
 		elif(choice == 3):
 			print("")
-			sortPlayers()
+			sortPlayers(reg)
 
 			try:
 				playerId = int(input(f"{reg['MENU_PLAYER_INPUT_NUMBER']}: {Colors.cyan}"))
@@ -313,7 +313,9 @@ def main(cfg, reg, info) -> bool: # Fonction principale de l'execution du progra
 
 	menu = list([ f"{reg['MENU_TEXT']}:\n" ])
 	for game in games:
-		menu.append(game(reg, cfg.encoding).gameName)
+		game = game(reg, cfg.encoding)
+		playable = str(f"{Colors.green+reg['COMMON_PLAYABLE'] if(game.finished) else Colors.red+reg['COMMON_UNPLAYABLE']}{Colors.end}")
+		menu.append(str(f"{game.gameName}{' '*(24-len(game.gameName))}[ {playable} ]"))
 
 	for key, row in enumerate(menu):
 		print(f" {'' if(key == 0) else f'{Colors.cyan}{key}.{Colors.end} '}{row}", end="\n\n" if(key == len(menu)-1) else "\n")

@@ -12,17 +12,19 @@
     "Visualizza la versione del programma"
   ],
   "ARGS_INTRO": [
-    "Gioco di carte",
+    "Giochi di carte",
     "Lancio",
     "Argomenti"
   ],
   "COMMON_BACK": "ritorno",
   "COMMON_BY": "di",
+  "COMMON_GAMES": "Giochi",
   "COMMON_NAME": "Nome",
   "COMMON_NO": "NO",
   "COMMON_PATH": "Sentiero",
   "COMMON_PLAYABLE": "Giocabile",
   "COMMON_PLAYER": "Il giocatore",
+  "COMMON_PLAYERS": "Giocatori",
   "COMMON_UNPLAYABLE": "Non giocabile",
   "COMMON_YES": "S\u00cc",
   "DEBUG_CONTINUE": "Premi un tasto qualsiasi per continuare...",
