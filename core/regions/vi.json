@@ -1,0 +1,75 @@
+{
+  "ARGS_DESC": [
+    "Hi\u1ec3n th\u1ecb m\u1ed9t l\u00e1 b\u00e0i t\u1eeb b\u1ed9 b\u00e0i",
+    "Hi\u1ec3n th\u1ecb to\u00e0n b\u1ed9 b\u1ed9 b\u00e0i",
+    "Hi\u1ec3n th\u1ecb m\u1ed9t l\u00e1 b\u00e0i t\u1eeb b\u1ed9 b\u00e0i \u0111\u00e3 x\u00e1o tr\u1ed9n",
+    "Hi\u1ec3n th\u1ecb t\u1ea5t c\u1ea3 c\u00e1c l\u00e1 b\u00e0i trong b\u1ed9 b\u00e0i \u0111\u00e3 x\u00e1o tr\u1ed9n",
+    "Kh\u1edfi ch\u1ea1y m\u1ed9t tr\u00f2 ch\u01a1i b\u00e0i",
+    "Ch\u00e8n m\u1ed9t ho\u1eb7c nhi\u1ec1u ng\u01b0\u1eddi ch\u01a1i",
+    "Hi\u1ec3n th\u1ecb danh s\u00e1ch tr\u00f2 ch\u01a1i v\u00e0 ng\u01b0\u1eddi ch\u01a1i",
+    "Hi\u1ec3n th\u1ecb menu tr\u1ee3 gi\u00fap",
+    "Ch\u1ebf \u0111\u1ed9 g\u1ee1 l\u1ed7i",
+    "Hi\u1ec3n th\u1ecb phi\u00ean b\u1ea3n ch\u01b0\u01a1ng tr\u00ecnh"
+  ],
+  "ARGS_INTRO": [
+    "Tr\u00f2 ch\u01a1i b\u00e0i",
+    "Ph\u00f3ng",
+    "L\u1eadp lu\u1eadn"
+  ],
+  "COMMON_BACK": "tr\u1edf l\u1ea1i",
+  "COMMON_BY": "qua",
+  "COMMON_GAMES": "Tr\u00f2 ch\u01a1i",
+  "COMMON_NAME": "T\u00ean",
+  "COMMON_NO": "KH\u00d4NG",
+  "COMMON_PATH": "Con \u0111\u01b0\u1eddng",
+  "COMMON_PLAYABLE": "C\u00f3 th\u1ec3 ch\u01a1i \u0111\u01b0\u1ee3c",
+  "COMMON_PLAYER": "Ng\u01b0\u1eddi ch\u01a1i",
+  "COMMON_PLAYERS": "Ng\u01b0\u1eddi ch\u01a1i",
+  "COMMON_UNPLAYABLE": "Kh\u00f4ng th\u1ec3 ch\u01a1i \u0111\u01b0\u1ee3c",
+  "COMMON_YES": "\u0110\u00fang",
+  "DEBUG_CONTINUE": "Nh\u1ea5n ph\u00edm b\u1ea5t k\u1ef3 \u0111\u1ec3 ti\u1ebfp t\u1ee5c...",
+  "DEBUG_STARTING": "Kh\u1edfi ch\u1ea1y \u1edf ch\u1ebf \u0111\u1ed9 g\u1ee1 l\u1ed7i",
+  "ERR_CARD_NUMBER": "Ch\u1ec9 \u0111\u1ecbnh s\u1ed1 th\u1ebb",
+  "ERR_GAME_NAME": "Nh\u1eadp t\u00ean tr\u00f2 ch\u01a1i",
+  "ERR_LIST": "Lo\u1ea1i danh s\u00e1ch kh\u00f4ng x\u00e1c \u0111\u1ecbnh",
+  "ERR_MENU_CHOICE": "L\u1ef1a ch\u1ecdn n\u00e0y kh\u00f4ng t\u1ed3n t\u1ea1i",
+  "ERR_PLAYER_EXIST": "Ng\u01b0\u1eddi ch\u01a1i kh\u00f4ng t\u1ed3n t\u1ea1i",
+  "ERR_PLAYER_LIST": "Danh s\u00e1ch ng\u01b0\u1eddi ch\u01a1i kh\u00f4ng \u0111\u00fang",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "Ng\u01b0\u1eddi T\u1ec7 H\u1ea1i"
+  },
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "Tr\u1eadn chi\u1ebfn kh\u00e9p k\u00edn",
+    "_ROUND": "Tr\u00f2n",
+    "_WINNER": "l\u00e0 ng\u01b0\u1eddi chi\u1ebfn th\u1eafng"
+  },
+  "GAME_LIAR": {
+    "_NAME": "K\u1ebb n\u00f3i d\u1ed1i"
+  },
+  "GAME_NOTFINISHED": "Tr\u00f2 ch\u01a1i n\u00e0y ch\u01b0a k\u1ebft th\u00fac",
+  "GAME_PECKERLADY": {
+    "_NAME": "N\u1eef ho\u00e0ng B\u00edch"
+  },
+  "GAME_SOLITARY": {
+    "_NAME": "B\u00e0i \u0111\u01a1n \u0111\u1ed9c"
+  },
+  "MENU_CHOICE_PLAYER": "Ng\u01b0\u1eddi ch\u01a1i",
+  "MENU_CHOICE_QUIT": "T\u1eeb b\u1ecf",
+  "MENU_CHOICE_SETTINGS": "C\u00e0i \u0111\u1eb7t",
+  "MENU_CONFIG_CONTENT_ENCODING": "M\u00e3 h\u00f3a",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "Ng\u00f4n ng\u1eef",
+  "MENU_CONFIG_CONTENT_SPLASH": "M\u00e0n h\u00ecnh ch\u00e0o m\u1eebng",
+  "MENU_CONFIG_FAIL": "C\u1ea5u h\u00ecnh kh\u00f4ng \u0111\u01b0\u1ee3c \u00e1p d\u1ee5ng",
+  "MENU_CONFIG_LABEL": "c\u00e0i \u0111\u1eb7t",
+  "MENU_CONFIG_RESTART": "Kh\u1edfi \u0111\u1ed9ng l\u1ea1i ch\u01b0\u01a1ng tr\u00ecnh \u0111\u1ec3 \u00e1p d\u1ee5ng c\u1ea5u h\u00ecnh m\u1edbi",
+  "MENU_CONFIG_SUCCESS": "C\u1ea5u h\u00ecnh \u0111\u01b0\u1ee3c \u00e1p d\u1ee5ng",
+  "MENU_PLAYER_CONTENT_ADD": "Th\u00eam m\u1ed9t ng\u01b0\u1eddi ch\u01a1i",
+  "MENU_PLAYER_CONTENT_LIST": "Hi\u1ec3n th\u1ecb danh s\u00e1ch ng\u01b0\u1eddi ch\u01a1i",
+  "MENU_PLAYER_CONTENT_REMOVE": "X\u00f3a m\u1ed9t ng\u01b0\u1eddi ch\u01a1i",
+  "MENU_PLAYER_INPUT_NAME": "T\u00ean ng\u01b0\u1eddi ch\u01a1i m\u1edbi",
+  "MENU_PLAYER_INPUT_NUMBER": "S\u1ed1 c\u1ea7u th\u1ee7 c\u1ea7n x\u00f3a",
+  "MENU_PLAYER_LABEL": "ng\u01b0\u1eddi ch\u01a1i",
+  "MENU_PLAYER_RESULT_ADDED": "\u0111\u00e3 \u0111\u01b0\u1ee3c th\u00eam v\u00e0o",
+  "MENU_PLAYER_RESULT_DELETED": "\u0111\u00e3 b\u1ecb x\u00f3a",
+  "MENU_TEXT": "Ch\u1ecdn ch\u1ebf \u0111\u1ed9 ch\u01a1i"
+}

@@ -1,60 +1,60 @@
-label,en,fr,de,it,es,ru,ja
-ARGS_INTRO_0,Cards games,Jeux de cartes,Kartenspiele,Giochi di carte,Juegos de cartas,Карточные игры,カードゲーム
-ARGS_INTRO_1,Launch,Lancement,Start,Lancio,Lanzamiento,Запуск,打ち上げ
-ARGS_INTRO_2,Arguments,Arguments,Argumente,Argomenti,Argumentos,Аргументы,議論
-ARGS_DESC_0,Displays a card from the deck,Affiche une carte du paquet,Zeigt eine Karte aus dem Stapel an,Mostra una carta dal mazzo,Muestra una carta de la baraja.,Показывает карту из колоды,デッキからカードを表示する
-ARGS_DESC_1,Displays the entire deck,Affiche l'intégralité du jeu,Zeigt das gesamte Deck an,Visualizza l'intero mazzo,Muestra la baraja completa,Отображает всю колоду,デッキ全体を表示します
-ARGS_DESC_2,Displays a card from the shuffled deck,Affiche une carte du jeu mélangé,Zeigt eine Karte aus dem gemischten Stapel an,Mostra una carta dal mazzo mescolato,Muestra una carta de la baraja barajada.,Показывает карту из перетасованной колоды,シャッフルされたデッキからカードを表示する
-ARGS_DESC_3,Displays all cards in the shuffled deck,Affiche toutes les cartes du jeu mélangé,Zeigt alle Karten im gemischten Stapel an,Mostra tutte le carte nel mazzo mescolato,Muestra todas las cartas de la baraja barajada.,Отображает все карты в перетасованной колоде,シャッフルされたデッキ内のすべてのカードを表示します
-ARGS_DESC_4,Launches a card game,Lance un jeu de cartes,Startet ein Kartenspiel,Lancia un gioco di carte,Lanza un juego de cartas,Запускает карточную игру,カードゲームを起動する
-ARGS_DESC_5,Insert one or more players,Insérer un ou plusieurs joueurs,Einen oder mehrere Spieler einfügen,Inserisci uno o più giocatori,Insertar uno o más jugadores,Вставьте одного или нескольких игроков,1人以上のプレーヤーを挿入する
-ARGS_DESC_6,Displays the list of games and players,Affiche la liste des jeux et des joueurs,Zeigt die Liste der Spiele und Spieler an,Visualizza l'elenco dei giochi e dei giocatori,Muestra la lista de juegos y jugadores.,Отображает список игр и игроков,ゲームとプレイヤーのリストを表示します
-ARGS_DESC_7,Displays the help menu,Affiche le menu d'aide,Zeigt das Hilfemenü an,Visualizza il menu di aiuto,Muestra el menú de ayuda,Отображает меню справки,ヘルプメニューを表示します
-ARGS_DESC_8,Debugger mode,Mode débogueur,Debugger-Modus,Modalità debugger,Modo depurador,Режим отладки,デバッガーモード
-ARGS_DESC_9,Displays the program version,Affiche la version du programme,Zeigt die Programmversion an,Visualizza la versione del programma,Muestra la versión del programa.,Отображает версию программы,プログラムのバージョンを表示します
-DEBUG_STARTING,Launching in debugger mode,Lancement en mode débogueur,Starten im Debugger-Modus,Avvio in modalità debugger,Lanzamiento en modo depurador,Запуск в режиме отладчика,デバッガーモードで起動する
-DEBUG_CONTINUE,Press any key to continue...,Appuyez sur n'importe quelle touche pour continuer...,"Drücken Sie eine beliebige Taste, um fortzufahren ...",Premi un tasto qualsiasi per continuare...,Presione cualquier tecla para continuar...,"Нажмите любую клавишу, чтобы продолжить...",続行するには任意のキーを押してください...
-ERR_MENU_CHOICE,This choice does not exist,Ce choix n'existe pas,Diese Wahl gibt es nicht,Questa scelta non esiste,Esta elección no existe,Такого выбора не существует,この選択肢は存在しません
-ERR_CARD_NUMBER,Specify a card number,Spécifiez un numéro de carte,Geben Sie eine Kartennummer an,Specificare un numero di carta,Especifique un número de tarjeta,Укажите номер карты,カード番号を指定してください
-ERR_GAME_NAME,Enter a game name,Entrez un nom de jeu,Geben Sie einen Spielnamen ein,Inserisci un nome di gioco,Introduce un nombre de juego,Введите название игры,ゲーム名を入力してください
-ERR_PLAYER_EXIST,Player does not exist,Le joueur n'existe pas,Spieler existiert nicht,Il giocatore non esiste,El jugador no existe,Игрок не существует,プレイヤーが存在しません
-ERR_PLAYER_LIST,The player list is incorrect,La liste des joueurs est incorrecte,Die Spielerliste ist falsch,L'elenco dei giocatori è errato,La lista de jugadores es incorrecta,Список игроков неверный,プレーヤーリストが間違っています
-ERR_LIST,Unknown list type,Type de liste inconnu,Unbekannter Listentyp,Tipo di elenco sconosciuto,Tipo de lista desconocida,Неизвестный тип списка,不明なリストタイプ
-COMMON_BACK,return,retour,zurückkehren,ritorno,devolver,возвращаться,戻る
-COMMON_BY,by,par,von,di,por,к,による
-COMMON_YES,Yes,Oui,Ja,SÌ,Sí,Да,はい
-COMMON_NO,No,Non,NEIN,NO,No,Нет,いいえ
-COMMON_PLAYABLE,Playable,Jouable,Spielbar,Giocabile,Interpretable,Играбельно,プレイ可能
-COMMON_UNPLAYABLE,Not playable,Non jouable,Nicht spielbar,Non giocabile,No jugable,Не играбельно,プレイできません
-COMMON_PATH,Path,Chemin,Weg,Sentiero,Camino,Путь,パス
-COMMON_NAME,Name,Nom,Name,Nome,Nombre,Имя,名前
-COMMON_PLAYER,The player,Le joueur,Der Spieler,Il giocatore,El jugador,Игрок,プレイヤー
-COMMON_PLAYERS,Players,Joueurs,Spieler,Giocatori,Jugadores,Игроки,プレイヤー
-COMMON_GAMES,Games,Jeux,Spiele,Giochi,Juegos,Игры,ゲーム
-MENU_CONFIG_CONTENT_ENCODING,Encoding,Codage,Codierung,Codifica,Codificación,Кодирование,エンコーディング
-MENU_CONFIG_CONTENT_LANGUAGE,Language,Langue,Sprache,Lingua,Idioma,Язык,言語
-MENU_CONFIG_CONTENT_SPLASH,Splash screen,Écran de démarrage,Begrüßungsbildschirm,Schermata iniziale,Pantalla de bienvenida,Заставка экрана,スプラッシュスクリーン
-MENU_CONFIG_LABEL,settings,paramètres,Einstellungen,impostazioni,ajustes,настройки,設定
-MENU_CONFIG_SUCCESS,Configuration applied,Configuration appliquée,Konfiguration angewendet,Configurazione applicata,Configuración aplicada,Конфигурация применена,適用された構成
-MENU_CONFIG_FAIL,Configuration not applied,Configuration non appliquée,Konfiguration nicht angewendet,Configurazione non applicata,Configuración no aplicada,Конфигурация не применена,設定は適用されませんでした
-MENU_CONFIG_RESTART,Restart the program to apply the new configuration,Redémarrez le programme pour appliquer la nouvelle configuration,"Starten Sie das Programm neu, um die neue Konfiguration anzuwenden",Riavviare il programma per applicare la nuova configurazione,Reinicie el programa para aplicar la nueva configuración,"Перезапустите программу, чтобы применить новую конфигурацию.",新しい設定を適用するにはプログラムを再起動してください
-MENU_PLAYER_CONTENT_LIST,Show player list,Afficher la liste des joueurs,Spielerliste anzeigen,Mostra l'elenco dei giocatori,Mostrar lista de jugadores,Показать список игроков,プレイヤーリストを表示
-MENU_PLAYER_CONTENT_ADD,Add a player,Ajouter un joueur,Einen Spieler hinzufügen,Aggiungi un giocatore,Agregar un jugador,Добавить игрока,プレイヤーを追加する
-MENU_PLAYER_CONTENT_REMOVE,Delete a player,Supprimer un joueur,Einen Spieler löschen,Elimina un giocatore,Eliminar un jugador,Удалить игрока,プレーヤーを削除する
-MENU_PLAYER_INPUT_NAME,New player name,Nouveau nom du joueur,Neuer Spielername,Nuovo nome del giocatore,Nuevo nombre de jugador,Новое имя игрока,新しいプレイヤー名
-MENU_PLAYER_INPUT_NUMBER,Player number to delete,Numéro du joueur à supprimer,Zu löschende Spielernummer,Numero del giocatore da eliminare,Número de jugador a eliminar,Номер игрока для удаления,削除するプレイヤー番号
-MENU_PLAYER_RESULT_ADDED,has been added,a été ajouté,wurde hinzugefügt,è stato aggiunto,Se ha añadido,был добавлен,が追加されました
-MENU_PLAYER_RESULT_DELETED,has been deleted,a été supprimé,wurde gelöscht,è stato cancellato,ha sido eliminado,был удален,削除されました
-MENU_PLAYER_LABEL,players,joueurs,Spieler,giocatori,jugadores,игроки,選手たち
-MENU_CHOICE_PLAYER,Players,Joueurs,Spieler,Giocatori,Jugadores,Игроки,プレイヤー
-MENU_CHOICE_QUIT,Quit,Quitter,Aufhören,Esentato,Abandonar,Покидать,やめる
-MENU_CHOICE_SETTINGS,Settings,Paramètres,Einstellungen,Impostazioni,Ajustes,Настройки,設定
-MENU_TEXT,Choose a game mode,Choisissez un mode de jeu,Wähle einen Spielmodus,Scegli una modalità di gioco,Elige un modo de juego,Выберите режим игры,ゲームモードを選択する
-GAME_NOTFINISHED,This game is not finished,Ce jeu n'est pas terminé,Dieses Spiel ist noch nicht fertig,Questo gioco non è finito,Este juego no está terminado,Эта игра не закончена.,このゲームはまだ終わっていない
-_GAME_CLOSEDBATTLE_NAME,Closed Battle,Bataille fermée,Geschlossener Kampf,Battaglia chiusa,Batalla cerrada,Закрытый бой,クローズドバトル
-_GAME_CLOSEDBATTLE_ROUND,Round,Rond,Runden,Girare,Redondo,Круглый,ラウンド
-_GAME_CLOSEDBATTLE_WINNER,is winner,est gagnant,ist Gewinner,è il vincitore,es ganador,победитель,勝者です
-_GAME_SOLITARY_NAME,Solitaire,Solitaire,Solitär,Solitario,Solitario,Пасьянс,ソリティア
-_GAME_PECKERLADY_NAME,The Queen of Spades,La Dame de Pique,Die Pik-Dame,La regina di picche,La reina de espadas,Пиковая дама,スペードの女王
-_GAME_CHICKENSHIT_NAME,The Lousy One,Le minable,Der Miese,Il pessimo,El pésimo,Паршивый,ひどい人
-_GAME_LIAR_NAME,The Liar,Le menteur,Der Lügner,Il bugiardo,El mentiroso,Лжец,嘘つき
+label,en,fr,de,it,es,ca,pl,uk,ru,zh,ja,vi,el
+ARGS_INTRO_0,Cards games,Jeux de cartes,Kartenspiele,Giochi di carte,Juegos de cartas,Jocs de cartes,Gry karciane,Карткові ігри,Карточные игры,纸牌游戏,カードゲーム,Trò chơi bài,Παιχνίδια με κάρτες
+ARGS_INTRO_1,Launch,Lancement,Start,Lancio,Lanzamiento,Llançament,Początek,Запуск,Запуск,发射,打ち上げ,Phóng,Εκτόξευση
+ARGS_INTRO_2,Arguments,Arguments,Argumente,Argomenti,Argumentos,Arguments,Argumenty,Аргументи,Аргументы,参数,議論,Lập luận,Επιχειρήματα
+ARGS_DESC_0,Displays a card from the deck,Affiche une carte du paquet,Zeigt eine Karte aus dem Stapel an,Mostra una carta dal mazzo,Muestra una carta de la baraja.,Mostra una carta de la baralla,Wyświetla kartę z talii,Показує карту з колоди,Показывает карту из колоды,显示一张牌,デッキからカードを表示する,Hiển thị một lá bài từ bộ bài,Εμφανίζει μια κάρτα από την τράπουλα
+ARGS_DESC_1,Displays the entire deck,Affiche l'intégralité du jeu,Zeigt das gesamte Deck an,Visualizza l'intero mazzo,Muestra la baraja completa,Mostra tota la coberta,Wyświetla cały pokład,Відображає всю колоду,Отображает всю колоду,显示整副牌,デッキ全体を表示します,Hiển thị toàn bộ bộ bài,Εμφανίζει ολόκληρο το κατάστρωμα
+ARGS_DESC_2,Displays a card from the shuffled deck,Affiche une carte du jeu mélangé,Zeigt eine Karte aus dem gemischten Stapel an,Mostra una carta dal mazzo mescolato,Muestra una carta de la baraja barajada.,Mostra una carta de la baralla barrejada,Wyświetla kartę z potasowanej talii,Показує карту з перемішаної колоди,Показывает карту из перетасованной колоды,显示洗好的牌堆中的一张牌,シャッフルされたデッキからカードを表示する,Hiển thị một lá bài từ bộ bài đã xáo trộn,Εμφανίζει μια κάρτα από την ανακατεμένη τράπουλα
+ARGS_DESC_3,Displays all cards in the shuffled deck,Affiche toutes les cartes du jeu mélangé,Zeigt alle Karten im gemischten Stapel an,Mostra tutte le carte nel mazzo mescolato,Muestra todas las cartas de la baraja barajada.,Mostra totes les cartes de la baralla barrejada,Wyświetla wszystkie karty w potasowanej talii,Показує всі карти в перемішаній колоді,Отображает все карты в перетасованной колоде,显示洗好的牌堆中的所有牌,シャッフルされたデッキ内のすべてのカードを表示します,Hiển thị tất cả các lá bài trong bộ bài đã xáo trộn,Εμφανίζει όλα τα φύλλα στην ανακατεμένη τράπουλα
+ARGS_DESC_4,Launches a card game,Lance un jeu de cartes,Startet ein Kartenspiel,Lancia un gioco di carte,Lanza un juego de cartas,Llança un joc de cartes,Uruchamia grę karcianą,Запускає карткову гру,Запускает карточную игру,启动纸牌游戏,カードゲームを起動する,Khởi chạy một trò chơi bài,Ξεκινά ένα παιχνίδι με κάρτες
+ARGS_DESC_5,Insert one or more players,Insérer un ou plusieurs joueurs,Einen oder mehrere Spieler einfügen,Inserisci uno o più giocatori,Insertar uno o más jugadores,Inseriu un o més jugadors,Wstaw jednego lub więcej graczy,Вставте одного або кількох гравців,Вставьте одного или нескольких игроков,插入一个或多个玩家,1人以上のプレーヤーを挿入する,Chèn một hoặc nhiều người chơi,Εισαγάγετε έναν ή περισσότερους παίκτες
+ARGS_DESC_6,Displays the list of games and players,Affiche la liste des jeux et des joueurs,Zeigt die Liste der Spiele und Spieler an,Visualizza l'elenco dei giochi e dei giocatori,Muestra la lista de juegos y jugadores.,Mostra la llista de jocs i jugadors,Wyświetla listę gier i graczy,Відображає список ігор і гравців,Отображает список игр и игроков,显示游戏和玩家列表,ゲームとプレイヤーのリストを表示します,Hiển thị danh sách trò chơi và người chơi,Εμφανίζει τη λίστα με τα παιχνίδια και τους παίκτες
+ARGS_DESC_7,Displays the help menu,Affiche le menu d'aide,Zeigt das Hilfemenü an,Visualizza il menu di aiuto,Muestra el menú de ayuda,Mostra el menú d'ajuda,Wyświetla menu pomocy,Відображає меню довідки,Отображает меню справки,显示帮助菜单,ヘルプメニューを表示します,Hiển thị menu trợ giúp,Εμφανίζει το μενού βοήθειας
+ARGS_DESC_8,Debugger mode,Mode débogueur,Debugger-Modus,Modalità debugger,Modo depurador,Mode depurador,Tryb debugowania,Режим відладчика,Режим отладки,调试器模式,デバッガーモード,Chế độ gỡ lỗi,Λειτουργία εντοπισμού σφαλμάτων
+ARGS_DESC_9,Displays the program version,Affiche la version du programme,Zeigt die Programmversion an,Visualizza la versione del programma,Muestra la versión del programa.,Mostra la versió del programa,Wyświetla wersję programu,Відображає версію програми,Отображает версию программы,显示程序版本,プログラムのバージョンを表示します,Hiển thị phiên bản chương trình,Εμφανίζει την έκδοση του προγράμματος
+DEBUG_STARTING,Launching in debugger mode,Lancement en mode débogueur,Starten im Debugger-Modus,Avvio in modalità debugger,Lanzamiento en modo depurador,S'està iniciant en mode depurador,Uruchamianie w trybie debugera,Запуск у режимі відладчика,Запуск в режиме отладчика,以调试器模式启动,デバッガーモードで起動する,Khởi chạy ở chế độ gỡ lỗi,Εκκίνηση σε λειτουργία εντοπισμού σφαλμάτων
+DEBUG_CONTINUE,Press any key to continue...,Appuyez sur n'importe quelle touche pour continuer...,"Drücken Sie eine beliebige Taste, um fortzufahren ...",Premi un tasto qualsiasi per continuare...,Presione cualquier tecla para continuar...,Premeu qualsevol tecla per continuar...,"Naciśnij dowolny klawisz, aby kontynuować...","Натисніть будь-яку клавішу, щоб продовжити...","Нажмите любую клавишу, чтобы продолжить...",按任意键继续...,続行するには任意のキーを押してください...,Nhấn phím bất kỳ để tiếp tục...,Πατήστε οποιοδήποτε πλήκτρο για να συνεχίσετε...
+ERR_MENU_CHOICE,This choice does not exist,Ce choix n'existe pas,Diese Wahl gibt es nicht,Questa scelta non esiste,Esta elección no existe,Aquesta elecció no existeix,Ten wybór nie istnieje,Такого вибору не існує,Такого выбора не существует,此选择不存在,この選択肢は存在しません,Lựa chọn này không tồn tại,Αυτή η επιλογή δεν υπάρχει
+ERR_CARD_NUMBER,Specify a card number,Spécifiez un numéro de carte,Geben Sie eine Kartennummer an,Specificare un numero di carta,Especifique un número de tarjeta,Especifiqueu un número de targeta,Podaj numer karty,Вкажіть номер картки,Укажите номер карты,指定卡号,カード番号を指定してください,Chỉ định số thẻ,Καθορίστε έναν αριθμό κάρτας
+ERR_GAME_NAME,Enter a game name,Entrez un nom de jeu,Geben Sie einen Spielnamen ein,Inserisci un nome di gioco,Introduce un nombre de juego,Introduïu un nom de joc,Wprowadź nazwę gry,Введіть назву гри,Введите название игры,输入游戏名称,ゲーム名を入力してください,Nhập tên trò chơi,Εισαγάγετε ένα όνομα παιχνιδιού
+ERR_PLAYER_EXIST,Player does not exist,Le joueur n'existe pas,Spieler existiert nicht,Il giocatore non esiste,El jugador no existe,El jugador no existeix,Gracz nie istnieje,Гравець не існує,Игрок не существует,玩家不存在,プレイヤーが存在しません,Người chơi không tồn tại,Παίκτης δεν υπάρχει
+ERR_PLAYER_LIST,The player list is incorrect,La liste des joueurs est incorrecte,Die Spielerliste ist falsch,L'elenco dei giocatori è errato,La lista de jugadores es incorrecta,La llista de jugadors és incorrecta,Lista graczy jest nieprawidłowa,Список гравців неправильний,Список игроков неверный,球员名单不正确,プレーヤーリストが間違っています,Danh sách người chơi không đúng,Η λίστα παικτών είναι λανθασμένη
+ERR_LIST,Unknown list type,Type de liste inconnu,Unbekannter Listentyp,Tipo di elenco sconosciuto,Tipo de lista desconocida,Tipus de llista desconegut,Nieznany typ listy,Невідомий тип списку,Неизвестный тип списка,未知列表类型,不明なリストタイプ,Loại danh sách không xác định,Άγνωστος τύπος λίστας
+COMMON_BACK,return,retour,zurückkehren,ritorno,devolver,tornar,powrót,повернення,возвращаться,返回,戻る,trở lại,απόδοση
+COMMON_BY,by,par,von,di,por,per,przez,за,к,经过,による,qua,με
+COMMON_YES,Yes,Oui,Ja,SÌ,Sí,Sí,Tak,так,Да,是的,はい,Đúng,Ναί
+COMMON_NO,No,Non,NEIN,NO,No,No,NIE,немає,Нет,不,いいえ,KHÔNG,Οχι
+COMMON_PLAYABLE,Playable,Jouable,Spielbar,Giocabile,Interpretable,Jugable,Możliwość gry,Відтворюється,Играбельно,可玩,プレイ可能,Có thể chơi được,Παικτός
+COMMON_UNPLAYABLE,Not playable,Non jouable,Nicht spielbar,Non giocabile,No jugable,No es pot jugar,Nie można grać,Не можна грати,Не играбельно,不可播放,プレイできません,Không thể chơi được,Δεν παίζεται
+COMMON_PATH,Path,Chemin,Weg,Sentiero,Camino,Camí,Ścieżka,шлях,Путь,小路,パス,Con đường,Μονοπάτι
+COMMON_NAME,Name,Nom,Name,Nome,Nombre,Nom,Nazwa,Ім'я,Имя,姓名,名前,Tên,Ονομα
+COMMON_PLAYER,The player,Le joueur,Der Spieler,Il giocatore,El jugador,El jugador,Gracz,Гравець,Игрок,玩家,プレイヤー,Người chơi,Ο παίκτης
+COMMON_PLAYERS,Players,Joueurs,Spieler,Giocatori,Jugadores,Jugadors,Gracze,Гравці,Игроки,玩家,プレイヤー,Người chơi,Παίκτες
+COMMON_GAMES,Games,Jeux,Spiele,Giochi,Juegos,Jocs,Zawody sportowe,Ігри,Игры,游戏,ゲーム,Trò chơi,Παιχνίδια
+MENU_CONFIG_CONTENT_ENCODING,Encoding,Codage,Codierung,Codifica,Codificación,Codificació,Kodowanie,Кодування,Кодирование,编码,エンコーディング,Mã hóa,Κωδικοποίηση
+MENU_CONFIG_CONTENT_LANGUAGE,Language,Langue,Sprache,Lingua,Idioma,Llengua,Język,Мова,Язык,语言,言語,Ngôn ngữ,Γλώσσα
+MENU_CONFIG_CONTENT_SPLASH,Splash screen,Écran de démarrage,Begrüßungsbildschirm,Schermata iniziale,Pantalla de bienvenida,Pantalla inicial,Ekran powitalny,Заставка,Заставка экрана,启动画面,スプラッシュスクリーン,Màn hình chào mừng,Οθόνη πιτσιλίσματος
+MENU_CONFIG_LABEL,settings,paramètres,Einstellungen,impostazioni,ajustes,configuracions,Ustawienia,налаштування,настройки,设置,設定,cài đặt,ρυθμίσεις
+MENU_CONFIG_SUCCESS,Configuration applied,Configuration appliquée,Konfiguration angewendet,Configurazione applicata,Configuración aplicada,Configuració aplicada,Zastosowano konfigurację,Конфігурація застосована,Конфигурация применена,配置已应用,適用された構成,Cấu hình được áp dụng,Εφαρμόστηκε διαμόρφωση
+MENU_CONFIG_FAIL,Configuration not applied,Configuration non appliquée,Konfiguration nicht angewendet,Configurazione non applicata,Configuración no aplicada,Configuració no aplicada,Konfiguracja nie została zastosowana,Конфігурація не застосована,Конфигурация не применена,未应用配置,設定は適用されませんでした,Cấu hình không được áp dụng,Η διαμόρφωση δεν εφαρμόστηκε
+MENU_CONFIG_RESTART,Restart the program to apply the new configuration,Redémarrez le programme pour appliquer la nouvelle configuration,"Starten Sie das Programm neu, um die neue Konfiguration anzuwenden",Riavviare il programma per applicare la nuova configurazione,Reinicie el programa para aplicar la nueva configuración,Reinicieu el programa per aplicar la nova configuració,"Uruchom ponownie program, aby zastosować nową konfigurację","Перезапустіть програму, щоб застосувати нову конфігурацію","Перезапустите программу, чтобы применить новую конфигурацию.",重新启动程序以应用新配置,新しい設定を適用するにはプログラムを再起動してください,Khởi động lại chương trình để áp dụng cấu hình mới,Επανεκκινήστε το πρόγραμμα για να εφαρμόσετε τη νέα διαμόρφωση
+MENU_PLAYER_CONTENT_LIST,Show player list,Afficher la liste des joueurs,Spielerliste anzeigen,Mostra l'elenco dei giocatori,Mostrar lista de jugadores,Mostra la llista de jugadors,Pokaż listę graczy,Показати список гравців,Показать список игроков,显示玩家列表,プレイヤーリストを表示,Hiển thị danh sách người chơi,Εμφάνιση λίστας παικτών
+MENU_PLAYER_CONTENT_ADD,Add a player,Ajouter un joueur,Einen Spieler hinzufügen,Aggiungi un giocatore,Agregar un jugador,Afegeix un jugador,Dodaj gracza,Додайте гравця,Добавить игрока,添加玩家,プレイヤーを追加する,Thêm một người chơi,Προσθέστε έναν παίκτη
+MENU_PLAYER_CONTENT_REMOVE,Delete a player,Supprimer un joueur,Einen Spieler löschen,Elimina un giocatore,Eliminar un jugador,Eliminar un jugador,Usuń gracza,Видалити гравця,Удалить игрока,删除一名玩家,プレーヤーを削除する,Xóa một người chơi,Διαγραφή παίκτη
+MENU_PLAYER_INPUT_NAME,New player name,Nouveau nom du joueur,Neuer Spielername,Nuovo nome del giocatore,Nuevo nombre de jugador,Nom del jugador nou,Nowa nazwa gracza,Нове ім'я гравця,Новое имя игрока,新玩家名称,新しいプレイヤー名,Tên người chơi mới,Όνομα νέου παίκτη
+MENU_PLAYER_INPUT_NUMBER,Player number to delete,Numéro du joueur à supprimer,Zu löschende Spielernummer,Numero del giocatore da eliminare,Número de jugador a eliminar,Número de jugador a esborrar,Numer gracza do usunięcia,Номер гравця для видалення,Номер игрока для удаления,要删除的玩家号码,削除するプレイヤー番号,Số cầu thủ cần xóa,Αριθμός παίκτη για διαγραφή
+MENU_PLAYER_RESULT_ADDED,has been added,a été ajouté,wurde hinzugefügt,è stato aggiunto,Se ha añadido,s'ha afegit,został dodany,було додано,был добавлен,已添加,が追加されました,đã được thêm vào,έχει προστεθεί
+MENU_PLAYER_RESULT_DELETED,has been deleted,a été supprimé,wurde gelöscht,è stato cancellato,ha sido eliminado,s'ha suprimit,został usunięty,було видалено,был удален,已被删除,削除されました,đã bị xóa,έχει διαγραφεί
+MENU_PLAYER_LABEL,players,joueurs,Spieler,giocatori,jugadores,jugadors,gracze,гравців,игроки,玩家,選手たち,người chơi,παίκτες
+MENU_CHOICE_PLAYER,Players,Joueurs,Spieler,Giocatori,Jugadores,Jugadors,Gracze,Гравці,Игроки,玩家,プレイヤー,Người chơi,Παίκτες
+MENU_CHOICE_QUIT,Quit,Quitter,Aufhören,Esentato,Abandonar,Surt,Zrezygnować,Вийти,Покидать,辞职,やめる,Từ bỏ,Εγκαταλείπω
+MENU_CHOICE_SETTINGS,Settings,Paramètres,Einstellungen,Impostazioni,Ajustes,Configuració,Ustawienia,Налаштування,Настройки,设置,設定,Cài đặt,Ρυθμίσεις
+MENU_TEXT,Choose a game mode,Choisissez un mode de jeu,Wähle einen Spielmodus,Scegli una modalità di gioco,Elige un modo de juego,Trieu un mode de joc,Wybierz tryb gry,Виберіть режим гри,Выберите режим игры,选择游戏模式,ゲームモードを選択する,Chọn chế độ chơi,Επιλέξτε μια λειτουργία παιχνιδιού
+GAME_NOTFINISHED,This game is not finished,Ce jeu n'est pas terminé,Dieses Spiel ist noch nicht fertig,Questo gioco non è finito,Este juego no está terminado,Aquest joc no s'ha acabat,Ta gra nie jest skończona,Ця гра не закінчена,Эта игра не закончена.,这个游戏尚未结束,このゲームはまだ終わっていない,Trò chơi này chưa kết thúc,Αυτό το παιχνίδι δεν έχει τελειώσει
+_GAME_CLOSEDBATTLE_NAME,Closed Battle,Bataille fermée,Geschlossener Kampf,Battaglia chiusa,Batalla cerrada,Batalla tancada,Zamknięta bitwa,Закритий бій,Закрытый бой,封闭式战斗,クローズドバトル,Trận chiến khép kín,Κλειστή Μάχη
+_GAME_CLOSEDBATTLE_ROUND,Round,Rond,Runden,Girare,Redondo,Ronda,Okrągły,Круглий,Круглый,圆形的,ラウンド,Tròn,Γύρω
+_GAME_CLOSEDBATTLE_WINNER,is winner,est gagnant,ist Gewinner,è il vincitore,es ganador,és el guanyador,jest zwycięzcą,є переможцем,победитель,是赢家,勝者です,là người chiến thắng,είναι νικητής
+_GAME_SOLITARY_NAME,Solitaire,Solitaire,Solitär,Solitario,Solitario,Solitari,Pasjans,Пасьянс,Пасьянс,纸牌,ソリティア,Bài đơn độc,Πασιέντζα
+_GAME_PECKERLADY_NAME,The Queen of Spades,La Dame de Pique,Die Pik-Dame,La regina di picche,La reina de espadas,La reina de piques,Dama Pikowa,Пікова дама,Пиковая дама,黑桃皇后,スペードの女王,Nữ hoàng Bích,Η Βασίλισσα των Μπαστούνι
+_GAME_CHICKENSHIT_NAME,The Lousy One,Le minable,Der Miese,Il pessimo,El pésimo,El Pistó,Ten kiepski,Паршивий,Паршивый,糟糕的人,ひどい人,Người Tệ Hại,Ο άθλιος
+_GAME_LIAR_NAME,The Liar,Le menteur,Der Lügner,Il bugiardo,El mentiroso,El mentider,Kłamca,Брехун,Лжец,骗子,嘘つき,Kẻ nói dối,Ο Ψεύτης

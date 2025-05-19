@@ -1,0 +1,75 @@
+{
+  "ARGS_DESC": [
+    "Mostra una carta de la baralla",
+    "Mostra tota la coberta",
+    "Mostra una carta de la baralla barrejada",
+    "Mostra totes les cartes de la baralla barrejada",
+    "Llan\u00e7a un joc de cartes",
+    "Inseriu un o m\u00e9s jugadors",
+    "Mostra la llista de jocs i jugadors",
+    "Mostra el men\u00fa d'ajuda",
+    "Mode depurador",
+    "Mostra la versi\u00f3 del programa"
+  ],
+  "ARGS_INTRO": [
+    "Jocs de cartes",
+    "Llan\u00e7ament",
+    "Arguments"
+  ],
+  "COMMON_BACK": "tornar",
+  "COMMON_BY": "per",
+  "COMMON_GAMES": "Jocs",
+  "COMMON_NAME": "Nom",
+  "COMMON_NO": "No",
+  "COMMON_PATH": "Cam\u00ed",
+  "COMMON_PLAYABLE": "Jugable",
+  "COMMON_PLAYER": "El jugador",
+  "COMMON_PLAYERS": "Jugadors",
+  "COMMON_UNPLAYABLE": "No es pot jugar",
+  "COMMON_YES": "S\u00ed",
+  "DEBUG_CONTINUE": "Premeu qualsevol tecla per continuar...",
+  "DEBUG_STARTING": "S'est\u00e0 iniciant en mode depurador",
+  "ERR_CARD_NUMBER": "Especifiqueu un n\u00famero de targeta",
+  "ERR_GAME_NAME": "Introdu\u00efu un nom de joc",
+  "ERR_LIST": "Tipus de llista desconegut",
+  "ERR_MENU_CHOICE": "Aquesta elecci\u00f3 no existeix",
+  "ERR_PLAYER_EXIST": "El jugador no existeix",
+  "ERR_PLAYER_LIST": "La llista de jugadors \u00e9s incorrecta",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "El Pist\u00f3"
+  },
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "Batalla tancada",
+    "_ROUND": "Ronda",
+    "_WINNER": "\u00e9s el guanyador"
+  },
+  "GAME_LIAR": {
+    "_NAME": "El mentider"
+  },
+  "GAME_NOTFINISHED": "Aquest joc no s'ha acabat",
+  "GAME_PECKERLADY": {
+    "_NAME": "La reina de piques"
+  },
+  "GAME_SOLITARY": {
+    "_NAME": "Solitari"
+  },
+  "MENU_CHOICE_PLAYER": "Jugadors",
+  "MENU_CHOICE_QUIT": "Surt",
+  "MENU_CHOICE_SETTINGS": "Configuraci\u00f3",
+  "MENU_CONFIG_CONTENT_ENCODING": "Codificaci\u00f3",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "Llengua",
+  "MENU_CONFIG_CONTENT_SPLASH": "Pantalla inicial",
+  "MENU_CONFIG_FAIL": "Configuraci\u00f3 no aplicada",
+  "MENU_CONFIG_LABEL": "configuracions",
+  "MENU_CONFIG_RESTART": "Reinicieu el programa per aplicar la nova configuraci\u00f3",
+  "MENU_CONFIG_SUCCESS": "Configuraci\u00f3 aplicada",
+  "MENU_PLAYER_CONTENT_ADD": "Afegeix un jugador",
+  "MENU_PLAYER_CONTENT_LIST": "Mostra la llista de jugadors",
+  "MENU_PLAYER_CONTENT_REMOVE": "Eliminar un jugador",
+  "MENU_PLAYER_INPUT_NAME": "Nom del jugador nou",
+  "MENU_PLAYER_INPUT_NUMBER": "N\u00famero de jugador a esborrar",
+  "MENU_PLAYER_LABEL": "jugadors",
+  "MENU_PLAYER_RESULT_ADDED": "s'ha afegit",
+  "MENU_PLAYER_RESULT_DELETED": "s'ha suprimit",
+  "MENU_TEXT": "Trieu un mode de joc"
+}

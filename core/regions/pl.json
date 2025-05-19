@@ -1,0 +1,75 @@
+{
+  "ARGS_DESC": [
+    "Wy\u015bwietla kart\u0119 z talii",
+    "Wy\u015bwietla ca\u0142y pok\u0142ad",
+    "Wy\u015bwietla kart\u0119 z potasowanej talii",
+    "Wy\u015bwietla wszystkie karty w potasowanej talii",
+    "Uruchamia gr\u0119 karcian\u0105",
+    "Wstaw jednego lub wi\u0119cej graczy",
+    "Wy\u015bwietla list\u0119 gier i graczy",
+    "Wy\u015bwietla menu pomocy",
+    "Tryb debugowania",
+    "Wy\u015bwietla wersj\u0119 programu"
+  ],
+  "ARGS_INTRO": [
+    "Gry karciane",
+    "Pocz\u0105tek",
+    "Argumenty"
+  ],
+  "COMMON_BACK": "powr\u00f3t",
+  "COMMON_BY": "przez",
+  "COMMON_GAMES": "Zawody sportowe",
+  "COMMON_NAME": "Nazwa",
+  "COMMON_NO": "NIE",
+  "COMMON_PATH": "\u015acie\u017cka",
+  "COMMON_PLAYABLE": "Mo\u017cliwo\u015b\u0107 gry",
+  "COMMON_PLAYER": "Gracz",
+  "COMMON_PLAYERS": "Gracze",
+  "COMMON_UNPLAYABLE": "Nie mo\u017cna gra\u0107",
+  "COMMON_YES": "Tak",
+  "DEBUG_CONTINUE": "Naci\u015bnij dowolny klawisz, aby kontynuowa\u0107...",
+  "DEBUG_STARTING": "Uruchamianie w trybie debugera",
+  "ERR_CARD_NUMBER": "Podaj numer karty",
+  "ERR_GAME_NAME": "Wprowad\u017a nazw\u0119 gry",
+  "ERR_LIST": "Nieznany typ listy",
+  "ERR_MENU_CHOICE": "Ten wyb\u00f3r nie istnieje",
+  "ERR_PLAYER_EXIST": "Gracz nie istnieje",
+  "ERR_PLAYER_LIST": "Lista graczy jest nieprawid\u0142owa",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "Ten kiepski"
+  },
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "Zamkni\u0119ta bitwa",
+    "_ROUND": "Okr\u0105g\u0142y",
+    "_WINNER": "jest zwyci\u0119zc\u0105"
+  },
+  "GAME_LIAR": {
+    "_NAME": "K\u0142amca"
+  },
+  "GAME_NOTFINISHED": "Ta gra nie jest sko\u0144czona",
+  "GAME_PECKERLADY": {
+    "_NAME": "Dama Pikowa"
+  },
+  "GAME_SOLITARY": {
+    "_NAME": "Pasjans"
+  },
+  "MENU_CHOICE_PLAYER": "Gracze",
+  "MENU_CHOICE_QUIT": "Zrezygnowa\u0107",
+  "MENU_CHOICE_SETTINGS": "Ustawienia",
+  "MENU_CONFIG_CONTENT_ENCODING": "Kodowanie",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "J\u0119zyk",
+  "MENU_CONFIG_CONTENT_SPLASH": "Ekran powitalny",
+  "MENU_CONFIG_FAIL": "Konfiguracja nie zosta\u0142a zastosowana",
+  "MENU_CONFIG_LABEL": "Ustawienia",
+  "MENU_CONFIG_RESTART": "Uruchom ponownie program, aby zastosowa\u0107 now\u0105 konfiguracj\u0119",
+  "MENU_CONFIG_SUCCESS": "Zastosowano konfiguracj\u0119",
+  "MENU_PLAYER_CONTENT_ADD": "Dodaj gracza",
+  "MENU_PLAYER_CONTENT_LIST": "Poka\u017c list\u0119 graczy",
+  "MENU_PLAYER_CONTENT_REMOVE": "Usu\u0144 gracza",
+  "MENU_PLAYER_INPUT_NAME": "Nowa nazwa gracza",
+  "MENU_PLAYER_INPUT_NUMBER": "Numer gracza do usuni\u0119cia",
+  "MENU_PLAYER_LABEL": "gracze",
+  "MENU_PLAYER_RESULT_ADDED": "zosta\u0142 dodany",
+  "MENU_PLAYER_RESULT_DELETED": "zosta\u0142 usuni\u0119ty",
+  "MENU_TEXT": "Wybierz tryb gry"
+}
