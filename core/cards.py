@@ -25,33 +25,34 @@ class Cards: # Objet de jeu de cartes
 
 		return(self._packet)
 
-	def __dispCard(self, card) -> list: # Affichage d'une carte
-		color = str(Colors.red if(card[1] in ("♥", "♦")) else Colors.cyan)
+	def __dispCards(self, cards) -> list: # Affichage d'une carte
+		displayer = list(["", "", "", "", ""])
 
-		displayer = tuple((
-			",-----,",
-			f"|{color}{card[0]}{' ' if(len(card[0]) < 2) else ''}{Colors.end}   |",
-			f"|  {color}{card[1]}{Colors.end}  |",
-			f"|   {color}{' ' if(len(card[0]) < 2) else ''}{card[0]}{Colors.end}|",
-			"`-----`"
-		))
+		for card in cards:
+			color = str(Colors.red if(card[1] in ("♥", "♦")) else Colors.cyan)
+
+			displayer[0] += " ,-----,"
+			displayer[1] += f" |{color}{card[0]}{' ' if(len(card[0]) < 2) else ''}{Colors.end}   |"
+			displayer[2] += f" |  {color}{card[1]}{Colors.end}  |"
+			displayer[3] += f" |   {color}{' ' if(len(card[0]) < 2) else ''}{card[0]}{Colors.end}|"
+			displayer[4] += " `-----`"
 
 		for line in displayer:
 			print(line)
 
-		return(card)
+		return(cards)
 
-	def dispAllCards(self) -> list: # Affiche toutes les cartes en ascii
+	def dispAllCards(self, div = int(6)) -> list: # Affiche toutes les cartes en ascii
 		cards = list(self.getAllCards())
 
-		for card in cards:
-			self.__dispCard(card)
+		for i in range(0, int(len(cards) / div)):
+			self.__dispCards(cards[i*div:(i*div)+div])
 
 		return(cards)
 
 	def dispOneCard(self, key) -> list: # Affiche une carte en ascii
 		card = list(self.getOneCard(key))
-		self.__dispCard(card)
+		self.__dispCards([ card ])
 
 		return(card)
 

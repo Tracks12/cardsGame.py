@@ -87,7 +87,7 @@ def arg(cfg, reg, info) -> bool: # Fonction d'entrée des arguments
 			input(f"{Icons.info}{reg['DEBUG_CONTINUE']}")
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
-		print(f" {info['name']} {info['vers']} {reg['common']['by']} {info['author']}\n")
+		print(f" {info['name']} {info['vers']} {reg['COMMON_BY']} {info['author']}\n")
 
 	elif(argv[1] in args["prfx"][0][0]): # Affiche une carte du paquet
 		packets = Cards(2)
