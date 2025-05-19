@@ -10,12 +10,12 @@ class Solitary(Cards, Players): # Le solitaire
 		Cards.__init__(self)
 		Players.__init__(self, str(encode))
 
-		self.__file__ = __file__
-		self.content	= dict(lang["GAME_SOLITARY"])
-		self.gameName	= str(self.content["_NAME"])
-		self.finished	= bool(False)
-		self.__end		= bool(False)
-		self.__table	= list([])
+		self.__file__	: str 	= str(__file__)
+		self.content	: dict	= dict(lang["GAME_SOLITARY"])
+		self.gameName	: str	= str(self.content["_NAME"])
+		self.finished	: bool	= bool(False)
+		self.__end		: bool	= bool(False)
+		self.__table	: list	= list([])
 
 	def __update(self) -> None:
 		self.__end = bool(True)

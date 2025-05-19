@@ -10,15 +10,15 @@ class ClosedBattle(Cards, Players): # La bataille fermée
 		Cards.__init__(self)
 		Players.__init__(self, str(encode))
 
-		self.__file__ = __file__
-		self.content	= dict(lang["GAME_CLOSEDBATTLE"]) # Traductions du jeu
-		self.gameName	= str(self.content["_NAME"]) # Nom du jeu
-		self.finished	= bool(True) # Jeu fini
-		self.__end		= bool(False) # État du jeu
-		self.__round	= int(0) # Nombre de tour
-		self.__table	= list([]) # Plateau
-		self.__winner	= None # Vainqueur
-		self.__values	= tuple(( # Valeurs des cartes du jeu
+		self.__file__	: str	= str(__file__)
+		self.content	: dict	= dict(lang["GAME_CLOSEDBATTLE"]) # Traductions du jeu
+		self.gameName	: str	= str(self.content["_NAME"]) # Nom du jeu
+		self.finished	: bool	= bool(True) # Jeu fini
+		self.__end		: bool	= bool(False) # État du jeu
+		self.__round	: int	= int(0) # Nombre de tour
+		self.__table	: list	= list([]) # Plateau
+		self.__winner			= None # Vainqueur
+		self.__values	: tuple	= tuple(( # Valeurs des cartes du jeu
 			("A", 14), ("K", 13), ("Q", 12), ("V", 11), ("10", 10), ("9", 9),
 			("8", 8), ("7", 7), ("6", 6), ("5", 5), ("4", 4), ("3", 3), ("2", 2)
 		))

@@ -52,7 +52,7 @@ def main() -> bool:
   print("[i] - Writing new regions json files ...")
 
   for key in regions:
-    with open(f"{dir_path}/../../core/regions/{key}.json", 'w') as regionFile:
+    with open(f"{dir_path}/core/regions/{key}.json", 'w') as regionFile:
       string = str(dumps(regions[key], indent=2, sort_keys=True))
       regionFile.write(string)
 

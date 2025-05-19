@@ -129,6 +129,9 @@ def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des argu
 		except Exception as e:
 			sortGames(cfg, reg)
 			sortPlayers(cfg, reg)
+	
+	else:
+		print(f'{Icons.warn}Unknown arguments "{argv[1]}"')
 
 	return(True)
 
