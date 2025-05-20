@@ -10,9 +10,7 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 	exit()
 
 # Importation des dépendances internes
-from core import Colors, Icons, launch, splash, sortGames, sortPlayers
-from core import Cards, Config, LoadPlayers, Players, Regions, INFO
-from games import *
+from core import *
 
 def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 	args = dict({
