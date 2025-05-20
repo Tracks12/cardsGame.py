@@ -5,19 +5,18 @@ from os import listdir, system as shell
 from platform import system
 from sys import argv, version_info
 
-# Importation des dépendances internes
-from core import Colors, Icons, launch, splash, sortGames, sortPlayers
-
 if(version_info.major < 3): # Vérification de l'éxecution du script avec Python3
-	print("{}Program must be run with Python 3".format(Icons.warn))
+	print("/!\\ - Program must be run with Python 3")
 	exit()
 
-from core import Cards, Config, LoadPlayers, Players, Regions, info
+# Importation des dépendances internes
+from core import Colors, Icons, launch, splash, sortGames, sortPlayers
+from core import Cards, Config, LoadPlayers, Players, Regions, INFO
 from games import *
 
-def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des arguments
+def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 	args = dict({
-		"prfx": tuple((
+		"prfx": tuple[tuple[tuple[str], str]]((
 			(("-s", "--show-card"), "<x>"),
 			(("-S", "--show-all"), ""),
 			(("-r", "--show-rand-card"), "<x>"),
@@ -29,7 +28,7 @@ def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des argu
 			(("-D", "--debug"), ""),
 			(("-v", "--version"), "")
 		)),
-		"desc": tuple(reg["ARGS_DESC"])
+		"desc": tuple[str](reg["ARGS_DESC"])
 	})
 
 	if(argv[1] in args["prfx"][-3][0]): # Affiche le helper args
@@ -51,7 +50,7 @@ def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des argu
 			input(f"{Icons.info}{reg['DEBUG_CONTINUE']}")
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script
-		print(f" {info['name']} {info['vers']} {reg['COMMON_BY']} {info['author']}\n")
+		print(f" {INFO['name']} {INFO['vers']} {reg['COMMON_BY']} {INFO['author']}\n")
 
 	elif(argv[1] in args["prfx"][0][0]): # Affiche une carte du paquet
 		packets = Cards(2)
@@ -95,13 +94,13 @@ def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des argu
 			print(f"{Icons.warn}{reg['ERR_GAME_NAME']}")
 			return(False)
 
-		gameList = list([])
-		for game in games:
+		gameList = list[str]([])
+		for game in GAMES:
 			gameList.append(game(reg, cfg.encoding).gameName)
 
 		for id, name in enumerate(gameList):
 			if(gameName == name):
-				launch(cfg, reg, games[id])
+				launch(cfg, reg, GAMES[id])
 
 	elif(argv[1] in args["prfx"][5][0]): # Gestion des joueurs
 		try:
@@ -129,13 +128,13 @@ def arg(cfg: dict, reg: dict, info: dict) -> bool: # Fonction d'entrée des argu
 		except Exception as e:
 			sortGames(cfg, reg)
 			sortPlayers(cfg, reg)
-	
+
 	else:
 		print(f'{Icons.warn}{reg["ERR_ARGS"]} "{argv[1]}"')
 
 	return(True)
 
-def playerManager(cfg: dict, reg: dict, info: dict) -> bool:
+def playerManager(cfg: Config, reg: dict) -> bool:
 	menu = tuple((
 		"",
 		reg['MENU_PLAYER_CONTENT_LIST'],
@@ -151,7 +150,7 @@ def playerManager(cfg: dict, reg: dict, info: dict) -> bool:
 	while(True):
 		while(True):
 			try:
-				choice = int(input(f"({Colors.green}{info['name']}{Colors.end})[{Colors.yellow}{reg['MENU_PLAYER_LABEL']}{Colors.end}]> {Colors.cyan}"))
+				choice = int(input(f"({Colors.green}{INFO['name']}{Colors.end})[{Colors.yellow}{reg['MENU_PLAYER_LABEL']}{Colors.end}]> {Colors.cyan}"))
 				print(end=Colors.end)
 				break
 
@@ -201,7 +200,7 @@ def playerManager(cfg: dict, reg: dict, info: dict) -> bool:
 
 	return(True)
 
-def config(cfg: dict, reg: dict, info: dict) -> bool: # Fonction de configuration du programme
+def config(cfg: Config, reg: dict) -> bool: # Fonction de configuration du programme
 	def confirm(setter: bool) -> bool:
 		if(setter):
 			print(f"{Icons.info}{reg['MENU_CONFIG_SUCCESS']}")
@@ -225,7 +224,7 @@ def config(cfg: dict, reg: dict, info: dict) -> bool: # Fonction de configuratio
 	while(True):
 		while(True):
 			try:
-				choice = int(input(f"({Colors.green}{info['name']}{Colors.end})[{Colors.yellow}{reg['MENU_CONFIG_LABEL']}{Colors.end}]> {Colors.cyan}"))
+				choice = int(input(f"({Colors.green}{INFO['name']}{Colors.end})[{Colors.yellow}{reg['MENU_CONFIG_LABEL']}{Colors.end}]> {Colors.cyan}"))
 				print(end=Colors.end)
 				break
 
@@ -274,12 +273,12 @@ def config(cfg: dict, reg: dict, info: dict) -> bool: # Fonction de configuratio
 
 	return(True)
 
-def main(cfg: dict, reg: dict, info: dict) -> bool: # Fonction principale de l'execution du programme
+def main(cfg: Config, reg: dict) -> bool: # Fonction principale de l'execution du programme
 	if(cfg.splash):
-		splash(reg, info)
+		splash(reg)
 
 	menu = list([ f"{reg['MENU_TEXT']}:\n" ])
-	for game in games:
+	for game in GAMES:
 		game = game(reg, cfg.encoding)
 		playable = str(f"{Colors.green+reg['COMMON_PLAYABLE'] if(game.finished) else Colors.red+reg['COMMON_UNPLAYABLE']}{Colors.end}")
 		menu.append(str(f"{game.gameName}{' '*(24-len(game.gameName))}[ {playable} ]"))
@@ -294,14 +293,14 @@ def main(cfg: dict, reg: dict, info: dict) -> bool: # Fonction principale de l'e
 	while(True):
 		while(True):
 			try:
-				choice = int(input(f"({Colors.green}{info['name']}{Colors.end})> {Colors.cyan}"))
+				choice = int(input(f"({Colors.green}{INFO['name']}{Colors.end})> {Colors.cyan}"))
 				print(end=Colors.end)
 				break
 
 			except Exception:
 				print(f"{Icons.warn}{reg['ERR_MENU_CHOICE']}")
 
-		for i, game in enumerate(games):
+		for i, game in enumerate(GAMES):
 			if(choice == i+1):
 				launch(cfg, reg, game)
 
@@ -309,10 +308,10 @@ def main(cfg: dict, reg: dict, info: dict) -> bool: # Fonction principale de l'e
 			break
 
 		elif(choice == len(menu)):
-			playerManager(cfg, reg, info)
+			playerManager(cfg, reg)
 
 		elif(choice == len(menu)+1):
-			config(cfg, reg, info)
+			config(cfg, reg)
 
 	return(True)
 
@@ -321,7 +320,7 @@ if(__name__ == "__main__"):
 	reg = Regions(cfg.language, cfg.encoding).content # Chargement de la langue
 
 	if(len(argv) > 1):
-		arg(cfg, reg, info)
+		arg(cfg, reg)
 
 	else:
-		main(cfg, reg, info)
+		main(cfg, reg)

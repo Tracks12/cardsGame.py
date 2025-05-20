@@ -1,7 +1,7 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-# Module d'affichage des textes par langue
+# Module de configuration des paramètres du programme
 
 from json import dump, load
 from os import listdir
@@ -14,8 +14,8 @@ class Config:
 		self.__encode	= str("utf-8")
 		self.__path		= str("config.json")
 		self.encoding	= str(self.__encode)	# Encodage par défaut
-		self.language	= str("en")						# Langue par défaut
-		self.splash		= bool(True)					# Screen de bienvenu par défaut
+		self.language	= str("en")				# Langue par défaut
+		self.splash		= bool(True)			# Screen de bienvenu par défaut
 
 		self.loaded		= bool(self.__loadJSON())
 

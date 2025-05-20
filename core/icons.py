@@ -1,9 +1,11 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+# Module d'icône ascii
+
 from core.colors import Colors
 
-class Icons: # Module d'icône ascii
+class Icons:
 	warn = str(f" {Colors.bold}{Colors.red}[!]{Colors.end} - ")
 	info = str(f" {Colors.bold}{Colors.blue}(i){Colors.end} - ")
 	tips = str(f" {Colors.bold}{Colors.green}(?){Colors.end} - ")

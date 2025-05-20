@@ -16,14 +16,15 @@ class Regions:
 
 		self.__loadJSON()
 
-	def __loadJSON(self) -> None: # Chargement des langues depuis un fichier
+	def __loadJSON(self) -> bool: # Chargement des langues depuis un fichier
 		try:
 			with open(f"{self.__path}{self.__lang}.json", "r", encoding=self.__encode) as outFile:
 				self.content = dict(load(outFile))
+				return(True)
 
 		except Exception: # Création du contenu de langue anglais par défaut
 			self.content = dict({
-				"ARGS_DESC": tuple((
+				"ARGS_DESC": tuple[str]((
 					"Displays a card from the deck",
 					"Displays the entire deck",
 					"Displays a card from the shuffled deck",
@@ -35,7 +36,7 @@ class Regions:
 					"Debugger mode",
 					"Displays the program version"
 				)),
-				"ARGS_INTRO": tuple((
+				"ARGS_INTRO": tuple[str]((
 					"Cards game",
 					"Launch",
 					"Arguments"
@@ -98,3 +99,5 @@ class Regions:
 
 			print(f"{Icons.warn}The loading of the language module failed")
 			print(f'{Icons.info}Check the "config.json" or if the language file is complete in "core/regions/"')
+
+		return(False)

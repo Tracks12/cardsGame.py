@@ -1,9 +1,11 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+# Module de coloration pour les système Linux/Unix
+
 from platform import system
 
-class Colors: # Module de coloration pour les système Linux/Unix
+class Colors:
 	if(system() == "Linux"):
 		bold	= str("\033[1m")
 		italic	= str("\033[3m")
