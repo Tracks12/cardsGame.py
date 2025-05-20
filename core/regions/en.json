@@ -44,6 +44,9 @@
     "_ROUND": "Round",
     "_WINNER": "is winner"
   },
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "An 8 American"
+  },
   "GAME_LIAR": {
     "_NAME": "The Liar"
   },

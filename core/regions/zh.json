@@ -44,6 +44,9 @@
     "_ROUND": "\u5706\u5f62\u7684",
     "_WINNER": "\u662f\u8d62\u5bb6"
   },
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "8 \u7f8e\u56fd\u4eba"
+  },
   "GAME_LIAR": {
     "_NAME": "\u9a97\u5b50"
   },

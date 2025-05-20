@@ -44,6 +44,9 @@
     "_ROUND": "Redondo",
     "_WINNER": "es ganador"
   },
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "Un americano de 8 a\u00f1os"
+  },
   "GAME_LIAR": {
     "_NAME": "El mentiroso"
   },

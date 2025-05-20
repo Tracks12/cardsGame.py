@@ -44,6 +44,9 @@
     "_ROUND": "Girare",
     "_WINNER": "\u00e8 il vincitore"
   },
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "Un 8 americano"
+  },
   "GAME_LIAR": {
     "_NAME": "Il bugiardo"
   },

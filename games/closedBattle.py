@@ -31,7 +31,7 @@ class ClosedBattle(Cards, Game, Players): # La bataille fermée
 		))
 
 	def __clearTable(self) -> None: # Vide le plateau
-		self.__table = list[tuple]([])
+		self.__table = list[tuple[str, Card]]([])
 
 	def __displayCardOnTable(self) -> None: # Affichage des cartes joueurs
 		screen = list[str]([])
@@ -76,7 +76,7 @@ class ClosedBattle(Cards, Game, Players): # La bataille fermée
 					player.hand.append(card)
 					player.hand.reverse()
 
-				player.deck = list([])
+				player.deck = list[Card]([])
 
 		for player in self.getPlayers():
 			if(len(player.hand)):
