@@ -39,7 +39,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 			print(f" {leftSide}{' '*(30-len(leftSide))}{args['desc'][i]}", end="\n\n" if(i in (3, 6, len(args['desc'])-1)) else "\n")
 
 	elif(argv[1] in args["prfx"][-2][0]): # Mode Debugger
-		isLinux = True if(system() == "Linux") else False
+		isLinux = bool(system() == "Linux")
 
 		while(True):
 			shell("clear" if(isLinux) else "cls")

@@ -1,6 +1,8 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+import time
+
 from csv import DictReader
 from json import dumps
 from os import path
@@ -11,7 +13,7 @@ if(version_info.major < 3): # Vérification de l'éxecution du script avec Pytho
 	print("/!\\ - Program must be run with Python 3")
 	exit()
 
-from core import Icons
+from core import Colors, Icons
 
 def translates() -> bool:
 	dir_path = str(path.dirname(path.realpath(__file__)))
@@ -30,35 +32,54 @@ def translates() -> bool:
 		if(field != 'label'):
 			regions[field] = dict({})
 
-			for data in datas:
-				if(("_GAME" in data["label"]) and (data["label"].split('_')[0] == "")):
-					labelSplitted = list[str](data["label"].split("_"))
-					newGameLabel = str(f"{labelSplitted[1]}_{labelSplitted[2]}")
-					newLabel = str(data["label"].split(f"_{newGameLabel}")[1])
+			try:
+				print(f'{Icons.play}PROCESSING "{field}" [ {Colors.yellow}...{Colors.end} ]', end="\r")
 
-					if(not newGameLabel in regions[field]):
-						regions[field].update({ newGameLabel: dict({}) })
+				for data in datas:
+					if(("_GAME" in data["label"]) and (data["label"].split('_')[0] == "")):
+						labelSplitted = list[str](data["label"].split("_"))
+						newGameLabel = str(f"{labelSplitted[1]}_{labelSplitted[2]}")
+						newLabel = str(data["label"].split(f"_{newGameLabel}")[1])
 
-					regions[field][newGameLabel].update({ newLabel: data[field] })
+						if(not newGameLabel in regions[field]):
+							regions[field].update({ newGameLabel: dict({}) })
 
-				elif(("ARGS_DESC" in data["label"]) or ("ARGS_INTRO" in data["label"])):
-					labelSplitted = list[str](data["label"].split("_"))
-					newArgsLabel = str(f"{labelSplitted[0]}_{labelSplitted[1]}")
+						regions[field][newGameLabel].update({ newLabel: data[field] })
 
-					if(not newArgsLabel in regions[field]):
-						regions[field].update({ newArgsLabel: list([]) })
+					elif(("ARGS_DESC" in data["label"]) or ("ARGS_INTRO" in data["label"])):
+						labelSplitted = list[str](data["label"].split("_"))
+						newArgsLabel = str(f"{labelSplitted[0]}_{labelSplitted[1]}")
 
-					regions[field][newArgsLabel].append(data[field])
+						if(not newArgsLabel in regions[field]):
+							regions[field].update({ newArgsLabel: list[str]([]) })
 
-				else:
-					regions[field].update({ data["label"]: data[field] })
+						regions[field][newArgsLabel].append(data[field])
+
+					else:
+						regions[field].update({ data["label"]: data[field] })
+
+				time.sleep(.05)
+
+			except Exception:
+				print(f'{Icons.warn}PROCESSING "{field}" [ {Colors.red}FAILED{Colors.end} ]')
+				print(f"{Icons.warn}{format_exc()}")
 
 	print(f"{Icons.play}Writing new regions json files ...")
 
 	for key in regions:
-		with open(f"{dir_path}/core/regions/{key}.json", 'w') as regionFile:
-			string = str(dumps(regions[key], indent=2, sort_keys=True))
-			regionFile.write(string)
+		try:
+			print(f'{Icons.play}WRITTING "{dir_path}/core/regions/{key}.json" [ {Colors.yellow}...{Colors.end} ]', end="\r")
+
+			with open(f"{dir_path}/core/regions/{key}.json", 'w') as regionFile:
+				string = str(dumps(regions[key], indent=2, sort_keys=True))
+				regionFile.write(string)
+
+			time.sleep(.05)
+			print(f'{Icons.info}WRITTING "{dir_path}/core/regions/{key}.json" [ {Colors.green}OK{Colors.end} ] ')
+
+		except Exception:
+				print(f'{Icons.warn}WRITTING "{dir_path}/core/regions/{key}.json" [ {Colors.red}FAILED{Colors.end} ]')
+				print(f"{Icons.warn}{format_exc()}")
 
 	print(f"{Icons.info}Translations created with success !")
 
