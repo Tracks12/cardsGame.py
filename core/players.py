@@ -4,6 +4,7 @@
 # Module de création d'objets joueurs
 
 from json import loads, dumps
+from os.path import abspath, dirname
 
 from core import B64
 from core.cards import Card
@@ -20,7 +21,7 @@ class LoadPlayers:
 	def __init__(self, encode: str):
 		self.players	: list[str]	= list[str]([])
 		self.__encode	: str		= str(encode)
-		self.__path		: str		= str("core/players")
+		self.__path		: str		= str(f"{dirname(abspath(__file__))}/players")
 
 		self.__loadJSON()
 

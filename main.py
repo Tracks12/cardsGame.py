@@ -1,6 +1,7 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
+import readline
 from os import listdir, system as shell
 from platform import system
 from sys import argv, version_info
@@ -36,7 +37,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 
 		for i in range(0, len(args["prfx"])):
 			leftSide = f"{args['prfx'][i][0][0]}, {args['prfx'][i][0][1]} {args['prfx'][i][1]}"
-			print(f" {leftSide}{' '*(30-len(leftSide))}{args['desc'][i]}", end="\n\n" if(i in (3, 6, len(args['desc'])-1)) else "\n")
+			print(f" {leftSide}{' '*(32-len(leftSide))}{args['desc'][i]}", end="\n\n" if(i in (3, 6, len(args['desc'])-1)) else "\n")
 
 	elif(argv[1] in args["prfx"][-2][0]): # Mode Debugger
 		isLinux = bool(system() == "Linux")
@@ -44,7 +45,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 		while(True):
 			shell("clear" if(isLinux) else "cls")
 			print(f"{Icons.info}{reg['DEBUG_STARTING']}")
-			shell(f"python{'3' if(isLinux) else ''} main.py")
+			shell(f"python{'3' if(isLinux) else ''} {__file__}")
 			input(f"{Icons.info}{reg['DEBUG_CONTINUE']}")
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script

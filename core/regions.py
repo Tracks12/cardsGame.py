@@ -4,6 +4,7 @@
 # Module d'affichage des textes par langue
 
 from json import load
+from os.path import abspath, dirname
 
 from core import Icons
 
@@ -12,7 +13,7 @@ class Regions:
 		self.content	= dict({})
 		self.__encode	= str(encode)
 		self.__lang		= str(lang)
-		self.__path		= str("core/regions/")
+		self.__path		= str(f"{dirname(abspath(__file__))}/regions/")
 
 		self.__loadJSON()
 

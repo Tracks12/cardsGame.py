@@ -5,6 +5,7 @@
 
 from json import dump, load
 from os import listdir
+from os.path import abspath, dirname
 
 from core.icons import Icons
 
@@ -12,7 +13,7 @@ class Config:
 	def __init__(self):
 		self.__config	= dict({})
 		self.__encode	= str("utf-8")
-		self.__path		= str("config.json")
+		self.__path		= str(f"{dirname(abspath(__file__))}/../config.json")
 		self.encoding	= str(self.__encode)	# Encodage par défaut
 		self.language	= str("en")				# Langue par défaut
 		self.splash		= bool(True)			# Screen de bienvenu par défaut
