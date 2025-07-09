@@ -14,6 +14,7 @@ class Config:
 		self.__config	= dict({})
 		self.__encode	= str("utf-8")
 		self.__path		= str(f"{dirname(abspath(__file__))}/../config.json")
+		self.colors		= bool(False)			# Couleurs par défaut
 		self.encoding	= str(self.__encode)	# Encodage par défaut
 		self.language	= str("en")				# Langue par défaut
 		self.splash		= bool(True)			# Screen de bienvenu par défaut
@@ -24,6 +25,7 @@ class Config:
 		try:
 			with open(self.__path, "r", encoding=self.__encode) as outFile:
 				self.__config	= dict(load(outFile))
+				self.colors		= bool(self.__config["colors"])
 				self.encoding	= str(self.__config["encoding"])
 				self.language	= str(self.__config["language"])
 				self.splash		= bool(self.__config["splash"])
@@ -38,9 +40,10 @@ class Config:
 		try:
 			with open(self.__path, "w", encoding=self.__encode) as inFile:
 				self.__config = dict({
-					"encoding": str(self.encoding),
-					"language": str(self.language),
-					"splash": bool(self.splash)
+					"colors"	: bool(self.colors),
+					"encoding"	: str(self.encoding),
+					"language"	: str(self.language),
+					"splash"	: bool(self.splash)
 				})
 
 				dump(dict(self.__config), inFile, sort_keys=True, indent=2)
@@ -48,6 +51,12 @@ class Config:
 		except(Exception):
 			print("{}No config file found".format(Icons.warn))
 			return(False)
+
+		return(True)
+
+	def setColors(self, colors: bool = True) -> bool: # Colors setter
+		self.colors = bool(colors in ("True", "true"))
+		self.__saveJSON()
 
 		return(True)
 

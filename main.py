@@ -221,9 +221,10 @@ def config(cfg: Config, reg: dict) -> bool: # Fonction de configuration du progr
 
 	menu = tuple((
 		"",
-		f"{reg['MENU_CONFIG_CONTENT_ENCODING']}{' '*(24-len(reg['MENU_CONFIG_CONTENT_ENCODING']))}[ {cfg.encoding} ]",
-		f"{reg['MENU_CONFIG_CONTENT_LANGUAGE']}{' '*(24-len(reg['MENU_CONFIG_CONTENT_LANGUAGE']))}[ {cfg.language} ]",
-		f"{reg['MENU_CONFIG_CONTENT_SPLASH']}{' '*(24-len(reg['MENU_CONFIG_CONTENT_SPLASH']))}[ {cfg.splash} ]"
+		f"{'Colors':<{24}}[ {cfg.colors} ]",
+		f"{reg['MENU_CONFIG_CONTENT_ENCODING']:<{24}}[ {cfg.encoding} ]",
+		f"{reg['MENU_CONFIG_CONTENT_LANGUAGE']:<{24}}[ {cfg.language} ]",
+		f"{reg['MENU_CONFIG_CONTENT_SPLASH']:<{24}}[ {cfg.splash} ]"
 	))
 
 	for key, row in enumerate(menu):
@@ -246,6 +247,13 @@ def config(cfg: Config, reg: dict) -> bool: # Fonction de configuration du progr
 			break
 
 		elif(choice == 1):
+			prompt = str(f"[{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]")
+			colors = str(input(f"Colors {prompt}: {Colors.cyan}"))
+			print(end=Colors.end)
+
+			confirm(cfg.setColors(colors))
+
+		elif(choice == 2):
 			codings = tuple(("ascii", "utf-8", "utf-16", "utf-32"))
 			prompt	= str("[")
 
@@ -257,7 +265,7 @@ def config(cfg: Config, reg: dict) -> bool: # Fonction de configuration du progr
 
 			confirm(cfg.setEncode(coding))
 
-		elif(choice == 2):
+		elif(choice == 3):
 			langs	= list(listdir("core/regions"))
 			for k, v in enumerate(langs):
 				langs[k] = str(v.split(".")[0])
@@ -271,12 +279,12 @@ def config(cfg: Config, reg: dict) -> bool: # Fonction de configuration du progr
 
 			confirm(cfg.setLanguage(lang))
 
-		elif(choice == 3):
+		elif(choice == 4):
 			prompt = str(f"[{Colors.green}true{Colors.end}|{Colors.red}false{Colors.end}]")
-			splash = str(input(f"{reg['MENU_CONFIG_CONTENT_SPLASH']} {prompt}: {Colors.cyan}"))
+			colors = str(input(f"{reg['MENU_CONFIG_CONTENT_SPLASH']} {prompt}: {Colors.cyan}"))
 			print(end=Colors.end)
 
-			confirm(cfg.setSplash(splash))
+			confirm(cfg.setSplash(colors))
 
 		else:
 			print(f"{Icons.warn}{reg['ERR_MENU_CHOICE']}")

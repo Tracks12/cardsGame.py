@@ -3,10 +3,22 @@
 
 # Module de coloration pour les système Linux/Unix
 
+from json import load
+from os.path import abspath
 from platform import system
 
+from core.constants import ENABLE_COLOR
+
+try:
+	with open(abspath("config.json"), "r", encoding="utf-8") as cfgFile:
+		_ = dict[str, str | bool](load(cfgFile))
+		ENABLE_COLOR = _["colors"]
+
+except:
+	pass
+
 class Colors:
-	if(system() == "Linux"):
+	if(ENABLE_COLOR):
 		bold	= str("\033[1m")
 		italic	= str("\033[3m")
 

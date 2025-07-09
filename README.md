@@ -4,17 +4,19 @@ Un jeu de carte classique sur terminal
 
 ## Sommaire
 
-1. [Aperçu](#aperçu)
-   - [Consignes](#consignes)
-2. [Pré-requis](#pré-requis)
-   - [Dépendances](#dépendances)
-3. [Utilisations](#utilisations)
-   - [Gestion des joeurs](#gestion-des-joeurs)
-4. [Options & Configurations](#options--configurations)
-5. [Ressource disponibles](#ressource-disponibles)
-   - [Langues & Régions](#langues--régions)
-   - [Jeux implémentés](#jeux-implémentés)
-6. [Licence](#licence)
+- [**Cards Game**](#cards-game)
+  - [Sommaire](#sommaire)
+  - [Aperçu](#aperçu)
+    - [Consignes](#consignes)
+  - [Pré-requis](#pré-requis)
+    - [Dépendances](#dépendances)
+  - [Utilisations](#utilisations)
+    - [Gestion des joeurs](#gestion-des-joeurs)
+  - [Options \& Configurations](#options--configurations)
+  - [Ressource disponibles](#ressource-disponibles)
+    - [Langues \& Régions](#langues--régions)
+    - [Jeux implémentés](#jeux-implémentés)
+  - [Licence](#licence)
 
 ## Aperçu
 
@@ -81,6 +83,7 @@ La configuration du programme se fait depuis le fichier **[config.json](config.j
 
 ```json
 {
+  "colors": true,
   "encoding": "utf-8",
   "language": "fr",
   "splash": true
