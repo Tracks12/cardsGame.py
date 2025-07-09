@@ -1,17 +1,28 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-import readline
-from os import listdir, system as shell
-from platform import system
-from sys import argv, version_info
+try:
+	# --- Importing external dependencies ---
+	from os import listdir, system as shell
+	from platform import system
+	from sys import argv, version_info
 
-if(version_info.major < 3): # Vérification de l'éxecution du script avec Python3
+	if(version_info.major < 3): # Check if Python version is 3 or higher
+		raise(RuntimeError)
+	
+	if(system() == "Linux"): # Dependencies for Linux
+		import readline
+
+	# Importation des dépendances internes
+	from core import *
+
+except(RuntimeError):
 	print("/!\\ - Program must be run with Python 3")
 	exit()
 
-# Importation des dépendances internes
-from core import *
+except(ModuleNotFoundError) as e:
+	print(f"/!\\ - ImportError: {e}")
+	exit()
 
 def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 	args = dict({
@@ -57,7 +68,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 		try:
 			card = int(argv[2])-1
 
-		except Exception:
+		except(Exception):
 			print(f"{Icons.warn}{reg['ERR_CARD_NUMBER']}")
 			return(False)
 
@@ -73,7 +84,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 		try:
 			card = int(argv[2])-1
 
-		except Exception:
+		except(Exception):
 			print(f"{Icons.warn}{reg['ERR_CARD_NUMBER']}")
 			return(False)
 
@@ -89,7 +100,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 		try:
 			gameName = str(argv[2])
 
-		except Exception:
+		except(Exception):
 			print(f"{Icons.warn}{reg['ERR_GAME_NAME']}")
 			return(False)
 
@@ -105,7 +116,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 		try:
 			playersList = list(eval(argv[2]))
 
-		except Exception:
+		except(Exception):
 			print(f"{Icons.warn}{reg['ERR_PLAYER_LIST']}")
 			return(False)
 
@@ -124,7 +135,7 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 				print(f"{Icons.warn}{reg['ERR_LIST']}")
 				return(False)
 
-		except Exception as e:
+		except(Exception):
 			sortGames(cfg, reg)
 			sortPlayers(cfg, reg)
 
@@ -153,7 +164,7 @@ def playerManager(cfg: Config, reg: dict) -> bool:
 				print(end=Colors.end)
 				break
 
-			except Exception:
+			except(Exception):
 				print(f"{Icons.warn}{reg['ERR_MENU_CHOICE']}")
 
 		if(choice == 0):
@@ -191,7 +202,7 @@ def playerManager(cfg: Config, reg: dict) -> bool:
 
 				print(f"{Icons.info}{reg['COMMON_PLAYER']} {playerName} {reg['MENU_PLAYER_RESULT_DELETED']}")
 
-			except Exception:
+			except(Exception):
 				print(f"{Icons.warn}{reg['ERR_PLAYER_EXIST']}")
 
 		else:
@@ -227,7 +238,7 @@ def config(cfg: Config, reg: dict) -> bool: # Fonction de configuration du progr
 				print(end=Colors.end)
 				break
 
-			except Exception:
+			except(Exception):
 				print(f"{Icons.warn}{reg['ERR_MENU_CHOICE']}")
 
 		if(choice == 0):
@@ -296,7 +307,7 @@ def main(cfg: Config, reg: dict) -> bool: # Fonction principale de l'execution d
 				print(end=Colors.end)
 				break
 
-			except Exception:
+			except(Exception):
 				print(f"{Icons.warn}{reg['ERR_MENU_CHOICE']}")
 
 		for i, game in enumerate(GAMES):

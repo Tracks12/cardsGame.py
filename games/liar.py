@@ -1,7 +1,6 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-from core import Colors
 from core.cards import Card, Cards
 from core.game import Game
 from core.players import Player, Players

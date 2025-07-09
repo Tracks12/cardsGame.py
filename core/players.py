@@ -30,7 +30,7 @@ class LoadPlayers:
 			with open(self.__path, "r", encoding=self.__encode) as outFile:
 				self.players = list[str](loads(B64.decode(outFile.read())))
 
-		except Exception:
+		except(Exception):
 			self.players = list[str]([])
 
 	def __saveJSON(self) -> bool:
@@ -40,7 +40,7 @@ class LoadPlayers:
 
 			return(True)
 
-		except Exception:
+		except(Exception):
 			return(False)
 
 	def insert(self, players: list[str]) -> bool:

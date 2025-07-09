@@ -31,7 +31,7 @@ def launch(cfg: Config, reg: dict, game: Game) -> bool: # Fonction de lancement 
 	try:
 		return(game.start())
 
-	except Exception:
+	except(Exception):
 		print(f"{Icons.warn}{format_exc()}")
 
 	return(False)

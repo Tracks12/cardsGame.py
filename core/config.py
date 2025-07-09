@@ -28,7 +28,7 @@ class Config:
 				self.language	= str(self.__config["language"])
 				self.splash		= bool(self.__config["splash"])
 
-		except Exception:
+		except(Exception):
 			print("{}No config file found".format(Icons.warn))
 			return(False)
 
@@ -45,7 +45,7 @@ class Config:
 
 				dump(dict(self.__config), inFile, sort_keys=True, indent=2)
 
-		except Exception:
+		except(Exception):
 			print("{}No config file found".format(Icons.warn))
 			return(False)
 

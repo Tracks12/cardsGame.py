@@ -115,12 +115,13 @@ class ClosedBattle(Cards, Game, Players): # La bataille fermée
 			self.__rules()
 
 			print("")
-			for player in self.getPlayers():
-				print(f" {player.name}: {len(player.hand) + len(player.deck)}")
+			print("\n".join([
+				f" {player.name:<{10}}: {len(player.hand) + len(player.deck)}" for player in self.getPlayers()
+			]), end="\n"*2)
 
-			print("")
-			# input()
+			print("\x1b[A" * (len(self.getPlayers()) + 9), end="\r")
 
+		print("\x1b[B" * (len(self.getPlayers()) + 9), end="\r")
 		print(f" {self.__winner.name} {self.content['_WINNER']} !")
 
 		return(True)

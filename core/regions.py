@@ -27,7 +27,7 @@ class Regions:
 
 				return(True)
 
-		except Exception: # Création du contenu de langue anglais par défaut
+		except(Exception): # Création du contenu de langue anglais par défaut
 			self.content = dict({
 				"ARGS_DESC": [
 					"Displays a card from the deck",

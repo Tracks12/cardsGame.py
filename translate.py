@@ -60,7 +60,7 @@ def translates() -> bool:
 
 				time.sleep(.05)
 
-			except Exception:
+			except(Exception):
 				print(f'{Icons.warn}PROCESSING "{field}" [ {Colors.red}FAILED{Colors.end} ]')
 				print(f"{Icons.warn}{format_exc()}")
 
@@ -77,7 +77,7 @@ def translates() -> bool:
 			time.sleep(.05)
 			print(f'{Icons.info}WRITTING "{dir_path}/core/regions/{key}.json" [ {Colors.green}OK{Colors.end} ] ')
 
-		except Exception:
+		except(Exception):
 				print(f'{Icons.warn}WRITTING "{dir_path}/core/regions/{key}.json" [ {Colors.red}FAILED{Colors.end} ]')
 				print(f"{Icons.warn}{format_exc()}")
 
@@ -92,7 +92,7 @@ def main() -> bool:
 	try:
 		return(translates())
 
-	except Exception:
+	except(Exception):
 		print(f"{Icons.warn}{format_exc()}")
 		return(False)
 
