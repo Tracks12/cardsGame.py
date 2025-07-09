@@ -34,4 +34,4 @@ for _, module, _ in iter_modules(__path__):
 			print(f"[games] Failed to import game {game}: {e}")
 
 if(DEBUG):
-	print(f"[games] Total games imported: {len(GAMES)}\n")
+	print(f"[games] Total games imported: {len(GAMES)}")
