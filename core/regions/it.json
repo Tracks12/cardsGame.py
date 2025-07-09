@@ -1,0 +1,79 @@
+{
+  "ARGS_DESC": [
+    "Mostra una carta dal mazzo",
+    "Visualizza l'intero mazzo",
+    "Mostra una carta dal mazzo mescolato",
+    "Mostra tutte le carte nel mazzo mescolato",
+    "Lancia un gioco di carte",
+    "Inserisci uno o pi\u00f9 giocatori",
+    "Visualizza l'elenco dei giochi e dei giocatori",
+    "Visualizza il menu di aiuto",
+    "Modalit\u00e0 debugger",
+    "Visualizza la versione del programma"
+  ],
+  "ARGS_INTRO": [
+    "Giochi di carte",
+    "Lancio",
+    "Argomenti"
+  ],
+  "COMMON_BACK": "ritorno",
+  "COMMON_BY": "di",
+  "COMMON_GAMES": "Giochi",
+  "COMMON_NAME": "Nome",
+  "COMMON_NO": "NO",
+  "COMMON_PATH": "Sentiero",
+  "COMMON_PLAYABLE": "Giocabile",
+  "COMMON_PLAYER": "Il giocatore",
+  "COMMON_PLAYERS": "Giocatori",
+  "COMMON_UNPLAYABLE": "Non giocabile",
+  "COMMON_YES": "S\u00cc",
+  "DEBUG_CONTINUE": "Premi un tasto qualsiasi per continuare...",
+  "DEBUG_STARTING": "Avvio in modalit\u00e0 debugger",
+  "ERR_ARGS": "Argomenti sconosciuti",
+  "ERR_CARD_NUMBER": "Specificare un numero di carta",
+  "ERR_GAME_NAME": "Inserisci un nome di gioco",
+  "ERR_LIST": "Tipo di elenco sconosciuto",
+  "ERR_MENU_CHOICE": "Questa scelta non esiste",
+  "ERR_PLAYER_EXIST": "Il giocatore non esiste",
+  "ERR_PLAYER_LIST": "L'elenco dei giocatori \u00e8 errato",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "Il pessimo"
+  },
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "Battaglia chiusa",
+    "_ROUND": "Girare",
+    "_WINNER": "\u00e8 il vincitore"
+  },
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "Un 8 americano"
+  },
+  "GAME_LIAR": {
+    "_NAME": "Il bugiardo"
+  },
+  "GAME_NOTFINISHED": "Questo gioco non \u00e8 finito",
+  "GAME_PECKERLADY": {
+    "_NAME": "La regina di picche"
+  },
+  "GAME_SOLITARY": {
+    "_NAME": "Solitario"
+  },
+  "MENU_CHOICE_PLAYER": "Giocatori",
+  "MENU_CHOICE_QUIT": "Esentato",
+  "MENU_CHOICE_SETTINGS": "Impostazioni",
+  "MENU_CONFIG_CONTENT_ENCODING": "Codifica",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "Lingua",
+  "MENU_CONFIG_CONTENT_SPLASH": "Schermata iniziale",
+  "MENU_CONFIG_FAIL": "Configurazione non applicata",
+  "MENU_CONFIG_LABEL": "impostazioni",
+  "MENU_CONFIG_RESTART": "Riavviare il programma per applicare la nuova configurazione",
+  "MENU_CONFIG_SUCCESS": "Configurazione applicata",
+  "MENU_PLAYER_CONTENT_ADD": "Aggiungi un giocatore",
+  "MENU_PLAYER_CONTENT_LIST": "Mostra l'elenco dei giocatori",
+  "MENU_PLAYER_CONTENT_REMOVE": "Elimina un giocatore",
+  "MENU_PLAYER_INPUT_NAME": "Nuovo nome del giocatore",
+  "MENU_PLAYER_INPUT_NUMBER": "Numero del giocatore da eliminare",
+  "MENU_PLAYER_LABEL": "giocatori",
+  "MENU_PLAYER_RESULT_ADDED": "\u00e8 stato aggiunto",
+  "MENU_PLAYER_RESULT_DELETED": "\u00e8 stato cancellato",
+  "MENU_TEXT": "Scegli una modalit\u00e0 di gioco"
+}

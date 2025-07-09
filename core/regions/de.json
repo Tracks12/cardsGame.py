@@ -1,64 +1,79 @@
 {
-  "args": {
-    "intro": ["Die Kartenspiele", "Starten Sie", "Einwände"],
-    "desc": [
-      "\tZeigt eine Paketkarte an",
-      "\tZeigt das gesamte Kartenpaket an",
-      "Zeigt eine gemischte Paketkarte an",
-      "\tZeigt alle Karten des gemischten Pakets an\n",
-      "\tStarten Sie ein Kartenspiel",
-      "Einen oder mehrere Spieler einfügen\n",
-      "\t\tZeigt das Hilfemenü an",
-      "\t\tDebug-Modus",
-      "\t\tZeigt die Version des Programms an\n"
-    ]
+  "ARGS_DESC": [
+    "Zeigt eine Karte aus dem Stapel an",
+    "Zeigt das gesamte Deck an",
+    "Zeigt eine Karte aus dem gemischten Stapel an",
+    "Zeigt alle Karten im gemischten Stapel an",
+    "Startet ein Kartenspiel",
+    "Einen oder mehrere Spieler einf\u00fcgen",
+    "Zeigt die Liste der Spiele und Spieler an",
+    "Zeigt das Hilfemen\u00fc an",
+    "Debugger-Modus",
+    "Zeigt die Programmversion an"
+  ],
+  "ARGS_INTRO": [
+    "Kartenspiele",
+    "Start",
+    "Argumente"
+  ],
+  "COMMON_BACK": "zur\u00fcckkehren",
+  "COMMON_BY": "von",
+  "COMMON_GAMES": "Spiele",
+  "COMMON_NAME": "Name",
+  "COMMON_NO": "NEIN",
+  "COMMON_PATH": "Weg",
+  "COMMON_PLAYABLE": "Spielbar",
+  "COMMON_PLAYER": "Der Spieler",
+  "COMMON_PLAYERS": "Spieler",
+  "COMMON_UNPLAYABLE": "Nicht spielbar",
+  "COMMON_YES": "Ja",
+  "DEBUG_CONTINUE": "Dr\u00fccken Sie eine beliebige Taste, um fortzufahren ...",
+  "DEBUG_STARTING": "Starten im Debugger-Modus",
+  "ERR_ARGS": "Unbekannte Argumente",
+  "ERR_CARD_NUMBER": "Geben Sie eine Kartennummer an",
+  "ERR_GAME_NAME": "Geben Sie einen Spielnamen ein",
+  "ERR_LIST": "Unbekannter Listentyp",
+  "ERR_MENU_CHOICE": "Diese Wahl gibt es nicht",
+  "ERR_PLAYER_EXIST": "Spieler existiert nicht",
+  "ERR_PLAYER_LIST": "Die Spielerliste ist falsch",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "Der Miese"
   },
-  "debug": {
-    "continue": "Taste drücken, um fortzufahren ..."
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "Geschlossener Kampf",
+    "_ROUND": "Runden",
+    "_WINNER": "ist Gewinner"
   },
-  "err": {
-    "menuCho": "Diese Wahl gibt es nicht",
-    "cardNum": "Geben Sie eine Kartennummer an",
-    "gameName": "Geben Sie einen Spielnamen ein",
-    "player": "Die Spielerliste ist falsch"
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "Ein 8-Amerikaner"
   },
-  "tip": {},
-  "menu": {
-    "config": {
-      "content": {
-        "encoding": "Kodierung",
-        "language": "Sprache",
-        "splash": "Begrüßungsbildschirm"
-      },
-      "label": "Einstellungen",
-      "back": "zurück",
-      "success": "Konfig angewendet",
-      "failed": "Config nicht angewendet",
-      "restart": "Programm neu starten, um die neue Konfiguration anzuwenden"
-    },
-    "txt": "Wählen Sie einen Spielmodus",
-    "quit": "Beenden Sie",
-    "set": "Einstellungen"
+  "GAME_LIAR": {
+    "_NAME": "Der L\u00fcgner"
   },
-  "game": {
-    "closedBattle": {
-      "name": "Die geschlossene Schlacht",
-      "round": "Runde",
-      "winner": "ist der Gewinner"
-    },
-    "solitary": {
-      "name": "Der Einzelgänger"
-    },
-    "peckerLady": {
-      "name": "Die Pecker-Dame"
-    },
-    "chickenshit": {
-      "name": "Die Angstscheiße"
-    },
-    "liar": {
-      "name": "Der Lügner"
-    },
-    "notFinished": "Diese Partie wurde nicht beendet"
+  "GAME_NOTFINISHED": "Dieses Spiel ist noch nicht fertig",
+  "GAME_PECKERLADY": {
+    "_NAME": "Die Pik-Dame"
   },
-  "vers": "von"
+  "GAME_SOLITARY": {
+    "_NAME": "Solit\u00e4r"
+  },
+  "MENU_CHOICE_PLAYER": "Spieler",
+  "MENU_CHOICE_QUIT": "Aufh\u00f6ren",
+  "MENU_CHOICE_SETTINGS": "Einstellungen",
+  "MENU_CONFIG_CONTENT_ENCODING": "Codierung",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "Sprache",
+  "MENU_CONFIG_CONTENT_SPLASH": "Begr\u00fc\u00dfungsbildschirm",
+  "MENU_CONFIG_FAIL": "Konfiguration nicht angewendet",
+  "MENU_CONFIG_LABEL": "Einstellungen",
+  "MENU_CONFIG_RESTART": "Starten Sie das Programm neu, um die neue Konfiguration anzuwenden",
+  "MENU_CONFIG_SUCCESS": "Konfiguration angewendet",
+  "MENU_PLAYER_CONTENT_ADD": "Einen Spieler hinzuf\u00fcgen",
+  "MENU_PLAYER_CONTENT_LIST": "Spielerliste anzeigen",
+  "MENU_PLAYER_CONTENT_REMOVE": "Einen Spieler l\u00f6schen",
+  "MENU_PLAYER_INPUT_NAME": "Neuer Spielername",
+  "MENU_PLAYER_INPUT_NUMBER": "Zu l\u00f6schende Spielernummer",
+  "MENU_PLAYER_LABEL": "Spieler",
+  "MENU_PLAYER_RESULT_ADDED": "wurde hinzugef\u00fcgt",
+  "MENU_PLAYER_RESULT_DELETED": "wurde gel\u00f6scht",
+  "MENU_TEXT": "W\u00e4hle einen Spielmodus"
 }

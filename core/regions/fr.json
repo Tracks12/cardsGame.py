@@ -1,64 +1,79 @@
 {
-  "args": {
-    "intro": ["Jeux de cartes", "Lancement", "Arguments"],
-    "desc": [
-      "\tAffiche une carte du paquet",
-      "\tAffiche tout le paquet de cartes",
-      "Affiche une carte du paquet mélangé",
-      "\tAffiche toutes les cartes du paquet mélangé\n",
-      "\tLance un jeu de carte",
-      "Insérer un ou plusieurs joueur(s)\n",
-      "\t\tAffiche le menu d'aide",
-      "\t\tMode debugger",
-      "\t\tAffiche la version du programme\n"
-    ]
+  "ARGS_DESC": [
+    "Affiche une carte du paquet",
+    "Affiche l'int\u00e9gralit\u00e9 du jeu",
+    "Affiche une carte du jeu m\u00e9lang\u00e9",
+    "Affiche toutes les cartes du jeu m\u00e9lang\u00e9",
+    "Lance un jeu de cartes",
+    "Ins\u00e9rer un ou plusieurs joueurs",
+    "Affiche la liste des jeux et des joueurs",
+    "Affiche le menu d'aide",
+    "Mode d\u00e9bogueur",
+    "Affiche la version du programme"
+  ],
+  "ARGS_INTRO": [
+    "Jeux de cartes",
+    "Lancement",
+    "Arguments"
+  ],
+  "COMMON_BACK": "retour",
+  "COMMON_BY": "par",
+  "COMMON_GAMES": "Jeux",
+  "COMMON_NAME": "Nom",
+  "COMMON_NO": "Non",
+  "COMMON_PATH": "Chemin",
+  "COMMON_PLAYABLE": "Jouable",
+  "COMMON_PLAYER": "Le joueur",
+  "COMMON_PLAYERS": "Joueurs",
+  "COMMON_UNPLAYABLE": "Non jouable",
+  "COMMON_YES": "Oui",
+  "DEBUG_CONTINUE": "Appuyez sur n'importe quelle touche pour continuer...",
+  "DEBUG_STARTING": "Lancement en mode d\u00e9bogueur",
+  "ERR_ARGS": "Arguments inconnus",
+  "ERR_CARD_NUMBER": "Sp\u00e9cifiez un num\u00e9ro de carte",
+  "ERR_GAME_NAME": "Entrez un nom de jeu",
+  "ERR_LIST": "Type de liste inconnu",
+  "ERR_MENU_CHOICE": "Ce choix n'existe pas",
+  "ERR_PLAYER_EXIST": "Le joueur n'existe pas",
+  "ERR_PLAYER_LIST": "La liste des joueurs est incorrecte",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "Le minable"
   },
-  "debug": {
-    "continue": "Appuyez sur une touche pour continuer ..."
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "Bataille ferm\u00e9e",
+    "_ROUND": "Rond",
+    "_WINNER": "est gagnant"
   },
-  "err": {
-    "menuCho": "Ce choix n'existe pas",
-    "cardNum": "Spécifier un numéro de carte",
-    "gameName": "Entrer un nom de jeu",
-    "player": "La liste de joueur est incorrect"
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "Un 8 am\u00e9ricain"
   },
-  "tip": {},
-  "menu": {
-    "config": {
-      "content": {
-        "encoding": "Encodage",
-        "language": "Langue",
-        "splash": "Écran de démarrage"
-      },
-      "label": "paramètres",
-      "back": "retour",
-      "success": "Configuration appliquée",
-      "failed": "Configuration non appliquée",
-      "restart": "Redémarrer le programme pour appliquer la nouvelle configuration"
-    },
-    "txt": "Choisissez un mode de jeu",
-    "quit": "Quitter",
-    "set": "Paramètres"
+  "GAME_LIAR": {
+    "_NAME": "Le menteur"
   },
-  "game": {
-    "closedBattle": {
-      "name": "La Bataille Fermée",
-      "round": "Tour",
-      "winner": "est le Vainqueur"
-    },
-    "solitary": {
-      "name": "Le Solitaire"
-    },
-    "peckerLady": {
-      "name": "La Dame de Pic"
-    },
-    "chickenshit": {
-      "name": "Le Pouilleux"
-    },
-    "liar": {
-      "name": "Le Menteur"
-    },
-    "notFinished": "Ce jeu n'est pas fini"
+  "GAME_NOTFINISHED": "Ce jeu n'est pas termin\u00e9",
+  "GAME_PECKERLADY": {
+    "_NAME": "La Dame de Pique"
   },
-  "vers": "par"
+  "GAME_SOLITARY": {
+    "_NAME": "Solitaire"
+  },
+  "MENU_CHOICE_PLAYER": "Joueurs",
+  "MENU_CHOICE_QUIT": "Quitter",
+  "MENU_CHOICE_SETTINGS": "Param\u00e8tres",
+  "MENU_CONFIG_CONTENT_ENCODING": "Codage",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "Langue",
+  "MENU_CONFIG_CONTENT_SPLASH": "\u00c9cran de d\u00e9marrage",
+  "MENU_CONFIG_FAIL": "Configuration non appliqu\u00e9e",
+  "MENU_CONFIG_LABEL": "param\u00e8tres",
+  "MENU_CONFIG_RESTART": "Red\u00e9marrez le programme pour appliquer la nouvelle configuration",
+  "MENU_CONFIG_SUCCESS": "Configuration appliqu\u00e9e",
+  "MENU_PLAYER_CONTENT_ADD": "Ajouter un joueur",
+  "MENU_PLAYER_CONTENT_LIST": "Afficher la liste des joueurs",
+  "MENU_PLAYER_CONTENT_REMOVE": "Supprimer un joueur",
+  "MENU_PLAYER_INPUT_NAME": "Nouveau nom du joueur",
+  "MENU_PLAYER_INPUT_NUMBER": "Num\u00e9ro du joueur \u00e0 supprimer",
+  "MENU_PLAYER_LABEL": "joueurs",
+  "MENU_PLAYER_RESULT_ADDED": "a \u00e9t\u00e9 ajout\u00e9",
+  "MENU_PLAYER_RESULT_DELETED": "a \u00e9t\u00e9 supprim\u00e9",
+  "MENU_TEXT": "Choisissez un mode de jeu"
 }

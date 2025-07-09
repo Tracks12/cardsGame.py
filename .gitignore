@@ -1,2 +1,4 @@
+tools/translate/regions/
 __pycache__/
+
 *.pyc

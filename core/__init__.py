@@ -1,53 +1,74 @@
 #!/bin/python3
 # -*- coding: utf-8 -*-
 
-from base64 import b64decode, b64encode
-from platform import system
 from time import sleep
+from traceback import format_exc
 
-class Colors: # Module de coloration pour les système Linux/Unix
-	if(system() == "Linux"):
-		bold	= str("\033[1m")
-		italic	= str("\033[3m")
+from core.b64 import B64
+from core.cards import Card, Cards
+from core.config import Config
+from core.colors import Colors
+from core.game import Game
+from core.icons import Icons
+from core.players import LoadPlayers, Player, Players
+from core.regions import Regions
 
-		red		= str("\033[31m")
-		green	= str("\033[32m")
-		yellow	= str("\033[33m")
-		blue	= str("\033[34m")
-		purple	= str("\033[35m")
-		cyan	= str("\033[36m")
-		white	= str("\033[37m")
+from games import GAMES
 
-		end		= str("\033[0m")
+INFO = dict[str, str]({
+	"name": "cardsGame.py",
+	"vers": "0.3",
+	"author": "Florian Cardinal"
+})
 
-	else:
-		bold = italic = end = str("")
-		red = green = yellow = blue = purple = cyan = white = str("")
+def launch(cfg: Config, reg: dict, game: Game) -> bool: # Fonction de lancement du jeu
+	game = game(reg, cfg.encoding)
+	print(f"{Icons.play}{game.gameName}")
 
-class Icons: # Module d'icône ascii
-	warn = str(f" {Colors.bold}{Colors.red}[!]{Colors.end} - ")
-	info = str(f" {Colors.bold}{Colors.blue}(i){Colors.end} - ")
-	tips = str(f" {Colors.bold}{Colors.green}(?){Colors.end} - ")
-	play = str(f" {Colors.bold}{Colors.green}(>){Colors.end} - ")
+	if(not game.finished):
+		print(f"{Icons.warn}{reg['GAME_NOTFINISHED']}")
 
-class B64: # Encode/Decode ascii string
-	def encode(str = ""):
-		return(b64encode(str.encode("ascii")).decode("ascii"))
+	try:
+		return(game.start())
 
-	def decode(str = ""):
-		return(b64decode(str).decode("ascii"))
+	except(Exception):
+		print(f"{Icons.warn}{format_exc()}")
 
-def splash(reg, info): # Splash Screen
-	for row in [
-		"                      {}_        ______{}".format(Colors.yellow, Colors.end),
-		"                     {}| |      / ____/{}".format(Colors.yellow, Colors.end),
-		"  {}____ ___ _ _ __ ___| |  ___/ /   ___ ___ _ _ _ _ __   ___   ___{}".format(Colors.yellow, Colors.end),
-		" {}/ __// _ ` | `_// _ ` | / _/ |   |_  / _ ` | `_` `_ \ / _ \ | _ \_ __{}".format(Colors.yellow, Colors.end),
-		"{}| (__| (_)  | | | (_)  |_\ \ \ \___/ | (_)  | | | | | |  __/ |  _/\` /\t{}{}{}".format(Colors.yellow, Colors.red, info["vers"], Colors.end),
-		" {}\__/ \___,_|_|  \___,_|___/  \_____/ \___,_|_| |_| |_|\___|.|_|  / /\t{}{} {}{}".format(Colors.yellow, Colors.purple, reg["vers"], info["author"], Colors.end),
-		"                                                                 {}/_/{}\n".format(Colors.yellow, Colors.end)
-	]:
+	return(False)
+
+def splash(reg: dict) -> bool: # Splash Screen
+	for row in tuple[str]((
+		f"                      {Colors.yellow}_        ______{Colors.end}",
+		f"                     {Colors.yellow}| |      / ____/\t{Colors.purple}{reg['COMMON_BY']} {INFO['author']:<{59}}{Colors.end}",
+		f"  {Colors.yellow}____ ___ _ _ __ ___| |  ___/ /   ___ ___ _ _ _ _ __   ___   ___{Colors.end}",
+		f" {Colors.yellow}/ __// _ ` | `_// _ ` | / _/ |   |_  / _ ` | `_` `_ \\ / _ \\ | _ \\_ __{Colors.end}",
+		f"{Colors.yellow}| (__| (_)  | | | (_)  |_\\ \\ \\ \\___/ | (_)  | | | | | |  __/ |  _/\\` /{Colors.end}",
+		f" {Colors.yellow}\\__/ \\___,_|_|  \\___,_|___/  \\_____/ \\___,_|_| |_| |_|\\___|.|_|  / / {Colors.red}{INFO['vers']}{Colors.end}",
+		f"                                                                 {Colors.yellow}/_/{Colors.end}\n"
+	)):
 		print(row)
 		sleep(.1)
 
 	return(True)
+
+def sortGames(cfg: Config, reg: dict) -> None:
+	print(f" [ {reg['COMMON_GAMES']} ]:\n --{'-'*len(reg['COMMON_GAMES'])}--")
+	print(f" *  {reg['COMMON_NAME']:<{21}}{reg['COMMON_PLAYABLE']:<{12}}{reg['COMMON_PATH']}")
+
+	for i, game in enumerate(GAMES):
+		g = game(reg, cfg.encoding)
+		finished = str(reg['COMMON_YES'] if(g.finished) else reg['COMMON_NO'])
+		print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{g.gameName:<{21}}{Colors.end}{Colors.green if(g.finished) else Colors.red}{finished:<{12}}{Colors.end}{g.__file__}")
+
+	print("")
+
+def sortPlayers(cfg: Config, reg: dict) -> None:
+	players = Players(cfg.encoding)
+
+	print(f" [ {reg['COMMON_PLAYERS']} ]:\n --{'-'*len(reg['COMMON_PLAYERS'])}--")
+	print(f" *  {reg['COMMON_NAME']}")
+
+	for i, player in enumerate(players.getPlayerNames()):
+		print(f" {Colors.cyan}{i+1}{Colors.end}. {Colors.yellow}{player}{Colors.end}")
+
+	print("")

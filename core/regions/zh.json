@@ -1,0 +1,79 @@
+{
+  "ARGS_DESC": [
+    "\u663e\u793a\u4e00\u5f20\u724c",
+    "\u663e\u793a\u6574\u526f\u724c",
+    "\u663e\u793a\u6d17\u597d\u7684\u724c\u5806\u4e2d\u7684\u4e00\u5f20\u724c",
+    "\u663e\u793a\u6d17\u597d\u7684\u724c\u5806\u4e2d\u7684\u6240\u6709\u724c",
+    "\u542f\u52a8\u7eb8\u724c\u6e38\u620f",
+    "\u63d2\u5165\u4e00\u4e2a\u6216\u591a\u4e2a\u73a9\u5bb6",
+    "\u663e\u793a\u6e38\u620f\u548c\u73a9\u5bb6\u5217\u8868",
+    "\u663e\u793a\u5e2e\u52a9\u83dc\u5355",
+    "\u8c03\u8bd5\u5668\u6a21\u5f0f",
+    "\u663e\u793a\u7a0b\u5e8f\u7248\u672c"
+  ],
+  "ARGS_INTRO": [
+    "\u7eb8\u724c\u6e38\u620f",
+    "\u53d1\u5c04",
+    "\u53c2\u6570"
+  ],
+  "COMMON_BACK": "\u8fd4\u56de",
+  "COMMON_BY": "\u7ecf\u8fc7",
+  "COMMON_GAMES": "\u6e38\u620f",
+  "COMMON_NAME": "\u59d3\u540d",
+  "COMMON_NO": "\u4e0d",
+  "COMMON_PATH": "\u5c0f\u8def",
+  "COMMON_PLAYABLE": "\u53ef\u73a9",
+  "COMMON_PLAYER": "\u73a9\u5bb6",
+  "COMMON_PLAYERS": "\u73a9\u5bb6",
+  "COMMON_UNPLAYABLE": "\u4e0d\u53ef\u64ad\u653e",
+  "COMMON_YES": "\u662f\u7684",
+  "DEBUG_CONTINUE": "\u6309\u4efb\u610f\u952e\u7ee7\u7eed...",
+  "DEBUG_STARTING": "\u4ee5\u8c03\u8bd5\u5668\u6a21\u5f0f\u542f\u52a8",
+  "ERR_ARGS": "\u672a\u77e5\u53c2\u6570",
+  "ERR_CARD_NUMBER": "\u6307\u5b9a\u5361\u53f7",
+  "ERR_GAME_NAME": "\u8f93\u5165\u6e38\u620f\u540d\u79f0",
+  "ERR_LIST": "\u672a\u77e5\u5217\u8868\u7c7b\u578b",
+  "ERR_MENU_CHOICE": "\u6b64\u9009\u62e9\u4e0d\u5b58\u5728",
+  "ERR_PLAYER_EXIST": "\u73a9\u5bb6\u4e0d\u5b58\u5728",
+  "ERR_PLAYER_LIST": "\u7403\u5458\u540d\u5355\u4e0d\u6b63\u786e",
+  "GAME_CHICKENSHIT": {
+    "_NAME": "\u7cdf\u7cd5\u7684\u4eba"
+  },
+  "GAME_CLOSEDBATTLE": {
+    "_NAME": "\u5c01\u95ed\u5f0f\u6218\u6597",
+    "_ROUND": "\u5706\u5f62\u7684",
+    "_WINNER": "\u662f\u8d62\u5bb6"
+  },
+  "GAME_HEIGHTAMERICAN": {
+    "_NAME": "8 \u7f8e\u56fd\u4eba"
+  },
+  "GAME_LIAR": {
+    "_NAME": "\u9a97\u5b50"
+  },
+  "GAME_NOTFINISHED": "\u8fd9\u4e2a\u6e38\u620f\u5c1a\u672a\u7ed3\u675f",
+  "GAME_PECKERLADY": {
+    "_NAME": "\u9ed1\u6843\u7687\u540e"
+  },
+  "GAME_SOLITARY": {
+    "_NAME": "\u7eb8\u724c"
+  },
+  "MENU_CHOICE_PLAYER": "\u73a9\u5bb6",
+  "MENU_CHOICE_QUIT": "\u8f9e\u804c",
+  "MENU_CHOICE_SETTINGS": "\u8bbe\u7f6e",
+  "MENU_CONFIG_CONTENT_ENCODING": "\u7f16\u7801",
+  "MENU_CONFIG_CONTENT_LANGUAGE": "\u8bed\u8a00",
+  "MENU_CONFIG_CONTENT_SPLASH": "\u542f\u52a8\u753b\u9762",
+  "MENU_CONFIG_FAIL": "\u672a\u5e94\u7528\u914d\u7f6e",
+  "MENU_CONFIG_LABEL": "\u8bbe\u7f6e",
+  "MENU_CONFIG_RESTART": "\u91cd\u65b0\u542f\u52a8\u7a0b\u5e8f\u4ee5\u5e94\u7528\u65b0\u914d\u7f6e",
+  "MENU_CONFIG_SUCCESS": "\u914d\u7f6e\u5df2\u5e94\u7528",
+  "MENU_PLAYER_CONTENT_ADD": "\u6dfb\u52a0\u73a9\u5bb6",
+  "MENU_PLAYER_CONTENT_LIST": "\u663e\u793a\u73a9\u5bb6\u5217\u8868",
+  "MENU_PLAYER_CONTENT_REMOVE": "\u5220\u9664\u4e00\u540d\u73a9\u5bb6",
+  "MENU_PLAYER_INPUT_NAME": "\u65b0\u73a9\u5bb6\u540d\u79f0",
+  "MENU_PLAYER_INPUT_NUMBER": "\u8981\u5220\u9664\u7684\u73a9\u5bb6\u53f7\u7801",
+  "MENU_PLAYER_LABEL": "\u73a9\u5bb6",
+  "MENU_PLAYER_RESULT_ADDED": "\u5df2\u6dfb\u52a0",
+  "MENU_PLAYER_RESULT_DELETED": "\u5df2\u88ab\u5220\u9664",
+  "MENU_TEXT": "\u9009\u62e9\u6e38\u620f\u6a21\u5f0f"
+}
