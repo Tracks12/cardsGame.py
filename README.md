@@ -124,6 +124,9 @@ games = [ # Registre des jeux
 ]
 ```
 
+> [!Note]
+> Tous les jeux sont maintenant importer de manière automatique sans déclaration dans la constantes `GAMES` depuis la version 0.3
+
 | Nom du jeu                                                                          | Jouable |
 | ----------------------------------------------------------------------------------- | ------- |
 | [La Bataille Fermée](<https://fr.wikipedia.org/wiki/Bataille_(jeu)>)                | Oui     |
