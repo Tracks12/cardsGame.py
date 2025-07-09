@@ -3,7 +3,7 @@
 
 try:
 	# --- Importing external dependencies ---
-	from os import listdir, system as shell
+	from os import environ, listdir, system as shell
 	from platform import system
 	from sys import argv, version_info
 
@@ -15,6 +15,7 @@ try:
 
 	# Importation des dépendances internes
 	from core import *
+	from core.constants import CMD_CLEAR, CMD_PYTHON
 
 except(RuntimeError):
 	print("/!\\ - Program must be run with Python 3")
@@ -51,12 +52,12 @@ def arg(cfg: Config, reg: dict) -> bool: # Fonction d'entrée des arguments
 			print(f" {leftSide}{' '*(32-len(leftSide))}{args['desc'][i]}", end="\n\n" if(i in (3, 6, len(args['desc'])-1)) else "\n")
 
 	elif(argv[1] in args["prfx"][-2][0]): # Mode Debugger
-		isLinux = bool(system() == "Linux")
+		environ["CG_DEBUG"] = "1" # Set DEBUG environment variable to 1
 
 		while(True):
-			shell("clear" if(isLinux) else "cls")
+			shell(CMD_CLEAR)
 			print(f"{Icons.info}{reg['DEBUG_STARTING']}")
-			shell(f"python{'3' if(isLinux) else ''} {__file__}")
+			shell(f"{CMD_PYTHON} {__file__}")
 			input(f"{Icons.info}{reg['DEBUG_CONTINUE']}")
 
 	elif(argv[1] in args["prfx"][-1][0]): # Affiche la version du script

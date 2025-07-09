@@ -3,6 +3,7 @@
 
 from core import Colors
 from core.cards import Card, Cards
+from core.constants import DEBUG
 from core.game import Game
 from core.players import Player, Players
 
@@ -103,6 +104,7 @@ class ClosedBattle(Cards, Game, Players): # La bataille fermée
 				self.__winner	= player
 
 	def start(self) -> bool: # Lancement de la partie
+		jump = int(9)
 		self.mixCards()
 		self.__distrib()
 
@@ -119,9 +121,16 @@ class ClosedBattle(Cards, Game, Players): # La bataille fermée
 				f" {player.name:<{10}}: {len(player.hand) + len(player.deck)}" for player in self.getPlayers()
 			]), end="\n"*2)
 
-			print("\x1b[A" * (len(self.getPlayers()) + 9), end="\r")
+			if(DEBUG):
+				input(f"Press Enter to continue...")
+				print("\x1b[A", end="\r")
 
-		print("\x1b[B" * (len(self.getPlayers()) + 9), end="\r")
+			if(not DEBUG):
+				print("\x1b[A" * (len(self.getPlayers()) + jump), end="\r")
+
+		if(not DEBUG):
+			print("\x1b[B" * (len(self.getPlayers()) + jump), end="\r")
+
 		print(f" {self.__winner.name} {self.content['_WINNER']} !")
 
 		return(True)
